@@ -1,0 +1,77 @@
+@use "sass:math";
+@import 'functions';
+
+@mixin calculateResponsiveProperty($startBreakPoint, $endBreakPoint, $startValue, $finishValue, $property ){
+	@media (min-width: $startBreakPoint){
+		#{$property}: calculateResponsiveValue( $startBreakPoint, $endBreakPoint, $startValue, $finishValue );
+		
+	}
+	@media (min-width: $endBreakPoint){
+		#{$property}: $finishValue;
+	}
+}
+
+:root {
+	--font-family: "Manrope", sans-serif;
+	--second-family: "Inter", sans-serif;
+  }
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+a{
+	text-decoration: none;
+}
+button, textarea, input{
+	background: transparent;
+	border: none;
+	outline: none;
+}
+textarea, input{
+	width: 100%;
+}
+a, textarea, input, button{
+	transition: ease-in 300ms;
+	font-family: inherit;
+	outline: none;
+}
+a, textarea, input, button{
+	font-family: var(--font-family);
+}
+
+textarea{
+	resize: none;
+}
+
+ul{
+	list-style: none;
+}
+button{
+	cursor: pointer;
+}
+address{
+	font-style: normal;
+}
+
+html{
+	scroll-behavior: smooth;
+	font-family: var(--font-family);
+}
+body{
+	display: flex;
+	flex-direction: column;	
+	min-height: 100vh;
+	
+}
+
+body.no-scroll{
+	overflow: hidden;
+}
+main{
+	flex-grow: 1;
+
+
+}

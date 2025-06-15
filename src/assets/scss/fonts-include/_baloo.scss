@@ -1,0 +1,14 @@
+/*Baloo*/
+$font-family: 'Baloo';
+@font-face {
+    font-family: 'Baloo';
+    src: url('../fonts/Baloo/Baloo-Regular.eot');
+    src: local('Baloo Regular'), local('Baloo-Regular'),
+        url('../fonts/Baloo/Baloo-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Baloo/Baloo-Regular.woff2') format('woff2'),
+        url('../fonts/Baloo/Baloo-Regular.woff') format('woff'),
+        url('../fonts/Baloo/Baloo-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+

@@ -1,0 +1,8 @@
+@function strip-units($number) {    
+    @return  math.div($number, ($number * 0 + 1));
+}
+@function calculateResponsiveValue( $minViewPort, $maxViewport, $startFontSize, $endFontSize ) {
+    $koof_step_1: (strip-units($endFontSize) - strip-units($startFontSize)) * 100;        
+    $koof_step_2: math.div($koof_step_1, (strip-units($maxViewport) - strip-units($minViewPort)));
+    @return calc( $startFontSize + ((1vw - math.div($minViewPort, 100)) * $koof_step_2));
+}

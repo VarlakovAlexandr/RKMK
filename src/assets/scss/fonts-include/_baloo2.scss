@@ -1,0 +1,62 @@
+/*Baloo2*/
+$font-family: 'Baloo 2';
+@font-face {
+    font-family: 'Baloo 2';
+    src: url('../fonts/Baloo2/Baloo2-SemiBold.eot');
+    src: local('Baloo 2 SemiBold'), local('Baloo2-SemiBold'),
+        url('../fonts/Baloo2/Baloo2-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Baloo2/Baloo2-SemiBold.woff2') format('woff2'),
+        url('../fonts/Baloo2/Baloo2-SemiBold.woff') format('woff'),
+        url('../fonts/Baloo2/Baloo2-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Baloo 2';
+    src: url('../fonts/Baloo2/Baloo2-Medium.eot');
+    src: local('Baloo 2 Medium'), local('Baloo2-Medium'),
+        url('../fonts/Baloo2/Baloo2-Medium.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Baloo2/Baloo2-Medium.woff2') format('woff2'),
+        url('../fonts/Baloo2/Baloo2-Medium.woff') format('woff'),
+        url('../fonts/Baloo2/Baloo2-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Baloo 2';
+    src: url('../fonts/Baloo2/Baloo2-Bold.eot');
+    src: local('Baloo 2 Bold'), local('Baloo2-Bold'),
+        url('../fonts/Baloo2/Baloo2-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Baloo2/Baloo2-Bold.woff2') format('woff2'),
+        url('../fonts/Baloo2/Baloo2-Bold.woff') format('woff'),
+        url('../fonts/Baloo2/Baloo2-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Baloo 2';
+    src: url('../fonts/Baloo2/Baloo2-ExtraBold.eot');
+    src: local('Baloo 2 ExtraBold'), local('Baloo2-ExtraBold'),
+        url('../fonts/Baloo2/Baloo2-ExtraBold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Baloo2/Baloo2-ExtraBold.woff2') format('woff2'),
+        url('../fonts/Baloo2/Baloo2-ExtraBold.woff') format('woff'),
+        url('../fonts/Baloo2/Baloo2-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Baloo 2';
+    src: url('../fonts/Baloo2/Baloo2-Regular.eot');
+    src: local('Baloo 2 Regular'), local('Baloo2-Regular'),
+        url('../fonts/Baloo2/Baloo2-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Baloo2/Baloo2-Regular.woff2') format('woff2'),
+        url('../fonts/Baloo2/Baloo2-Regular.woff') format('woff'),
+        url('../fonts/Baloo2/Baloo2-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+

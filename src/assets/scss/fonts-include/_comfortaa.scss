@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'Comfortaa';
+    src: url('../fonts/Comfortaa/Comfortaa-Bold.eot');
+    src: local('Comfortaa Bold'), local('Comfortaa-Bold'),
+        url('../fonts/Comfortaa/Comfortaa-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Comfortaa/Comfortaa-Bold.woff2') format('woff2'),
+        url('../fonts/Comfortaa/Comfortaa-Bold.woff') format('woff'),
+        url('../fonts/Comfortaa/Comfortaa-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Comfortaa';
+    src: url('../fonts/Comfortaa/Comfortaa-Light.eot');
+    src: local('Comfortaa Light'), local('Comfortaa-Light'),
+        url('../fonts/Comfortaa/Comfortaa-Light.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Comfortaa/Comfortaa-Light.woff2') format('woff2'),
+        url('../fonts/Comfortaa/Comfortaa-Light.woff') format('woff'),
+        url('../fonts/Comfortaa/Comfortaa-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Comfortaa';
+    src: url('../fonts/Comfortaa/Comfortaa-Regular.eot');
+    src: local('Comfortaa Regular'), local('Comfortaa-Regular'),
+        url('../fonts/Comfortaa/Comfortaa-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Comfortaa/Comfortaa-Regular.woff2') format('woff2'),
+        url('../fonts/Comfortaa/Comfortaa-Regular.woff') format('woff'),
+        url('../fonts/Comfortaa/Comfortaa-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+

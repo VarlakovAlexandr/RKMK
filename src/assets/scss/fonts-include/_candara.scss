@@ -1,0 +1,12 @@
+/*Candara*/
+$font-family: 'Candara';
+@font-face {
+    font-family: 'Candara';
+    src: url('../fonts/Candara/Candara.eot');
+    src: local('Candara'), local('Candara'),
+        url('../fonts/Candara/Candara.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Candara/Candara.woff2') format('woff2'),
+        url('../fonts/Candara/Candara.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
