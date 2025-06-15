@@ -14,7 +14,38 @@
 :root {
 	--font-family: "Manrope", sans-serif;
 	--second-family: "Inter", sans-serif;
-  }
+
+	--colors-biege-basic: #f5f4f0;
+	--colors-biege-dark: #e3e1dc;
+	--colors-monochrome-white: #fff;
+	--colors-monochrome-black: #262626;
+	--colors-brand-basic-red: #ac0900;
+	--colors-monochrome-gray: #83827f;
+	--colors-background-primary: var(--colors-biege-basic);
+	--colors-type-primary: var(--colors-monochrome-black);
+	--colors-background-secondary: var(--colors-monochrome-white);
+	--colors-icons-and-graphics-on-primary-light: var(--colors-biege-dark);
+	--colors-icons-and-graphics-on-secondary-light: var(--colors-biege-dark);
+	--colors-background-inverse-primary: var(--colors-monochrome-black);
+	--colors-type-secondary: var(--colors-monochrome-gray);
+	--colors-type-inverse-primary: var(--colors-biege-basic);
+	--colors-type-accent: var(--colors-brand-basic-red);
+	--colors-biege-medium: #f0efe9;
+	--colors-biege-super-dark: #dbd6c8;
+	--colors-strokes-on-primary: var(--colors-biege-dark);
+	--colors-background-terriary: var(--colors-biege-dark);
+	--colors-monochrome-black-light: #3a3a3a;
+	--colors-background-inverse-primary-hover: var(--colors-monochrome-black-light);
+	--colors-type-inverse-secondary: var(--colors-monochrome-gray);
+	--colors-background-primary-hover: var(--colors-biege-medium);
+	--colors-background-terriary-hover: var(--colors-biege-super-dark);
+	--colors-strokes-on-primary-hover: var(--colors-biege-super-dark);
+	--colors-type-inverse-tertiary: var(--colors-monochrome-black-light-2);
+	--colors-monochrome-black-light-2: #5f5f5f;
+	--colors-strokes-on-inverse: var(--colors-monochrome-black-light);
+	--colors-monochrome-black-dark: #0f0f0f;
+	--colors-type-primary-hover: var(--colors-monochrome-black-light-2);
+}
 
 *{
 	margin: 0;
@@ -41,6 +72,11 @@ a, textarea, input, button{
 a, textarea, input, button{
 	font-family: var(--font-family);
 }
+
+path{
+	transition: ease-in 300ms;
+}
+
 
 textarea{
 	resize: none;
@@ -75,3 +111,28 @@ main{
 
 
 }
+
+
+section{
+	.content-block{
+		padding: 0 20px;
+
+		@include calculateResponsiveProperty(350px, 744px, 20px, 40px, padding-left);
+		@include calculateResponsiveProperty(350px, 744px, 20px, 40px, padding-right);
+		@include calculateResponsiveProperty(1025px, 1800px, 40px, 66px, padding-left);
+		@include calculateResponsiveProperty(1025px, 1800px, 40px, 66px, padding-right);
+		
+		.container{
+			max-width: 1800px;
+			margin: 0 auto;
+		}
+	}
+}
+
+@import 'units/typography';
+@import 'units/ui';
+@import 'units/dev';
+
+@import 'units/header';
+@import 'units/footer';
+@import 'units/contacts';

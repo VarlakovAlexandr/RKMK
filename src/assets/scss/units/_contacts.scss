@@ -1,0 +1,57 @@
+.contacts-title-block{
+    padding: 24px 0;
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+    width: 100%;
+    max-width: 1000px;
+
+
+    @include calculateResponsiveProperty(350px, 744px, 24px, 72px, padding-top);
+    @include calculateResponsiveProperty(350px, 744px, 24px, 64px, padding-bottom);
+    @include calculateResponsiveProperty(745px, 1024px, 72px, 52px, padding-top);
+    @include calculateResponsiveProperty(745px, 1024px, 64px, 80px, padding-bottom);
+
+    h1{
+        font-family: var(--font-family);
+        font-weight: 300;
+        font-size: 25px;
+        color: var(--colors-type-primary);
+        letter-spacing: -0.02em;
+        @include calculateResponsiveProperty(350px, 744px, 25px, 60px, font-size);
+    }
+
+    p{
+        font-family: var(--font-family);
+        font-weight: 300;
+        font-size: 18px;
+        color: var(--colors-type-primary);
+        line-height: 1.4;
+        @include calculateResponsiveProperty(350px, 744px, 18px, 36px, font-size);
+        letter-spacing: -0.02em;
+    }
+}
+
+
+.contacts-bg-layer{
+    background: linear-gradient(180deg, #c12017 12.02%, rgba(193, 32, 23, 0) 100%);    
+    opacity: 0.1;
+    width: 100%;
+    height: 68px;       
+    transform: rotate(180deg);
+
+    @include calculateResponsiveProperty(350px, 744px, 68px, 100px, height);
+}
+
+.contacts-banner{
+    padding: 12px;
+    height: 380px;
+    @include calculateResponsiveProperty(350px, 744px, 380px, 556px, height);
+    @include calculateResponsiveProperty(745px, 1024px, 556px, 796px, height);
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+}

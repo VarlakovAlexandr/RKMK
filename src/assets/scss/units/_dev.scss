@@ -1,0 +1,132 @@
+.body-dev{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.header-dev {
+    position: sticky;
+    z-index: 500;
+    display: flex;
+    justify-content: center;
+    top: 0;
+    padding: 48px 20px 48px;
+
+    backdrop-filter: blur(14px);
+    background: rgba($color: #fff, $alpha: .9);
+
+
+    @include calculateResponsiveProperty(1024px, 1800px, 48px, 80px, padding-top);
+    @include calculateResponsiveProperty(1024px, 1800px, 48px, 80px, padding-bottom);
+
+}
+.logo-dev {
+
+    width: 100%;
+    max-width: 138px;
+
+    @include calculateResponsiveProperty(350px, 744px, 138px, 188px, max-width);
+    img{
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+.main-dev{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 165px;
+
+    @include calculateResponsiveProperty(1024px, 1800px, 165px, 230px, padding-bottom);
+
+}
+
+
+.dev-content{
+    
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+
+    width: 100%;
+    max-width: 278px;
+    margin: 0 auto;
+
+    @include calculateResponsiveProperty(350px, 744px, 278px, 584px, max-width);
+    @include calculateResponsiveProperty(745px, 1024px, 584px, 830px, max-width);
+    @include calculateResponsiveProperty(1025px, 1800px, 830px, 942px, max-width);
+}
+
+.dev-content h1{
+    font-family: var(--font-family);
+    font-weight: 300;
+    font-size: 32px;
+    text-align: center;
+    background: linear-gradient(118deg, #c12017 0%, #201f1f 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    @include calculateResponsiveProperty(350px, 744px, 32px, 63px, font-size);
+}
+
+.dev-content p{
+    font-family: var(--font-family);
+    font-weight: 300;
+    font-size: 18px;
+    text-align: center;
+    color: var(--colors-type-primary);
+    line-height: 1.333;
+    @include calculateResponsiveProperty(350px, 744px, 18px, 24px, font-size);
+}
+
+.dev-content__contacts{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px 40px;
+
+
+    
+}
+
+
+
+
+.dev-nav-section{
+    padding: 0 20px;
+
+	@include calculateResponsiveProperty(350px, 744px, 20px, 40px, padding-left);
+	@include calculateResponsiveProperty(350px, 744px, 20px, 40px, padding-right);
+	@include calculateResponsiveProperty(1025px, 1800px, 40px, 66px, padding-left);
+	@include calculateResponsiveProperty(1025px, 1800px, 40px, 66px, padding-right);
+    
+	.container{
+		max-width: 1800px;
+		margin: 0 auto;
+	}
+}
+
+
+.dev-nav{
+    width: 100%;
+    max-width: 360px;
+    padding: 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(14px);
+    background: rgba(245, 244, 240, 0.9);
+    margin: 50px 0;
+
+    
+}
+
+.dev-nav__list{
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+}

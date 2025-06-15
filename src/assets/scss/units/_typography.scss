@@ -1,0 +1,18 @@
+a{
+    font-family: var(--font-family);
+    font-weight: 300;
+    font-size: 16px;
+    color: var(--colors-type-primary);
+    
+}
+
+a.underline{        
+    text-decoration: underline;
+    text-decoration-skip-ink: none;       
+}
+
+a{
+    &:hover{
+        color: var(--colors-type-accent);;
+    }
+}
