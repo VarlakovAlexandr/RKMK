@@ -55,6 +55,11 @@ if ( resetInputBtns.length ){
 
 
 const pageContactsForm = document.querySelector('.page-contacts-form');
+const formSuccess = document.querySelector('.form-success')
+
+
+
+
 
 if ( pageContactsForm ){
     pageContactsForm.addEventListener('submit', function(event){
@@ -62,6 +67,10 @@ if ( pageContactsForm ){
 
         const requiredInputs = this.querySelectorAll('.input:required');
        
+        const submitBtn = document.querySelector('.cf-submit');
+
+        submitBtn.setAttribute('disabled', 'disabled');
+
         requiredInputs.forEach( inp => {
             if ( inp.value.length < 1 ){
                 const parent = inp.closest('.input-block');
@@ -69,7 +78,47 @@ if ( pageContactsForm ){
             }
         } )
 
+
+
+        setTimeout(()=>{
+            this.reset();
+            submitBtn.removeAttribute('disabled');
+            
+            const hookAnimationStart = () => {
+                formSuccess.classList.remove('start');    
+                formSuccess.classList.add('active');    
+                formSuccess.removeEventListener('animationend', hookAnimationStart);
+            }
+
+            formSuccess.addEventListener('animationend', hookAnimationStart);
+            formSuccess.classList.add('start');
+        }, 2000)
+
     })
+}
+
+
+const messageCloseBtns = document.querySelectorAll('[data-message-close]');
+
+if ( messageCloseBtns.length ){
+    messageCloseBtns.forEach( btn => {
+
+        btn.addEventListener('click', function(){
+            const message = this.closest('.message');
+
+            const animationHook = () => {
+
+                message.classList.remove('active');
+                message.classList.remove('hide');
+                message.removeEventListener( 'animationend', animationHook )
+            }
+            
+            message.addEventListener( 'animationend', animationHook )
+
+            message.classList.add('hide');
+        })
+
+    } )
 }
 
 
