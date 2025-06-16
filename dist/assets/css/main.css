@@ -184,7 +184,7 @@ h1, h2, h3 {
   letter-spacing: -0.02em;
 }
 
-.contact-link {
+.h-contact-link {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -200,14 +200,14 @@ h1, h2, h3 {
   color: #83827f;
   display: flex;
 }
-.contact-link svg {
+.h-contact-link svg {
   -ms-flex-negative: 0;
       flex-shrink: 0;
 }
-.contact-link:hover {
+.h-contact-link:hover {
   color: var(--colors-type-accent);
 }
-.contact-link:hover path {
+.h-contact-link:hover path {
   fill: var(--colors-type-accent);
 }
 
