@@ -264,11 +264,16 @@
     display: flex;
     flex-direction: column;
     row-gap: 54px;
+    align-items: flex-start;
+    
 }
 
-
+.contact-form form{
+    width: 100%;
+}
 
 .cf-fields{
+    width: 100%;
     display: flex;
     flex-direction: column;
     row-gap: 40px;
@@ -351,7 +356,7 @@ textarea.input{
     display: inline-block;
     cursor: pointer;
     
-    display: flex;
+    
     justify-content: center;
     align-items: center;
 
@@ -365,7 +370,7 @@ textarea.input{
         }
     }
 
-    visibility: hidden;
+    display: none;
 }
 
 .input-error{
@@ -388,13 +393,13 @@ textarea.input{
 
 .input-block.has-text{
     .input-block__reset{
-        visibility: visible;
+        display: flex;
     }
 }
 
 
 .cf-file-uploads{
-
+    width: 100%;
     display: flex;
     flex-direction: column;
     row-gap: 40px;
@@ -409,7 +414,11 @@ textarea.input{
 }
 
 .cf-file-uploads.has-files{
-    display: flex;
+    
+
+    .cf-files{
+        display: flex;
+    }
 }
 
 .cf-file-uploads__btn{

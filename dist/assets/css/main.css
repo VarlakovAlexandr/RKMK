@@ -1880,9 +1880,17 @@ h1, h2, h3 {
       -ms-flex-direction: column;
           flex-direction: column;
   row-gap: 54px;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.contact-form form {
+  width: 100%;
 }
 
 .cf-fields {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1986,9 +1994,6 @@ textarea.input {
   background: var(--colors-background-terriary);
   display: inline-block;
   cursor: pointer;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -2000,7 +2005,7 @@ textarea.input {
       -ms-transform: translate(0, -50%);
           transform: translate(0, -50%);
   right: 12px;
-  visibility: hidden;
+  display: none;
 }
 .input-block__reset:hover path {
   fill: var(--colors-type-accent);
@@ -2022,10 +2027,13 @@ textarea.input {
 }
 
 .input-block.has-text .input-block__reset {
-  visibility: visible;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .cf-file-uploads {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2042,7 +2050,7 @@ textarea.input {
   display: none;
 }
 
-.cf-file-uploads.has-files {
+.cf-file-uploads.has-files .cf-files {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
