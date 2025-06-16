@@ -55,3 +55,117 @@
         object-position: center;
     }
 }
+
+
+.content-block.contacts-next-block{
+    background: var(--colors-background-terriary);
+    padding-top: 32px;
+
+    padding-bottom: calc(50% + 42px);
+    position: relative;
+
+    @media (min-width: 540px){
+        padding-bottom: 0;
+        padding-top: 0px;
+    }
+}
+
+.cnb-content__img{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+
+    width: 100vw;
+    aspect-ratio: 1 / 1;
+
+    @media (min-width: 540px){
+        width: 230px;
+        position: static;
+        transform: unset;
+    }
+
+    @media (min-width: 840px){
+        position: absolute;
+        width: calc(50% - 12px);
+        transform: translate(0, 0%);
+        left: unset;
+        bottom: unset;
+        top: 0;
+        right: 0;
+
+        max-width: 635px;
+    }
+}
+
+
+.cnb-content{
+    @media (min-width: 540px){
+        display: flex;
+        justify-content: space-between;
+    }
+
+    @media (min-width: 840px){
+        position: relative;
+    }
+}
+
+.cnb-content__text-content{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 32px;
+
+
+    @media (min-width: 540px){
+        padding: 32px 0;
+        justify-content: space-between;
+    }
+    @include calculateResponsiveProperty(745px, 1024px, 32px, 56px, row-gap);
+    @include calculateResponsiveProperty(1025px, 1800px, 56px, 140px, row-gap);
+    p{
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 11px;
+        color: var(--colors-type-primary);
+        letter-spacing: -0.02em;
+        @include calculateResponsiveProperty(350px, 744px, 11px, 13px, font-size);
+    }
+    a{
+        display: inline-flex;
+        align-items: center;
+        column-gap: 4px;
+        
+        font-family: var(--font-family);
+        font-weight: 300;
+        font-size: 20px;
+        color: var(--colors-type-primary);
+        letter-spacing: -0.02em;
+
+        
+
+        @include calculateResponsiveProperty(745px, 1024px, 20px, 34px, font-size);
+
+        svg{
+            flex-shrink: 0;
+
+            @include calculateResponsiveProperty(745px, 1024px, 16px, 24px, width);
+            @include calculateResponsiveProperty(745px, 1024px, 16px, 24px, height);
+        }
+
+
+        &:hover{
+            color: var(--colors-type-primary);;
+        }
+    }
+}
+
+.cnb-content__link-group{
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+    align-items: flex-start;
+}

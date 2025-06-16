@@ -40,3 +40,20 @@
     }
 
 }
+
+
+.white-badge{
+    display: inline-flex;
+
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--colors-type-secondary);
+    padding: 2px 10px;
+    background: var(--colors-background-secondary);
+    border-radius: 50px;
+
+    @include calculateResponsiveProperty(350px, 744px, 11px, 13px, font-size);
+}
