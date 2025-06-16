@@ -930,6 +930,9 @@ h1, h2, h3 {
   display: -ms-flexbox;
   display: flex;
 }
+.header-search:hover path {
+  fill: var(--colors-type-accent);
+}
 
 .footer {
   background: var(--colors-background-inverse-primary);

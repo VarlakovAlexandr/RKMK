@@ -133,4 +133,10 @@
 
 .header-search{
     display: flex;
+
+    &:hover{
+        path{
+            fill: var(--colors-type-accent);
+        }
+    }
 }
