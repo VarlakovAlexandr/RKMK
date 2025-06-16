@@ -169,3 +169,92 @@
     row-gap: 4px;
     align-items: flex-start;
 }
+
+.contacts-content{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 124px;
+
+    padding-top: 32px;
+    padding-bottom: 98px;
+
+
+    @include calculateResponsiveProperty(350px, 744px, 32px, 54px, padding-top);
+    @include calculateResponsiveProperty(745px, 1024px, 54px, 80px, padding-top);
+    @include calculateResponsiveProperty(1025px, 1800px, 80px, 92px, padding-top);
+
+
+    @include calculateResponsiveProperty(745px, 1024px, 98px, 240px, padding-bottom);
+    @include calculateResponsiveProperty(1025px, 1800px, 240px, 320px, padding-bottom);
+
+    @media (min-width: 1024px){
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 24px;
+    }
+
+}
+
+.contacts-block{
+    display: flex;
+    flex-direction: column;
+    row-gap: 88px;
+
+    
+}
+
+.contacts-block__sub-block{
+    display: flex;
+    flex-direction: column;
+    row-gap: 28px;
+    @include calculateResponsiveProperty(350px, 744px, 28px, 56px, row-gap);
+
+    @include calculateResponsiveProperty(745px, 1024px, 56px, 44px, row-gap);
+    address{
+        font-family: var(--font-family);
+        font-weight: 300;
+        font-size: 18px;
+        color: #201f1f;
+
+        line-height: 2;
+
+        @include calculateResponsiveProperty(350px, 744px, 20px, 24px, font-size);
+    }
+
+   
+}
+.contacts-block__links-group{
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+}
+.contacts-block__links-sub-group{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 4px;
+}
+
+
+
+.contacts-block__sub-title{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 4px;
+
+    h2{
+        font-family: var(--font-family);
+        font-weight: 600;
+        font-size: 20px;
+        color: #201f1f;
+
+        @include calculateResponsiveProperty(350px, 744px, 20px, 32px, font-size);
+    }
+    p{
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 13px;
+        color: var(--colors-type-secondary);
+
+    }
+}

@@ -57,3 +57,67 @@
 
     @include calculateResponsiveProperty(350px, 744px, 11px, 13px, font-size);
 }
+
+.contact-link{
+    font-family: var(--font-family);
+    font-weight: 300;
+    font-size: 18px;
+    display: inline-flex;
+    position: relative;
+    letter-spacing: -0.02em;
+    color: var(--colors-type-primary);
+
+    @include calculateResponsiveProperty(350px, 744px, 20px, 24px, font-size);
+
+    &:hover{
+        color: var(--colors-type-accent);
+
+        path{
+            fill: var(--colors-type-accent);
+        }
+    }
+}
+
+.contact-link.outer-link{
+    
+
+    
+    svg{
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 13px;
+        height: 13px;
+        transform: translate(125%, 0);
+
+        @include calculateResponsiveProperty(350px, 744px, 13px, 24px, width);
+        @include calculateResponsiveProperty(350px, 744px, 13px, 24px, height);
+    }
+
+    
+}
+
+
+
+
+.contact-link.under-line{
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    color: var(--colors-type-primary);
+}
+
+
+.contact-soc-links{
+    display: flex;
+    gap: 7px;
+    flex-wrap: wrap;
+
+    a{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 44px;
+        height: 44px;
+        background: var(--colors-background-terriary);
+    }
+}
