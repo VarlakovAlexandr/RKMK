@@ -123,6 +123,10 @@ if ( messageCloseBtns.length ){
 
 
 document.addEventListener('DOMContentLoaded', function() {
+
+    const startLoadBtn = document.querySelector('.cf-file-uploads__btn');
+    if (!startLoadBtn) return;
+
     const fileInput = document.querySelector('.loaded-files');
     if (!fileInput) return;
 
@@ -132,7 +136,60 @@ document.addEventListener('DOMContentLoaded', function() {
     const filesContainer = parentContainer.querySelector('.cf-files');
     if (!filesContainer) return;
 
+    const dropZone = parentContainer.querySelector('.cf-load-file-zone');
+    if (!dropZone) return;
+
+    
+
     let currentFiles = [];
+
+
+    startLoadBtn.addEventListener('click', function(){
+        parentContainer.classList.add('load-state')
+    })
+
+
+    // --- Обработчики для drag-and-drop с дозагрузкой ---
+    dropZone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropZone.classList.add('dragover');
+    });
+
+    dropZone.addEventListener('dragleave', () => {
+        dropZone.classList.remove('dragover');
+    });
+
+    dropZone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropZone.classList.remove('dragover');
+        
+        if (e.dataTransfer.files.length) {
+            // Создаем новый DataTransfer для объединения файлов
+            const dataTransfer = new DataTransfer();
+            
+            // Добавляем уже выбранные файлы
+            if (fileInput.files) {
+                for (let file of fileInput.files) {
+                    dataTransfer.items.add(file);
+                }
+            }
+            
+            // Добавляем новые файлы из перетаскивания
+            for (let file of e.dataTransfer.files) {
+                if (validateFile(file)) { // Проверяем валидность перед добавлением
+                    dataTransfer.items.add(file);
+                }
+            }
+            
+            // Обновляем input и триггерим событие
+            fileInput.files = dataTransfer.files;
+            const event = new Event('change', { bubbles: true });
+            fileInput.dispatchEvent(event);
+        }
+    });
+
+
+
 
     // --- Основной обработчик загрузки файлов ---
     fileInput.addEventListener('change', function(e) {

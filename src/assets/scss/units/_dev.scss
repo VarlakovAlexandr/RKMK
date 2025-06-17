@@ -13,8 +13,9 @@
     top: 0;
     padding: 48px 20px 48px;
 
-    backdrop-filter: blur(14px);
-    background: rgba($color: #fff, $alpha: .9);
+    
+    
+    background: var(--colors-background-primary);
 
 
     @include calculateResponsiveProperty(1024px, 1800px, 48px, 80px, padding-top);

@@ -469,9 +469,7 @@ h1, h2, h3 {
           justify-content: center;
   top: 0;
   padding: 48px 20px 48px;
-  -webkit-backdrop-filter: blur(14px);
-          backdrop-filter: blur(14px);
-  background: rgba(255, 255, 255, 0.9);
+  background: var(--colors-background-primary);
 }
 @media (min-width: 1024px) {
   .header-dev {
@@ -2160,6 +2158,15 @@ textarea.input {
   display: none;
 }
 
+.cf-file-uploads.load-state .cf-file-uploads__btn {
+  display: none;
+}
+.cf-file-uploads.load-state .cf-load-file-zone {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .cf-file-uploads.has-files .cf-files {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2278,6 +2285,30 @@ textarea.input {
 }
 .cf-bottom a:hover {
   color: var(--colors-type-accent);
+}
+
+.cf-load-file-zone {
+  border: 2px dashed var(--colors-strokes-on-primary);
+  border-radius: 8px;
+  padding: 20px 24px;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  row-gap: 10px;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 13px;
+  text-align: center;
+  color: var(--colors-type-primary);
+}
+.cf-load-file-zone label {
+  color: var(--colors-type-accent);
+  cursor: pointer;
 }
 
 .message {

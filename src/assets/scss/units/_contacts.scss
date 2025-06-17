@@ -413,6 +413,16 @@ textarea.input{
     }
 }
 
+.cf-file-uploads.load-state{
+    .cf-file-uploads__btn{
+        display: none;
+    }
+
+    .cf-load-file-zone{
+        display: flex;
+    }
+}
+
 .cf-file-uploads.has-files{
     
 
@@ -510,6 +520,28 @@ textarea.input{
         &:hover{
             color: var(--colors-type-accent);
         }
+    }
+}
+
+.cf-load-file-zone{
+    border: 2px dashed var(--colors-strokes-on-primary);
+    border-radius: 8px;
+    padding: 20px 24px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+
+
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 13px;
+    text-align: center;
+    color: var(--colors-type-primary);
+
+    label{
+        color: var(--colors-type-accent);
+        cursor: pointer;
     }
 }
 
