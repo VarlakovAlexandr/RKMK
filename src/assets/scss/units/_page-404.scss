@@ -45,6 +45,10 @@
 
     padding: 80px 0;
 
+    @media ( max-height: 480px){
+        padding: 160px 0;
+    }
+
     @media (min-width: 1024px){
         max-width: 940px;
     }

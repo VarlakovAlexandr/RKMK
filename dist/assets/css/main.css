@@ -2565,6 +2565,11 @@ textarea.input {
   row-gap: 46px;
   padding: 80px 0;
 }
+@media (max-height: 480px) {
+  .text-block-404 {
+    padding: 160px 0;
+  }
+}
 @media (min-width: 1024px) {
   .text-block-404 {
     max-width: 940px;
