@@ -63,7 +63,7 @@
 
     padding-bottom: calc(50% + 42px);
     position: relative;
-
+    transition: linear 200ms;
     @media (min-width: 540px){
         padding-bottom: 0;
         padding-top: 0px;
@@ -81,6 +81,9 @@
 
     width: 100vw;
     aspect-ratio: 1 / 1;
+
+
+    transition: linear 200ms;
 
     @media (min-width: 540px){
         width: 230px;
@@ -158,8 +161,22 @@
 
 
         &:hover{
-            color: var(--colors-type-primary);;
+            color: var(--colors-type-accent);
+            path{
+                fill: var(--colors-type-accent);
+            }
         }
+    }
+}
+
+
+.content-block.contacts-next-block:hover{
+    background: var(--colors-background-primary-hover);
+
+
+
+    .cnb-content__img{
+        border-radius: 0px;
     }
 }
 
@@ -431,7 +448,7 @@ textarea.input{
     }
 }
 
-.cf-file-uploads__btn{
+.cf-file-uploads__btn, .cf-file-uploads__btn p{
     font-family: var(--font-family);
     font-weight: 600;
     font-size: 15px;

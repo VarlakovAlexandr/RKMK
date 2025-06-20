@@ -54,7 +54,7 @@ if ( resetInputBtns.length ){
 }
 
 
-const pageContactsForm = document.querySelector('.page-contacts-form');
+const pageContactsForm = document.querySelector('.contact-form form');
 const formSuccess = document.querySelector('.form-success')
 
 
@@ -65,25 +65,46 @@ if ( pageContactsForm ){
     pageContactsForm.addEventListener('submit', function(event){
         event.preventDefault();
 
-        const requiredInputs = this.querySelectorAll('.input:required');
+        const requiredInputs = this.querySelectorAll('.input.wpcf7-validates-as-required');
+        
        
         const submitBtn = document.querySelector('.cf-submit');
 
         submitBtn.setAttribute('disabled', 'disabled');
 
+
+        let formError = false;
+
         requiredInputs.forEach( inp => {
             if ( inp.value.length < 1 ){
                 const parent = inp.closest('.input-block');
                 parent.classList.add('has-error');
+
+                formError = true;
             }
         } )
 
 
+        document.addEventListener('wpcf7mailsent', function(event) {
 
-        setTimeout(()=>{
-            this.reset();
             submitBtn.removeAttribute('disabled');
+
             
+            const filesList = document.querySelector('.cf-files');
+            const loadContainer = document.querySelector('.cf-file-uploads');
+            filesList.innerHTML = '';
+            loadContainer.classList.remove('load-state');
+            loadContainer.classList.remove('has-files');
+            
+            const hasTextBlocks = document.querySelectorAll('.input-block.has-text');
+
+            if ( hasTextBlocks.length )  {
+
+                hasTextBlocks.forEach( bl => {
+                    bl.classList.remove('has-text');
+                } )
+            }
+                
             const hookAnimationStart = () => {
                 formSuccess.classList.remove('start');    
                 formSuccess.classList.add('active');    
@@ -92,7 +113,12 @@ if ( pageContactsForm ){
 
             formSuccess.addEventListener('animationend', hookAnimationStart);
             formSuccess.classList.add('start');
-        }, 2000)
+            
+        });
+
+
+       
+        
 
     })
 }
@@ -129,6 +155,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const fileInput = document.querySelector('.loaded-files');
     if (!fileInput) return;
+
+    const thisForm = fileInput.closest('form');
+    if (!fileInput) return;
+
 
     const parentContainer = fileInput.closest('.cf-file-uploads');
     if (!parentContainer) return;
@@ -208,7 +238,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             
             // Обновляем input после валидации
-            updateFileInput(fileInput, currentFiles);
+            updateFileInputs(thisForm, fileInput, currentFiles);
         } else {
             parentContainer.classList.remove('has-files');
         }
@@ -238,7 +268,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const fileName = decodeURIComponent(fileElement.dataset.fileName);
             currentFiles = currentFiles.filter(f => f.name !== fileName);
             
-            updateFileInput(fileInput, currentFiles);
+            updateFileInputs(thisForm, fileInput, currentFiles);
             fileElement.remove();
             
             if (currentFiles.length === 0) {
@@ -250,11 +280,50 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // --- Обновление состояния input ---
-    function updateFileInput(input, filesToKeep) {
+    /*function updateFileInput(input, filesToKeep) {
         const dataTransfer = new DataTransfer();
         filesToKeep.forEach(file => dataTransfer.items.add(file));
         input.files = dataTransfer.files;
-    }
+
+
+    }*/
+
+
+function updateFileInputs(form, bufferInput, filesToKeep) {
+    // 1. Обновляем буферный input (multiple)
+    
+    const bufferDT = new DataTransfer();
+    filesToKeep.forEach(file => bufferDT.items.add(file));
+    bufferInput.files = bufferDT.files;
+    
+    // 2. Очищаем все слоты CF7 (file-0, file-1...)
+    const slots = Array.from({length: 10}, (_, i) => 
+        form.querySelector(`input[name="file-${i}"]`)
+    ).filter(Boolean);
+    
+    slots.forEach(slot => {
+        slot.value = ''; // Очищаем слот
+    });
+    
+    // 3. Заполняем слоты файлами (1 файл на слот)
+    filesToKeep.forEach((file, index) => {
+        if (index >= 10) return; // Не превышаем лимит слотов
+        
+        const slot = slots[index];
+        if (slot) {
+            const slotDT = new DataTransfer();
+            slotDT.items.add(file);
+            slot.files = slotDT.files;
+            
+            // Триггерим событие для CF7
+            slot.dispatchEvent(new Event('change', { bubbles: true }));
+        }
+    });
+    
+   
+}
+    
+
 
     // --- Валидация файлов ---
     function validateFile(file) {
@@ -305,3 +374,42 @@ document.addEventListener('DOMContentLoaded', function() {
         return div.innerHTML;
     }
 });
+
+const toUp = document.querySelector('.footer-to-up');
+
+if ( toUp ){
+    toUp.addEventListener('click', function(e) {
+            e.preventDefault(); 
+        
+            
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        
+        }
+    );
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    if (document.querySelector('input[type="file"]')) {
+      document.querySelector('input[type="file"]').setAttribute('multiple', 'multiple');
+    }
+
+
+    const text404 = document.querySelector('.text-block-404');
+
+    if ( text404 ){
+        const header = document.querySelector('.header');
+        let headerHeight = header.offsetHeight;
+        
+        text404.style.marginTop = (headerHeight * -1) + 'px';
+
+        window.addEventListener('resize', function(){
+            headerHeight = header.offsetHeight;
+            text404.style.marginTop = (headerHeight * -1) + 'px';
+        })
+    }
+});
+
+

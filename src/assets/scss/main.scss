@@ -65,7 +65,7 @@ textarea, input{
 	width: 100%;
 }
 a, textarea, input, button{
-	transition: ease-in 300ms;
+	transition: linear 200ms;
 	font-family: inherit;
 	outline: none;
 }
@@ -74,7 +74,7 @@ a, textarea, input, button{
 }
 
 path{
-	transition: ease-in 300ms;
+	transition: linear 200ms;
 }
 
 
@@ -138,3 +138,23 @@ section{
 @import 'units/footer';
 @import 'units/contacts';
 @import 'units/messages';
+
+@import 'units/page-404';
+@import 'units/sitemap';
+
+
+
+.wpcf7-response-output{
+	display: none !important;
+}
+.wpcf7-not-valid-tip{
+	display: none !important;
+}
+
+.cf-file-uploads__btn + p{
+	display: none !important;
+}
+
+.cf-files + p {
+	display: none;
+}

@@ -119,11 +119,16 @@
         width: 44px;
         height: 44px;
         background: var(--colors-background-terriary);
+
+        &:hover{
+            background: var(--colors-background-secondary);
+            border-radius: 50%;
+        }
     }
 }
 
 
-.cf-submit{
+.cf-submit, .dark-btn{
     display: flex;
     align-items: center;
     column-gap: 10px;
@@ -160,7 +165,7 @@
         height: 100%;
         background: linear-gradient(90deg, #262626 0%, #ac0900 100%);
         z-index: 2;
-        transition: 300ms ease-in;
+        transition: linear 200ms;
 
         transform: translate(-50%, -50%);
         opacity: 0;
@@ -174,7 +179,7 @@
         }
     }
 }
-.cf-submit__text{
+.cf-submit__text, .dark-btn__text{
     font-family: var(--font-family);
     font-weight: 400;
     font-size: 16px;
@@ -221,4 +226,8 @@
     .cf-submit__text {
         font-size: 14px;
     }
+}
+
+.dark-btn{
+    
 }

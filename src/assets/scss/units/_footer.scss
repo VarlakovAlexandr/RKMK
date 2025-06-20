@@ -165,7 +165,7 @@
         border-radius: 40px;
         background: var(--colors-background-inverse-primary-hover);
         z-index: -1;
-        transition: 300ms ease-in;
+        transition: linear 200ms;
         opacity: 0;
     }
     &::after{
@@ -175,7 +175,7 @@
         width: 13px;
         height: 13px;
         background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='13' height='14' viewBox='0 0 13 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M4.73357 2.125L9.67246 6.90327L4.73357 11.6815L3.7915 10.7701L4.81691 9.77806C6.44185 8.20597 6.44185 5.60058 4.81691 4.02849L3.7915 3.03643L4.73357 2.125Z' fill='%23F5F4F0' /%3e%3c/svg%3e");
-        transition: 300ms ease-in;
+        transition: linear 200ms;
         opacity: 0;
     }
 
@@ -270,7 +270,7 @@
     border: 1px solid rgba($color: #f5f4f0, $alpha: .6);
     border-radius: 8px;
 
-    transition: 300ms linear;
+    transition: linear 200ms;
 
     &:hover{
         color: var(--colors-type-inverse-primary);
@@ -290,5 +290,10 @@
     justify-content: center;
     align-items: center;
     background: var(--colors-background-inverse-primary-hover);
+
+    &:hover{
+        background: var(--colors-background-primary-hover);
+        border-radius: 50%;
+    }
     
 }

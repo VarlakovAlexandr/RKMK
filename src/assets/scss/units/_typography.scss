@@ -20,3 +20,15 @@ a{
 h1, h2, h3{
     letter-spacing: -0.02em;
 }
+
+
+
+.text{
+    font-family: var(--font-family);
+    font-weight: 300;
+    font-size: 18px;
+    color: var(--colors-type-primary);
+    letter-spacing: -0.02em;
+    line-height: 1.3333;
+    @include calculateResponsiveProperty(350px, 744px, 18px, 24px, font-size);
+}
