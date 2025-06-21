@@ -413,3 +413,21 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+const sliderWhereUse = new Swiper(".swiper.where-use-slider", {
+    speed: 1000,    
+    slidesPerView: 'auto',
+    navigation: {
+        nextEl: '.where-use__nav .slider-nav.slider-next',
+        prevEl: '.where-use__nav .slider-nav.slider-prev',
+    },
+    breakpoints: {
+        320: {
+            slidesPerView: 'auto',
+            spaceBetween: 10
+        },
+        744: {
+            slidesPerView: 'auto',
+            spaceBetween: 14
+        },
+    }
+})

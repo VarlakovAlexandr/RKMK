@@ -1,0 +1,120 @@
+.s-where-use{
+    position: relative;
+    padding-top: 94px;
+    padding-bottom: 44px;
+
+    @include calculateResponsiveProperty(350px, 744px, 94px, 140px, padding-top);
+    @include calculateResponsiveProperty(350px, 744px, 44px, 56px, padding-bottom);
+    @include calculateResponsiveProperty(745px, 1025px, 56px, 20px, padding-bottom);
+
+
+    @include calculateResponsiveProperty(1025px, 1800px, 140px, 230px, padding-top);
+    @include calculateResponsiveProperty(1025px, 1800px, 20px, 56px, padding-bottom);
+    overflow: hidden;
+    width: 100%;
+    &::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 69px;
+        background: linear-gradient(180deg, #c12017 12.02%, rgba(193, 32, 23, 0) 100%);
+
+     
+        opacity: 0.1;
+
+        @include calculateResponsiveProperty(350px, 744px, 69px, 100px, height);
+    }
+}
+
+.where-use{
+    display: flex;
+    flex-direction: column;
+    row-gap: 70px;
+    @include calculateResponsiveProperty(350px, 744px, 70px, 100px, row-gap);
+
+
+    @include calculateResponsiveProperty(1025px, 1800px, 100px, 70px, row-gap);
+}
+
+.where-use__text-block{
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+
+    @media (min-width: 1024px){
+        max-width: 753px;
+    }
+    @include calculateResponsiveProperty(1025px, 1800px, 753px, 1000px, max-width);
+}
+
+.where-use__slider-block{
+    width: 100%;
+    position: relative;
+}
+
+.swiper.where-use-slider{
+    overflow: visible;
+}
+
+.swiper-slide.where-use-card{
+    padding: 20px 20px 24px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 44px;
+    background: #fff;
+    align-items: flex-start;
+    height: auto;
+    width: 100vw;
+    max-width: 266px;
+
+    @include calculateResponsiveProperty(350px, 744px, 20px, 32px, padding);
+    @include calculateResponsiveProperty(350px, 744px, 24px, 32px, padding-bottom);
+    @include calculateResponsiveProperty(350px, 744px, 266px, 406px, max-width);
+    @include calculateResponsiveProperty(350px, 744px, 44px, 125px, row-gap);
+}
+
+.where-use-card__icon{
+    width: 72px;
+    height: 72px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f0efe9;
+
+    @include calculateResponsiveProperty(350px, 744px, 72px, 92px, height);
+    @include calculateResponsiveProperty(350px, 744px, 72px, 92px, width);
+
+    img{
+        width: 50%;
+        height: auto;
+    }
+}
+
+.where-use-card__text-block{
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+    padding-bottom: 32px;
+
+    
+}
+
+.where-use__nav{
+    
+    justify-content: flex-end;
+    column-gap: 22px;
+    
+    display: none;
+
+    @media (min-width: 1024px){
+        display: flex;
+    }
+
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(0, calc(-100% - 52px));
+}

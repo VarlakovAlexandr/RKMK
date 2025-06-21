@@ -231,3 +231,24 @@
 .dark-btn{
     
 }
+
+.slider-nav{
+    width: 52px;
+    height: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: #e3e1dc;
+
+    
+}
+.slider-nav.swiper-button-disabled{
+    opacity: 0.3;
+}
+.slider-nav:not(.swiper-button-disabled){
+    &:hover{
+        background: #dbd6c8;
+        border-radius: 0%;
+    }
+}

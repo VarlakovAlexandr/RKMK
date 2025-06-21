@@ -75,7 +75,15 @@ h1, h2, h3{
     line-height: 1.3333;
     @include calculateResponsiveProperty(350px, 744px, 22px, 38px, font-size);
 }
-
+.text-basic{
+    font-family: var(--font-family);
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: -0.02em;
+    color: #262626;
+    @include calculateResponsiveProperty(350px, 744px, 14px, 16px, font-size);    
+}
 
 .small-text{
     font-family: var(--font-family);
@@ -83,5 +91,16 @@ h1, h2, h3{
     font-size: 11px;
     
     @include calculateResponsiveProperty(350px, 744px, 11px, 13px, font-size);
+    
+}
+
+.text-subline{
+    font-family: var(--font-family);
+    font-weight: 300;
+    font-size: 18px;
+    color: #262626;
+    line-height: 130%;
+    letter-spacing: -0.025em;
+    @include calculateResponsiveProperty(350px, 744px, 18px, 36px, font-size);
     
 }
