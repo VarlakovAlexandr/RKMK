@@ -66,6 +66,17 @@ h1, h2, h3{
     @include calculateResponsiveProperty(350px, 744px, 18px, 24px, font-size);
 }
 
+.text-lg{
+    font-family: var(--font-family);
+    font-weight: 300;
+    font-size: 22px;
+    color: #262626;
+    letter-spacing: -0.02em;
+    line-height: 1.3333;
+    @include calculateResponsiveProperty(350px, 744px, 22px, 38px, font-size);
+}
+
+
 .small-text{
     font-family: var(--font-family);
     font-weight: 400;
