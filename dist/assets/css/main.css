@@ -2853,6 +2853,11 @@ textarea.input {
   opacity: 1;
 }
 
+.s-quote {
+  padding-top: 136px;
+  padding-bottom: 100px;
+}
+
 .wpcf7-response-output {
   display: none !important;
 }
