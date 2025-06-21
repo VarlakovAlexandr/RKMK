@@ -31,6 +31,21 @@ h1, h2, h3{
     @include calculateResponsiveProperty(350px, 744px, 25px, 60px, font-size);
 }
 
+
+.gradient-title{
+    font-family: var(--font-family);
+    font-weight: 300;
+    font-size: 25px;
+    background: linear-gradient(122deg, #c12017 0%, #201f1f 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.02em;
+    line-height: 1.3333;
+    @include calculateResponsiveProperty(744px, 1024px, 25px, 60px, font-size);
+}
+
+
 .small-title{
     font-family: var(--font-family);
     font-weight: 600;

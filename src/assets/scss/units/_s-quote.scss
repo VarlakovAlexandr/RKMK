@@ -1,4 +1,76 @@
 .s-quote{
     padding-top: 136px;
     padding-bottom: 100px;
+
+    @include calculateResponsiveProperty(350px, 744px, 136px, 194px, padding-top);
+
+    @include calculateResponsiveProperty(745px, 1024px, 194px, 205px, padding-top);
+    @include calculateResponsiveProperty(745px, 1024px, 100px, 125px, padding-bottom);
+
+    @include calculateResponsiveProperty(1025px, 1800px, 205px, 252px, padding-top);
+    @include calculateResponsiveProperty(1025px, 1800px, 125px, 155px, padding-bottom);
+
+    h2{
+        max-width: 1300px;
+    }
+}
+
+.quote{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+
+    @include calculateResponsiveProperty(745px, 1024px, 32px, 48px, row-gap);
+}
+
+.quote__author{
+    display: flex;
+    align-items: center;
+    column-gap: 12px;
+
+    @include calculateResponsiveProperty(350px, 744px, 12px, 24px, column-gap);
+}
+
+.quote__author-photo{
+    width: 52px;
+    height: 52px;
+
+    @include calculateResponsiveProperty(350px, 744px, 52px, 82px, width);
+    @include calculateResponsiveProperty(350px, 744px, 52px, 82px, height);
+
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    flex-shrink: 0;
+}
+
+.quote__text-info{
+    display: flex;
+    flex-direction: column;
+    row-gap: 2px;
+}
+.quote__name{
+    color: #262626;
+}
+.quote__post{
+    color: #83827f;
+}
+
+.quote__decoration{
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(0, -35%);
+    width: 180px;
+    height: auto;
+
+    @include calculateResponsiveProperty(350px, 744px, 180px, 240px, width);
+    @include calculateResponsiveProperty(745px, 1024px, 240px, 312px, width);
+    @media (min-width: 744px){
+        transform: translate(0, -40%);
+    }
+    @media (min-width: 1024px){
+        transform: translate(0, -55%);
+    }
 }
