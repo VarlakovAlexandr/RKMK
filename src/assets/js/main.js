@@ -431,3 +431,21 @@ const sliderWhereUse = new Swiper(".swiper.where-use-slider", {
         },
     }
 })
+
+let slider = new Swiper(".swiper.slider-advantages", {
+    speed: 1000,
+    
+    
+    spaceBetween: 0,
+    
+    breakpoints: {
+        579: {
+            slidesPerView: 'auto',
+            spaceBetween: 24
+        },
+        1023: {
+            slidesPerView: 3,
+            spaceBetween: 24
+        }
+    }
+})
