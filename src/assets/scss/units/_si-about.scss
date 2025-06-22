@@ -1,0 +1,83 @@
+.si-about{
+
+
+}
+
+.si-about__top-text{
+    padding-top: 56px;
+    padding-bottom: 44px;
+    @include calculateResponsiveProperty(350px, 744px, 44px, 56px, padding-bottom);
+    @include calculateResponsiveProperty(745px, 1024px, 56px, 80px, padding-top);
+    @include calculateResponsiveProperty(1025px, 1800px, 80px, 120px, padding-top);
+    @include calculateResponsiveProperty(1025px, 1800px, 56px, 40px, padding-bottom);
+    
+    .text-lg{
+        max-width: 1432px;
+    }
+}
+.si-about-bblock{
+    display: flex;
+    flex-direction: column;
+    row-gap: 60px;
+    @include calculateResponsiveProperty(350px, 744px, 60px, 64px, row-gap);
+
+    @media (min-width: 1024px){
+        flex-direction: row;
+        align-items: center;
+        column-gap: 24px;
+    }
+}
+.si-about-bblock__img-block{
+    width: 100%;
+    padding: 0 6px;
+    @include calculateResponsiveProperty(350px, 744px, 6px, 12px, padding-left);
+    @include calculateResponsiveProperty(350px, 744px, 6px, 12px, padding-right);
+    img{
+        width: 100%;
+        height: 328px;
+        object-fit: cover;
+        object-position: center;
+
+        @include calculateResponsiveProperty(350px, 744px, 328px, 572px, height);
+        @include calculateResponsiveProperty(1024px, 650px, 547px, 650px, height);
+        
+    }
+
+    @media (min-width: 1024px){
+        width: calc(50% - 12px);
+        padding: 12px;
+        
+
+        order: 2;
+
+        
+    }
+
+    
+}
+.si-about-bblock__content-block{
+    padding: 0 20px;
+    @include calculateResponsiveProperty(350px, 744px, 20px, 40px, padding-left);
+    @include calculateResponsiveProperty(350px, 744px, 20px, 40px, padding-right);
+    @include calculateResponsiveProperty(1025px, 1800px, 40px, 66px, padding-left);
+    display: flex;
+    flex-direction: column;
+    row-gap: 44px;
+
+    @include calculateResponsiveProperty(350px, 744px, 44px, 54px, row-gap);
+
+    padding-bottom: 120px;
+
+    @include calculateResponsiveProperty(350px, 744px, 120px, 74px, padding-bottom);
+
+
+    @media (min-width: 1024px){
+        order: 1;
+        width: calc(50% - 12px);
+    }
+}
+.si-about-bblock__text-block{
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+}

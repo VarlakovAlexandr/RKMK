@@ -291,3 +291,25 @@
         }
     }
 }
+
+.rkmk-list{
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    @include calculateResponsiveProperty(350px, 744px, 8px, 12px, row-gap);
+    li{
+        display: flex;
+        align-items: center;
+        column-gap: 8px;
+
+        
+    }
+    li::before{
+        content: "";
+        display: inline-block;
+        width: 14px;
+        height: 8px;
+        flex-shrink: 0;
+        background: url('data:image/svg+xml,<svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.2" d="M14 4L10.1172 0.117132L8.15843 2.07588C7.51829 2.71602 6.48109 2.7154 5.84157 2.07588L3.88282 0.117132L-4.78921e-05 4L3.88282 7.88287L5.84157 5.92412C6.48171 5.28398 7.51891 5.2846 8.15843 5.92412L10.1172 7.88287L14 4Z" fill="%2383827F" /></svg>');
+    }
+}
