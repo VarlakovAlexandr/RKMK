@@ -449,3 +449,21 @@ let slider = new Swiper(".swiper.slider-advantages", {
         }
     }
 })
+
+const sliderIndexCategories = new Swiper(".swiper.i-categories", {
+    speed: 1000,    
+    slidesPerView: 'auto',
+    spaceBetween: 12,
+    navigation: {
+        nextEl: '.si-categories__slider-nav .slider-nav.slider-next',
+        prevEl: '.si-categories__slider-nav .slider-nav.slider-prev',
+    },
+    
+    breakpoints: {
+        579: {
+            slidesPerView: 'auto',
+            spaceBetween: 20
+        },
+        
+    }
+})
