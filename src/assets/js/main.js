@@ -467,3 +467,71 @@ const sliderIndexCategories = new Swiper(".swiper.i-categories", {
         
     }
 })
+
+
+const advantagesSlider = new Swiper('.swiper.advantages-slider', {
+    // Настройки для fade-эффекта
+    effect: 'fade',
+    fadeEffect: {
+      crossFade: true // Плавное перекрытие слайдов
+    },
+    
+    // Дополнительные параметры
+    speed: 1000, // Длительность анимации перехода (в мс)    
+        
+    // Навигационные элементы
+    navigation: {
+      nextEl: '.as-slide__controls .slider-nav.slider-next',
+      prevEl: '.as-slide__controls .slider-nav.slider-prev'
+    },
+    
+    
+  });
+
+
+import marquee from './vanilla-marquee.min.js'
+
+const runnerLines = document.querySelectorAll('.runner-line');
+if ( runnerLines.length ){
+
+    runnerLines.forEach( rl => {
+        new marquee( rl, {
+            speed: 50,
+            pauseOnHover: true,
+            duplicated: true,
+            recalcResize: true,
+        } )        
+    } )
+
+}
+
+
+
+
+
+
+
+const tabTogglers = document.querySelectorAll('.tabs__single-tab');
+const sheets = document.querySelectorAll('.sheet');
+
+
+if ( tabTogglers.length && sheets.length){
+
+    tabTogglers.forEach( (tab, index) => {
+        tab.addEventListener('click', function(){
+
+            if ( this.classList.contains('active') ) return ;
+
+            const activeTab = document.querySelector('.tabs__single-tab.active');
+            const activeSheet = document.querySelector('.sheet.active');
+
+            activeTab.classList.remove('active');
+            activeSheet.classList.remove('active');
+
+            this.classList.add('active');
+            sheets[index].classList.add('active');
+
+            
+        })
+    } )
+}

@@ -133,3 +133,13 @@ h1, h2, h3{
     @include calculateResponsiveProperty(350px, 744px, 18px, 36px, font-size);
     
 }
+
+.text-subline-sheet{
+    font-family: var(--font-family);
+    font-weight: 300;
+    font-size: 18px;
+    color: #262626;
+    line-height: 130%;
+    letter-spacing: -0.025em;
+    @include calculateResponsiveProperty(744px, 1024px, 18px, 36px, font-size);
+}
