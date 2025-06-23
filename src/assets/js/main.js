@@ -535,3 +535,299 @@ if ( tabTogglers.length && sheets.length){
         })
     } )
 }
+const { animate, createTimer, createTimeline, waapi } = anime;
+
+
+
+
+
+const heroSection = document.querySelector('.hero');
+if ( heroSection ){
+    
+    const heroBg = new Swiper('.swiper.hero-bg-conatiner', {
+        effect: 'fade',
+        fadeEffect: {
+          crossFade: true 
+        },       
+        speed: 1000,
+
+        
+      });
+
+      const heroMainContent = new Swiper('.swiper.hero-main-content', {
+        effect: 'fade',
+        fadeEffect: {
+          crossFade: true 
+        },       
+        speed: 1000,
+        allowTouchMove: false,
+        mousewheel: { enabled: false },
+        keyboard: { enabled: false },
+        
+      });
+
+    
+      
+    const heroBtnTogglers = document.querySelectorAll('.hero-single-toggler');
+    
+    
+
+
+
+
+
+    if ( heroBtnTogglers.length > 1 ){
+        const heroTogglers = new Swiper(".swiper.hero-togglers  ", {
+            speed: 1000,    
+            slidesPerView: 'auto',
+            spaceBetween: 0,
+            breakpoints: {
+                320: {
+                    slidesPerView: 'auto',
+                    spaceBetween: 0
+                },
+                580: {
+                    slidesPerView: 'auto',
+                    spaceBetween: 12
+                },
+                1400: {
+                    slidesPerView: 3,
+                    spaceBetween: 25
+                },
+            }
+        })  
+
+        const container = document.querySelector('.swiper.hero-togglers .swiper-wrapper');
+
+
+        const indicators = document.querySelectorAll('.hero-single-toggler__color-indicator');
+        
+        
+
+
+
+        
+        var activeIndexToggler = 0;
+        let potenialNextIndex = 1;
+
+        let startTimer = 0;
+        const finishTimer = 7000;
+        let timerReset = false;
+
+        createTimer({
+            duration: 7000,
+            loop: true,
+            frameRate: 30,
+            onUpdate: self => {
+
+                if ( activeIndexToggler >= heroBtnTogglers.length - 1 ){
+                    potenialNextIndex = 0;
+                } else{
+                    potenialNextIndex  = activeIndexToggler + 1;
+                }
+
+                //console.log(activeIndexToggler, potenialNextIndex);
+
+                if ( timerReset ){
+                    startTimer = 0;
+                    self.currentTime = 0;
+                    timerReset = false;
+                } else{
+                    startTimer = self.currentTime;
+                }
+                
+                
+                if ( self.currentTime >= finishTimer) {
+                    self.currentTime = 0;
+                    let currentVW = document.documentElement.clientWidth;
+
+                    changeSlide(heroBtnTogglers[potenialNextIndex],  heroBtnTogglers[activeIndexToggler], potenialNextIndex, currentVW, heroBg, heroMainContent, container);
+                }
+                //console.log(self.currentTime);
+                indicators.forEach( ind => {
+                    ind.style.width = ((startTimer / finishTimer) * 100 ) + '%';
+                } )
+                
+            },
+            
+        });
+
+        heroBtnTogglers.forEach(  (tgl, index) => {
+            if ( tgl.classList.contains('active-toggler') ) activeIndexToggler = index;
+
+
+            tgl.addEventListener( 'click', function(){
+                if ( tgl.classList.contains('active-toggler') || tgl.classList.contains('open-mode') ) return;
+                
+                let currentVW = document.documentElement.clientWidth;
+                timerReset = true;
+
+                changeSlide(this,  heroBtnTogglers[activeIndexToggler], index, currentVW, heroBg, heroMainContent, container);
+
+
+                
+
+            })
+
+        } )
+    }
+      
+    
+
+    
+
+
+}
+
+
+function changeSlide(newActiveToggler, oldActiveToggler, newIndex, currentVW, bgSlider, contentSlider, container){
+    if ( currentVW < 580 ){
+        let containerHeight = container.offsetHeight + 'px';
+        container.style.maxHeight = containerHeight;
+        container.style.minHeight = containerHeight;
+
+        let tglHeight = newActiveToggler.offsetHeight;
+    
+        const tglContent = newActiveToggler.querySelector('.hero-single-toggler__main-toggler-content');
+        const tglTitleBlock = newActiveToggler.querySelector('.hero-single-toggler__title-block');
+          
+        let tglContentHeight = tglContent.offsetHeight;
+        let tglTitleBlockHeight = tglTitleBlock.offsetHeight;
+
+        let currentImg = newActiveToggler.querySelector('.hero-single-toggler__img-block');
+        currentImg.style.minHeight = currentImg.offsetHeight + 'px';
+
+        newActiveToggler.classList.add('open-mode');
+        newActiveToggler.style.height = tglHeight + 'px';
+
+
+        
+        oldActiveToggler.classList.add('close-mode');
+
+        
+        
+
+        let oldActiveTitleBlock = oldActiveToggler.querySelector('.hero-single-toggler__title-block');
+        let oldTglContent = oldActiveToggler.querySelector('.hero-single-toggler__main-toggler-content');
+
+        let oldActiveTitleBlockHeight = oldActiveTitleBlock.offsetHeight;
+
+        let oldImg = oldActiveToggler.querySelector('.hero-single-toggler__img-block');
+        oldImg.style.minHeight = oldImg.offsetHeight + 'px';
+
+
+        let ooh = oldTglContent.offsetHeight + 'px';
+        let toh = oldActiveTitleBlock.offsetHeight + 'px';
+
+        
+        
+        animate(newActiveToggler, { 
+            duration: 400,
+            delay: 50,
+            easing: 'linear',
+            minHeight: (tglContentHeight + 'px') }
+        );
+
+        animate(tglContent, { 
+            duration: 400,
+            delay: 50,
+            easing: 'linear',
+            height: (tglContentHeight + 'px') , 
+            onComplete: self =>{
+                newActiveToggler.classList.remove('open-mode');
+                newActiveToggler.classList.add('active-toggler');
+                activeIndexToggler = newIndex;
+                currentImg.setAttribute('style', "");
+                newActiveToggler.setAttribute('style', "");
+
+                
+            }
+
+        });
+
+
+        animate(oldActiveToggler, { 
+            duration: 400,
+            easing: 'linear',
+            delay: 50,
+            maxHeight: {
+                from: ooh, 
+                to: toh
+            } 
+        });
+
+        animate(oldTglContent, { 
+            duration: 400,
+            easing: 'linear',
+            maxHeight: '0px' , 
+            delay: 50,
+            onComplete: self =>{
+                oldActiveToggler.classList.remove('close-mode');
+                oldActiveToggler.classList.remove('active-toggler');
+                oldActiveToggler.setAttribute('style', "");
+                oldTglContent.setAttribute('style', "");
+                oldImg.setAttribute('style', "");
+                
+            }
+
+        });
+        setTimeout(() => {
+            container.setAttribute('style', "");
+        }, 450)
+    }
+
+
+    if ( currentVW > 580 && currentVW < 1400 ) {
+
+        let parentContainer = container.closest('.hero-togglers');
+        
+        let w = (parentContainer.offsetWidth - 360 - 24);
+
+        if ( w < 432 ){
+            w = 432;
+        }
+        w = w + 'px';
+
+        newActiveToggler.classList.add('active-toggler');
+        
+        newActiveToggler.style.maxHeight = newActiveToggler.offsetHeight + 'px';
+        oldActiveToggler.style.maxHeight = newActiveToggler.offsetHeight + 'px';
+        animate(oldActiveToggler, { 
+            duration: 400,
+            delay: 50,
+            easing: 'linear',
+            width: {
+                from: w, 
+                to: '180px'
+            },
+            onComplete: self =>{
+                //oldActiveToggler.style.width = '';
+                oldActiveToggler.classList.remove('active-toggler');
+            }
+        });
+        animate(newActiveToggler, { 
+            duration: 400,
+            delay: 50,
+            easing: 'linear',
+            width: {
+                from: '180px', 
+                to: w
+            },
+            onComplete: self =>{
+                newActiveToggler.classList.add('active-toggler');
+                //newActiveToggler.style.width = '';
+            }
+        });
+        
+
+        
+        activeIndexToggler = newIndex;
+    }
+    if ( currentVW >= 1400 ) {
+        newActiveToggler.classList.add('active-toggler');
+        oldActiveToggler.classList.remove('active-toggler');
+        activeIndexToggler = newIndex;
+    }
+    bgSlider.slideTo(newIndex); 
+    contentSlider.slideTo(newIndex); 
+}
