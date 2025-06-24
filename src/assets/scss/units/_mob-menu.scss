@@ -237,6 +237,12 @@ path#cross{
 .mob-child-menu__item{
     padding: 8px 0;
 }
+
+.mob-child-menu__item.cat{
+    padding: 0;
+    margin-bottom: 15px;
+}
+
 .mob-child-menu__link{
     font-family: var(--font-family);
     font-weight: 300;
@@ -255,3 +261,17 @@ path#cross{
     }
 }
 
+.go-to-cat{
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 12px;
+    color: #ac0900;
+    border: 1px solid #ac0900;
+    border-radius: 8px;
+    padding: 2px 9px 2px 9px;
+    display: inline-block;
+    &:hover{
+        border-radius: 50px;
+    }
+    
+}

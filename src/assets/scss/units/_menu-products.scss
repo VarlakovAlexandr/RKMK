@@ -1,0 +1,62 @@
+.menu-products{
+    padding: 120px 0px 48px;
+    z-index: 800;
+    box-shadow: 0 5px 57px 0 rgba(208, 0, 0, 0.1);
+    background: #f5f4f0;
+
+    max-height: 100vh;
+
+    transform: translate(0, -120%);
+
+    @include calculateResponsiveProperty(1025px, 1800px, 120px, 140px, padding-top);
+
+    transition: 400ms linear;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    .content-block{
+		padding: 0 20px;
+
+		@include calculateResponsiveProperty(350px, 744px, 20px, 40px, padding-left);
+		@include calculateResponsiveProperty(350px, 744px, 20px, 40px, padding-right);
+		@include calculateResponsiveProperty(1025px, 1800px, 40px, 66px, padding-left);
+		@include calculateResponsiveProperty(1025px, 1800px, 40px, 66px, padding-right);
+		
+		.container{
+			max-width: 1800px;
+			margin: 0 auto;
+		}
+	}
+    .container{
+        display: flex;
+        flex-direction: column;
+        row-gap: 44px;
+
+        @include calculateResponsiveProperty(350px, 744px, 44px, 64px, row-gap);
+        @include calculateResponsiveProperty(745px, 1024px, 64px, 64px, row-gap);
+        @include calculateResponsiveProperty(1025px, 1800px, 64px, 44px, row-gap);
+    }
+    
+}
+
+.menu-products.active{
+    transform: translate(0, 0);
+}
+
+.menu-products .si-categories__title-block > .text-subline{
+    font-size: 24px;
+    max-width: 760px;
+
+    @include calculateResponsiveProperty(1024px, 1800px, 760px, 1056px, max-width);
+}
+
+.menu-products .swiper-slide.i-category{
+    @media (min-width: 744px) {
+        max-width: 446px;
+        padding-bottom: 150px;
+    }
+}

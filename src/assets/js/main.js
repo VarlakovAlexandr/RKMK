@@ -1023,3 +1023,57 @@ const feedbackmodal = new HystModal({
         console.log(modal); //modal window object
     },
 });
+
+
+const productItemMenu = document.querySelector('.header-menu__item.products-item');
+const productsMenu = document.querySelector('.menu-products');
+
+if (productItemMenu && productsMenu) {
+    let timeoutId = null;
+    let isHovered = false;
+
+    // Функция для добавления класса active
+    const showMenu = () => {
+
+        let bodyWidth = document.documentElement.clientWidth;                   
+        document.body.style.maxWidth  = bodyWidth + 'px';
+        document.body.classList.add('no-scroll'); 
+
+
+        productsMenu.classList.add('active');
+        isHovered = true;
+        if (timeoutId) {
+            clearTimeout(timeoutId);
+            timeoutId = null;
+        }
+    };
+
+    // Функция для удаления класса active с задержкой
+    const hideMenuWithDelay = () => {
+        isHovered = false;
+        if (timeoutId) clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => {
+            if (!isHovered) {
+                productsMenu.classList.remove('active');
+                document.body.classList.remove('no-scroll');
+                document.body.removeAttribute('style'); 
+            }
+        }, 100);
+
+        
+    };
+
+    // Наведение на основной элемент
+    productItemMenu.addEventListener('mouseenter', showMenu);
+    productItemMenu.addEventListener('mouseleave', hideMenuWithDelay);
+
+    // Наведение на меню
+    productsMenu.addEventListener('mouseenter', () => {
+        isHovered = true;
+        if (timeoutId) {
+            clearTimeout(timeoutId);
+            timeoutId = null;
+        }
+    });
+    productsMenu.addEventListener('mouseleave', hideMenuWithDelay);
+}
