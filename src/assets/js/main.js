@@ -902,25 +902,12 @@ if ( coockieInfo ){
     }
 }
 
-const feedbackmodal = new HystModal({
-    linkAttributeName: 'data-hystmodal',
-    catchFocus: true,
-    waitTransitions: true,
-    closeOnEsc: false,
-    beforeOpen: function(modal){
-        console.log('Message before opening the modal');
-        console.log(modal); //modal window object
-    },
-    afterClose: function(modal){
-        console.log('Message after modal has closed');
-        console.log(modal); //modal window object
-    },
-});
+
 
 
 const hamburger = document.querySelector('.hamburger');
 const mobNavBlock = document.querySelector('.mob-nav-block');
-const mobMenuClose = document.querySelector('.mob-menu__close');
+
 
 
 const hideMenu = () => {        
@@ -939,6 +926,23 @@ const hideMenu = () => {
 	mobNavBlock.addEventListener('transitionend', hideHook);
 	mobNavBlock.classList.add('hide-menu');
     
+
+    animate('path#cross', {
+        opacity: 0,
+        scale: 0,
+        easing: 'linear',
+        duration: 100,   
+               
+    });
+    animate('path#line', {
+        opacity: 1,
+        scale: 1,
+        easing: 'linear',
+        duration: 100,   
+        delay: 50           
+    });
+    
+    hamburger.classList.remove('active');
 }
 
 
@@ -946,42 +950,49 @@ const hideMenu = () => {
 
 
 hamburger.addEventListener('click', function(){
-    const line = document.getElementById('line');
-    const crossPath = 'M24.1693 3.17095L21.8323 0.833984L12.5043 10.162L3.17291 0.833984L0.835938 3.17095L5.47682 7.81184C8.06501 10.4 8.06501 14.598 5.47682 17.1862L0.835938 21.8303L3.17291 24.1673L12.501 14.8393L21.829 24.1673L24.166 21.8303L19.5251 17.1895C16.9369 14.6013 16.9369 10.4033 19.5251 7.81514L24.166 3.17426L24.1693 3.17095Z';
-    const linePath = 'M27.7096 8.75 H7.29297 V11.9388 H27.7096 V8.75 Z M27.7096 15.9056 H7.29297 V19.0944 H27.7096 V15.9056 Z M27.7096 23.0612 H7.29297 V26.25 H27.7096 V23.0612 Z';
+    
     
     if (!this.classList.contains('active')){
 
         hamburger.classList.add('active');
-        mobNavBlock.classList.add('active');        
+
+        const animationHook = () => {
+            mobNavBlock.classList.add('active');
+            mobNavBlock.classList.remove('start-show');
+        }
+        
+        mobNavBlock.addEventListener('animationend', animationHook);
+        mobNavBlock.classList.add('start-show');    
+        
+        
+        
+
         let bodyWidth = document.documentElement.clientWidth;                   
         document.body.style.maxWidth  = bodyWidth + 'px';
         document.body.classList.add('no-scroll');        
 
-        const $path1 = utils.$('#cross');
-        const $path2 = utils.$('#line');
-        const $path3 = utils.$('#line2');
+        
 
         
         
-        animate($path2, {
-            d: svg.morphTo($path1),
+        animate('path#line', {
+            opacity: 0,
+            scale: 0,
             easing: 'linear',
             duration: 100,            
         });
-    } else{        
-        hideMenu();
-        const $path1 = utils.$('#cross');
-    const $path2 = utils.$('#line');
-    const $path3 = utils.$('#line2');
-        animate($path2, {
-            d: svg.morphTo($path3),
+
+        animate('path#cross', {
+            opacity: 1,
+            scale: 1,
             easing: 'linear',
             duration: 100,   
-            onComplete: ()=>{
-                //console.log(line.setAttribute('d', linePath));
-            }         
+            delay: 50         
         });
+        
+    } else{        
+        hideMenu();
+        
         
         
     }    
@@ -995,5 +1006,20 @@ mobNavBlock.addEventListener('click', ( event ) => {
 })
 
 
-mobMenuClose.addEventListener('click', hideMenu );
+
 new VavAccordion('.vav-accordion.mob-menu-list', {singleMode: false, closeChilds: true});
+
+
+const feedbackmodal = new HystModal({
+    linkAttributeName: 'data-hystmodal',
+    catchFocus: true,
+    waitTransitions: true,
+    closeOnEsc: false,
+    beforeOpen: function(modal){
+        hideMenu()	
+    },
+    afterClose: function(modal){
+        console.log('Message after modal has closed');
+        console.log(modal); //modal window object
+    },
+});
