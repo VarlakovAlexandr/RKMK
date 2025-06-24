@@ -277,7 +277,7 @@
 }
 
 
-.contact-form, .contact-form form{
+.contact-form, .contact-form form, .feedback-modal-form-container form{
     display: flex;
     flex-direction: column;
     row-gap: 54px;
@@ -285,7 +285,7 @@
     
 }
 
-.contact-form form{
+.contact-form form, .feedback-modal-form-container form{
     width: 100%;
 }
 

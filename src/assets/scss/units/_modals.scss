@@ -1,0 +1,119 @@
+.hystmodal__shadow{
+    z-index: 1999;
+}
+
+.hystmodal{
+    z-index: 2000;
+}
+
+
+.hystmodal__shadow--show{
+    opacity: 1;
+    background: rgba(38, 38, 38, 0.95);
+}
+.hystmodal__window{
+    transition: 200ms linear;
+    transform: translate(120%, 0%);
+}
+.hystmodal.hystmodal--active{
+    transform: translate(0%, 0%);
+}
+.hystmodal__window{
+    width: 100%;
+    max-width: 632px;
+    margin-top: 0;
+    margin-bottom: 0;
+    min-height: 100vh;
+    margin-left: auto;
+    @include calculateResponsiveProperty(744px, 1024px, 632px, 920px, max-width);
+    @include calculateResponsiveProperty(1025px, 1280px, 920px, 1260px, max-width);
+    padding-bottom: 100px;
+
+    box-shadow: -10px 0 29px 0 rgba(172, 9, 0, 0.3);
+    background: var(--colors-background-primary);
+
+}
+.feedback-form{
+    display: flex;
+    flex-direction: column;
+    background: var(--colors-background-primary);
+}
+
+.ff-header{
+    padding: 16px 20px;
+    background: var(--colors-background-primary);
+    z-index: 50;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--colors-strokes-on-primary);
+
+    @include calculateResponsiveProperty(350px, 744px, 16px, 32px, padding-top);
+    @include calculateResponsiveProperty(350px, 744px, 16px, 32px, padding-bottom);
+
+    @include calculateResponsiveProperty(350px, 744px, 20px, 40px, padding-left);
+    @include calculateResponsiveProperty(350px, 744px, 20px, 40px, padding-right);
+    
+    @include calculateResponsiveProperty(1024px, 1800px, 40px, 64px, padding-left);
+    @include calculateResponsiveProperty(1024px, 1800px, 40px, 64px, padding-right);
+}
+
+.ff-header__title{
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--colors-type-secondary);
+
+}
+.ff-header__close{
+    border: 1px solid var(--colors-type-primary);
+    border-radius: 50%;    
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include calculateResponsiveProperty(350px, 744px, 32px, 44px, width);
+    @include calculateResponsiveProperty(350px, 744px, 32px, 44px, height);
+
+    svg{
+        @include calculateResponsiveProperty(350px, 744px, 12px, 16px, width);
+        @include calculateResponsiveProperty(350px, 744px, 12px, 16px, height);
+    }
+
+    &:hover{
+        border-radius: 0%;
+    }
+}
+.ff-body{
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+    @include calculateResponsiveProperty(350px, 744px, 20px, 40px, padding-left);
+    @include calculateResponsiveProperty(350px, 744px, 20px, 40px, padding-right);
+
+    @include calculateResponsiveProperty(745px, 1024px, 40px, 64px, padding-left);
+    @include calculateResponsiveProperty(745px, 1024px, 40px, 64px, padding-right);
+
+    @include calculateResponsiveProperty(1024px, 1800px, 40px, 64px, padding-left);
+    @include calculateResponsiveProperty(1024px, 1800px, 40px, 64px, padding-right);
+
+    @include calculateResponsiveProperty(350px, 744px, 24px, 12px, row-gap);
+    @include calculateResponsiveProperty(745px, 1024px, 12px, 20px, row-gap);
+    @include calculateResponsiveProperty(1025px, 1800px, 20px, 40px, row-gap);
+}
+.ff-body__top-block{
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    padding: 32px 0;
+
+    @include calculateResponsiveProperty(350px, 744px, 32px, 64px, padding-top);
+    @include calculateResponsiveProperty(350px, 744px, 32px, 64px, padding-bottom);
+}

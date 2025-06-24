@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon"> 
     <link rel="stylesheet" href="assets/css/fonts.min.css">        
     <link rel="stylesheet" href="assets/css/swiper.min.css">        
+    <link rel="stylesheet" href="assets/css/hystmodal.min.css">        
     <link rel="stylesheet" href="assets/css/main.min.css">     
     
 </head>
@@ -75,7 +76,7 @@
                         </svg>
                     </button>
 
-                    <button class="btn btn-red">Оставить заявку</button>
+                    <button class="btn btn-red" data-hystmodal="#feedback-modal">Оставить заявку</button>
                 </div>
 
             </div>
@@ -592,10 +593,169 @@
         </div>
     </div>
 
+
+    
+
+    <div class="hystmodal" id="feedback-modal" aria-hidden="true">
+        <div class="hystmodal__wrap">
+            <div class="hystmodal__window" role="dialog" aria-modal="true">
+                
+                <div class="feedback-form">
+                    <div class="ff-header">
+                        <p class="ff-header__title">Форма обратной связи</p>
+                        <button class="ff-header__close" data-hystclose>
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.3307 1.73434L10.2624 0.666016L5.99815 4.93026L1.73239 0.666016L0.664062 1.73434L2.78561 3.85589C3.96878 5.03906 3.96878 6.95813 2.78561 8.1413L0.664062 10.2644L1.73239 11.3327L5.99664 7.06843L10.2609 11.3327L11.3292 10.2644L9.20767 8.14281C8.0245 6.95964 8.0245 5.04057 9.20767 3.8574L11.3292 1.73586L11.3307 1.73434Z" fill="#262626" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="ff-body">
+                        <div class="ff-body__top-block">
+                            <p class="title">Обратная связь</p>
+                            <p class="text-subline-small">Обращайтесь к нам по вопросам закупки, возможного партнёрства, для запросов от СМИ и, в целом, по любым интересующим вас вопросам. Мы ответим вам в течение одного рабочего дня.</p>
+                        </div>
+
+                        <div class="feedback-modal-form-container">
+                            <form class="page-contacts-form">
+                                <div class="cf-fields">
+                                    <div class="cf-fields__field-group">
+    
+                                        <div class="input-block">
+                                            <label for="field-name">Ваше имя<sup>*</sup></label>
+                                            <div class="input-block__wrap">                                                
+                                                <input type="text" id="field-name" name="name" class="input" required >
+                                                <span class="input-block__reset">
+                                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M13.3332 3.73499L12.2648 2.66666L8.00059 6.93091L3.73483 2.66666L2.6665 3.73499L4.78805 5.85653C5.97122 7.0397 5.97122 8.95877 4.78805 10.1419L2.6665 12.265L3.73483 13.3333L7.99908 9.06907L12.2633 13.3333L13.3317 12.265L11.2101 10.1434C10.0269 8.96028 10.0269 7.04121 11.2101 5.85804L13.3317 3.7365L13.3332 3.73499Z" fill="#262626" />
+                                                    </svg>
+                                                </span>
+                                            </div>
+                                            <span class="input-error">Это поле обязательное для ввода</span>
+                                        </div>
+    
+                                        <div class="input-block">
+                                            <label for="field-email">Ваша почта<sup>*</sup></label>
+                                            <div class="input-block__wrap">                                                
+                                                <input type="email" id="field-email" name="email" class="input" required >
+                                                <span class="input-block__reset">
+                                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M13.3332 3.73499L12.2648 2.66666L8.00059 6.93091L3.73483 2.66666L2.6665 3.73499L4.78805 5.85653C5.97122 7.0397 5.97122 8.95877 4.78805 10.1419L2.6665 12.265L3.73483 13.3333L7.99908 9.06907L12.2633 13.3333L13.3317 12.265L11.2101 10.1434C10.0269 8.96028 10.0269 7.04121 11.2101 5.85804L13.3317 3.7365L13.3332 3.73499Z" fill="#262626" />
+                                                    </svg>
+                                                </span>
+                                            </div>
+                                            <span class="input-error">Это поле обязательное для ввода</span>
+                                        </div>
+    
+                                    </div>
+                                    <div class="cf-fields__field-group">
+                                        <div class="input-block">
+                                            <label for="field-phone">Ваш телефон<sup>*</sup></label>
+                                            <div class="input-block__wrap">                                                
+                                                <input type="tel" id="field-phone" name="phone" class="input" required minlength="16">
+                                                <span class="input-block__reset">
+                                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M13.3332 3.73499L12.2648 2.66666L8.00059 6.93091L3.73483 2.66666L2.6665 3.73499L4.78805 5.85653C5.97122 7.0397 5.97122 8.95877 4.78805 10.1419L2.6665 12.265L3.73483 13.3333L7.99908 9.06907L12.2633 13.3333L13.3317 12.265L11.2101 10.1434C10.0269 8.96028 10.0269 7.04121 11.2101 5.85804L13.3317 3.7365L13.3332 3.73499Z" fill="#262626" />
+                                                    </svg>
+                                                </span>
+                                            </div>
+                                            <span class="input-error">Это поле обязательное для ввода</span>
+                                        </div>
+                                        <div class="input-block">
+                                            <label for="field-company">Компания</label>
+                                            <div class="input-block__wrap">                                                
+                                                <input type="text" id="field-company" name="company" class="input">
+                                                <span class="input-block__reset">
+                                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M13.3332 3.73499L12.2648 2.66666L8.00059 6.93091L3.73483 2.66666L2.6665 3.73499L4.78805 5.85653C5.97122 7.0397 5.97122 8.95877 4.78805 10.1419L2.6665 12.265L3.73483 13.3333L7.99908 9.06907L12.2633 13.3333L13.3317 12.265L11.2101 10.1434C10.0269 8.96028 10.0269 7.04121 11.2101 5.85804L13.3317 3.7365L13.3332 3.73499Z" fill="#262626" />
+                                                    </svg>
+                                                </span>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="cf-fields__field-group">
+                                        <div class="input-block textarea-block">
+                                            <label for="field-message">Ваше сообщение (опционально)</label>
+                                            <div class="input-block__wrap">                                                
+                                                
+                                                <textarea name="message" id="field-message" class="input"></textarea>
+                                                <span class="input-block__reset">
+                                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M13.3332 3.73499L12.2648 2.66666L8.00059 6.93091L3.73483 2.66666L2.6665 3.73499L4.78805 5.85653C5.97122 7.0397 5.97122 8.95877 4.78805 10.1419L2.6665 12.265L3.73483 13.3333L7.99908 9.06907L12.2633 13.3333L13.3317 12.265L11.2101 10.1434C10.0269 8.96028 10.0269 7.04121 11.2101 5.85804L13.3317 3.7365L13.3332 3.73499Z" fill="#262626" />
+                                                    </svg>
+                                                </span>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="cf-file-uploads">
+    
+                                    <div class="cf-load-file-zone">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M20 20H4V14.3679H5.65183V16.6652C5.65183 17.5615 6.35179 18.2866 7.21693 18.2866H16.781C17.6461 18.2866 18.3461 17.5615 18.3461 16.6652V14.3679H19.9979V20H20Z" fill="#262626" />
+                                            <path d="M7.08685 9.08877L8.02013 10.0556L9.70706 8.30802C10.3451 7.64706 11.4353 8.11551 11.4353 9.05027V15.739H12.7547V9.25134C12.7547 8.31658 13.8449 7.84813 14.4829 8.50909L15.9757 10.0556L16.909 9.08877L11.999 4L7.08685 9.08877Z" fill="#262626" />
+                                        </svg>
+                                        <div>Перенесите сюда файл(ы), или <label for="files">выберите</label> на вашем устройстве</div>
+                                        
+                                    </div>
+    
+    
+                                    <div class="cf-files">
+                                        
+                                    </div>
+    
+    
+    
+                                    <div class="cf-file-uploads__btn">
+                                        <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M11.5802 17.7205L18.3754 10.7625M14.0004 5.24998L6.63819 12.7627C6.31012 13.0909 6.12582 13.5359 6.12582 14C6.12582 14.464 6.31012 14.9091 6.63819 15.2372C6.96637 15.5653 7.41141 15.7496 7.87544 15.7496C8.33948 15.7496 8.78452 15.5653 9.11269 15.2372L16.4749 7.72448C17.1311 7.06814 17.4997 6.17806 17.4997 5.24998C17.4997 4.32191 17.1311 3.43183 16.4749 2.77548C15.8186 2.11934 14.9285 1.75073 14.0004 1.75073C13.0724 1.75073 12.1823 2.11934 11.5259 2.77548L4.16282 10.2874C3.17817 11.272 2.625 12.6075 2.625 14C2.625 15.3925 3.17817 16.728 4.16282 17.7126C5.14747 18.6973 6.48294 19.2504 7.87544 19.2504C9.26795 19.2504 10.6034 18.6973 11.5881 17.7126" stroke="#262626" stroke-width="2" stroke-linecap="square" stroke-linejoin="round" />
+                                        </svg>
+                                        Приложить файл
+                                    </div>
+    
+                                    
+    
+    
+                                    <input type="file" id="files" class="loaded-files" multiple>
+                                </div>
+    
+                                <div class="cf-bottom">
+                                    <button class="cf-submit" >
+                                        <span class="cf-submit__text cf-submit__text_static">Отправить заявку</span>
+                                        <span class="cf-submit__text cf-submit__text_sending">Отправляем данные</span>
+                                        <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect width="23" height="23" rx="11.5" fill="#3A3A3A" />
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M9.80094 7L14 11.5L9.80094 16L9 15.1417L9.85167 14.2289C11.2856 12.6922 11.2856 10.3078 9.85167 8.77105L9 7.85835L9.80094 7Z" fill="#F5F4F0" />
+                                        </svg>
+                                    </button>
+    
+    
+                                    <p>Нажимая кнопку “Отправить сообщение”, вы подтверждаете, что ознакомились и согласны с нашей <a href="privacy-politic.html" target="_blank">Политикой обработкой данных</a></p>
+                                </div>
+                            </form>
+                        </div>
+                        
+                    </div>
+                </div>
+
+
+                <!-- <button data-hystclose class="hystmodal__close">Закрыть</button>  -->
+
+
+                
+            </div>
+        </div>
+    </div>
+
+
+
     <script src="assets/js/vanilla-marquee.min.js" type="module"></script>
     <script src="assets/js/imask.js"></script>
     <script src="assets/js/anime.iife.min.js" ></script>
     <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/hystmodal.min.js"></script>
     <script src="assets/js/main.js" type="module"></script>
 
 </body>

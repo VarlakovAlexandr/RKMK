@@ -93,7 +93,7 @@ address{
 }
 
 html{
-	scroll-behavior: smooth;
+	
 	font-family: var(--font-family);
 }
 body{
@@ -151,6 +151,7 @@ section{
 @import 'units/si-categories';
 @import 'units/si-advantages-slider';
 @import 'units/si-partners';
+@import 'units/modals';
 
 
 
