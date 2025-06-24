@@ -437,6 +437,19 @@ h1, h2, h3 {
   border-radius: 0px;
 }
 
+.btn-outline-dark {
+  padding: 8px;
+  font-size: 14px;
+  color: var(--colors-monochrome-black);
+  border: 1px solid var(--colors-monochrome-black);
+  border-radius: 50px;
+  padding: 4px 6px;
+}
+.btn-outline-dark:hover {
+  border-radius: 0px;
+  color: var(--colors-monochrome-black);
+}
+
 .white-badge {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -2715,6 +2728,15 @@ textarea.input {
   }
 }
 
+@media (min-width: 680px) {
+  .message.coockie-info {
+    max-width: 587px;
+    bottom: 20px;
+    left: 20px;
+    right: unset;
+  }
+}
+
 .message.start {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2824,6 +2846,15 @@ textarea.input {
 }
 .message__close:hover path {
   fill: var(--colors-type-accent);
+}
+
+.message__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 4px;
+     -moz-column-gap: 4px;
+          column-gap: 4px;
 }
 
 .content-404 {

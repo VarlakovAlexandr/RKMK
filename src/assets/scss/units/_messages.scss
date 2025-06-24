@@ -33,6 +33,15 @@
 
 }
 
+.message.coockie-info{
+    @media (min-width: 680px){
+        max-width: 587px;
+        bottom: 20px;
+        left: 20px;
+        right: unset;
+    }
+}
+
 .message.start{
     display: flex;
     animation: show-message 300ms forwards;
@@ -101,4 +110,9 @@
             fill: var(--colors-type-accent)
         }
     }
+}
+
+.message__buttons{
+    display: flex;
+    column-gap: 4px;
 }

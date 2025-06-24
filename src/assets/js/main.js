@@ -105,15 +105,8 @@ if ( pageContactsForm ){
                 } )
             }
                 
-            const hookAnimationStart = () => {
-                formSuccess.classList.remove('start');    
-                formSuccess.classList.add('active');    
-                formSuccess.removeEventListener('animationend', hookAnimationStart);
-            }
-
-            formSuccess.addEventListener('animationend', hookAnimationStart);
-            formSuccess.classList.add('start');
-            
+           
+            showSnack(formSuccess)
         });
 
 
@@ -121,6 +114,18 @@ if ( pageContactsForm ){
         
 
     })
+}
+
+
+function showSnack(modal){
+    const hookAnimationStart = () => {
+        modal.classList.remove('start');    
+        modal.classList.add('active');    
+        modal.removeEventListener('animationend', hookAnimationStart);
+    }
+
+    modal.addEventListener('animationend', hookAnimationStart);
+    modal.classList.add('start');
 }
 
 
@@ -831,3 +836,56 @@ function changeSlide(newActiveToggler, oldActiveToggler, newIndex, currentVW, bg
     bgSlider.slideTo(newIndex); 
     contentSlider.slideTo(newIndex); 
 }
+
+
+
+function getCookie(name) {
+    let matches = document.cookie.match(new RegExp(
+      "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+    ));
+    return matches ? decodeURIComponent(matches[1]) : undefined;
+}
+
+function setCookie(name, value, options = {}) {
+
+  options = {
+    path: '/',
+    // при необходимости добавьте другие значения по умолчанию
+    ...options
+  };
+
+  if (options.expires instanceof Date) {
+    options.expires = options.expires.toUTCString();
+  }
+
+  let updatedCookie = encodeURIComponent(name) + "=" + encodeURIComponent(value);
+
+  for (let optionKey in options) {
+    updatedCookie += "; " + optionKey;
+    let optionValue = options[optionKey];
+    if (optionValue !== true) {
+      updatedCookie += "=" + optionValue;
+    }
+  }
+
+  document.cookie = updatedCookie;
+}
+
+
+const coockieInfo = document.querySelector('.message.coockie-info');
+
+if ( coockieInfo ){
+
+    const btnCoockieApprove = document.querySelector('[data-coockie-approve]');
+
+    btnCoockieApprove.addEventListener('click', function(){
+        setCookie('coockie-approve', 'true', {secure: true, 'max-age': (60*60*34*365)})
+    })
+
+
+    if (getCookie('coockie-approve') === undefined ){
+        showSnack(coockieInfo)
+           
+    }
+}
+
