@@ -1,3 +1,29 @@
+
+let observerOptions = {
+    rootMargin: '500px'  
+};
+document.addEventListener("DOMContentLoaded", function() {
+    var lazyImages = [].slice.call(document.querySelectorAll("[data-vav-lazy]"));
+    if ("IntersectionObserver" in window) {
+        let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    let lazyImage = entry.target;
+                    lazyImage.src = lazyImage.getAttribute('data-vav-lazy');
+                    lazyImage.removeAttribute('data-vav-lazy')
+                    lazyImageObserver.unobserve(lazyImage);
+                }
+            });
+        },observerOptions);
+        lazyImages.forEach(function(lazyImage) {
+            lazyImageObserver.observe(lazyImage);
+        });
+    } else {
+    
+    }
+});
+
+
 let vh = window.innerHeight * 0.01;
 const { animate, createTimer, createTimeline, waapi,  svg, utils} = anime;
 
