@@ -301,16 +301,18 @@
     flex-direction: column;
     row-gap: 4px;
 
-    label{
-        font-family: var(--font-family);
-        font-weight: 600;
-        font-size: 15px;
-        color: var(--colors-type-primary);
+    
+}
 
-        sup{
-            color: var(--colors-type-accent);
-            font-size: 10px;
-        }
+.input-block__label{
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--colors-type-primary);
+
+    sup{
+        color: var(--colors-type-accent);
+        font-size: 10px;
     }
 }
 

@@ -327,4 +327,12 @@
     }
 }
 
+.title-block{
+    padding: 32px 0;
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
 
+    @include calculateResponsiveProperty(350px, 744px, 32px, 64px, padding-top);
+    @include calculateResponsiveProperty(350px, 744px, 32px, 64px, padding-bottom);
+}

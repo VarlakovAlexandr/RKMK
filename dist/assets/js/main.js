@@ -93,68 +93,102 @@ if ( resetInputBtns.length ){
 }
 
 
-const pageContactsForm = document.querySelector('.contact-form form');
+const inputLabels = document.querySelectorAll('.input-block__label');
+if ( inputLabels.length ){
+    inputLabels.forEach( lb => {
+        lb.addEventListener('click', function(){
+            const parent = this.closest('.input-block');
+            const inp = parent.querySelector('.wpcf7-form-control');
+
+            if ( inp ) inp.focus();
+        })
+    } )
+}
+
+
+
+const pageContactsForms = document.querySelectorAll('.contact-form form');
 const formSuccess = document.querySelector('.form-success')
 
 
 
 
 
-if ( pageContactsForm ){
-    pageContactsForm.addEventListener('submit', function(event){
-        event.preventDefault();
-
-        const requiredInputs = this.querySelectorAll('.input.wpcf7-validates-as-required');
-        
-       
-        const submitBtn = document.querySelector('.cf-submit');
-
-        submitBtn.setAttribute('disabled', 'disabled');
-
-
-        let formError = false;
-
-        requiredInputs.forEach( inp => {
-            if ( inp.value.length < 1 ){
-                const parent = inp.closest('.input-block');
-                parent.classList.add('has-error');
-
-                formError = true;
-            }
-        } )
+const feedbackmodal = new HystModal({
+    linkAttributeName: 'data-hystmodal',
+    catchFocus: true,
+    waitTransitions: true,
+    closeOnEsc: false,
+    beforeOpen: function(modal){
+        hideMenu()	
+    },
+    afterClose: function(modal){
+        console.log('Message after modal has closed');
+        console.log(modal); //modal window object
+    },
+});
 
 
-        document.addEventListener('wpcf7mailsent', function(event) {
+if ( pageContactsForms.length ){
 
-            submitBtn.removeAttribute('disabled');
-
+    pageContactsForms.forEach( pageContactsForm => {
+        pageContactsForm.addEventListener('submit', function(event){
+            event.preventDefault();
+    
+            const requiredInputs = this.querySelectorAll('.input.wpcf7-validates-as-required');
             
-            const filesList = document.querySelector('.cf-files');
-            const loadContainer = document.querySelector('.cf-file-uploads');
-            filesList.innerHTML = '';
-            loadContainer.classList.remove('load-state');
-            loadContainer.classList.remove('has-files');
-            
-            const hasTextBlocks = document.querySelectorAll('.input-block.has-text');
-
-            if ( hasTextBlocks.length )  {
-
-                hasTextBlocks.forEach( bl => {
-                    bl.classList.remove('has-text');
-                } )
-            }
-                
            
-            showSnack(formSuccess)
-        });
+            const submitBtn = document.querySelector('.cf-submit');
+    
+            submitBtn.setAttribute('disabled', 'disabled');
+    
+    
+            let formError = false;
+    
+            requiredInputs.forEach( inp => {
+                if ( inp.value.length < 1 ){
+                    const parent = inp.closest('.input-block');
+                    parent.classList.add('has-error');
+    
+                    formError = true;
+                }
+            } )
+    
+    
+            document.addEventListener('wpcf7mailsent', function(event) {
+    
+                submitBtn.removeAttribute('disabled');
+    
+                
+                const filesList = document.querySelector('.cf-files');
+                const loadContainer = document.querySelector('.cf-file-uploads');
+                filesList.innerHTML = '';
+                loadContainer.classList.remove('load-state');
+                loadContainer.classList.remove('has-files');
+                
+                const hasTextBlocks = document.querySelectorAll('.input-block.has-text');
+    
+                if ( hasTextBlocks.length )  {
+    
+                    hasTextBlocks.forEach( bl => {
+                        bl.classList.remove('has-text');
+                    } )
+                }
+                    
+               
+                showSnack(formSuccess)
+                feedbackmodal.close();
+            });
+    
+    
+           
+            
+    
+        })
+    } ) 
 
-
-       
-        
-
-    })
+    
 }
-
 
 function showSnack(modal){
     const hookAnimationStart = () => {
@@ -1036,19 +1070,7 @@ mobNavBlock.addEventListener('click', ( event ) => {
 new VavAccordion('.vav-accordion.mob-menu-list', {singleMode: false, closeChilds: true});
 
 
-const feedbackmodal = new HystModal({
-    linkAttributeName: 'data-hystmodal',
-    catchFocus: true,
-    waitTransitions: true,
-    closeOnEsc: false,
-    beforeOpen: function(modal){
-        hideMenu()	
-    },
-    afterClose: function(modal){
-        console.log('Message after modal has closed');
-        console.log(modal); //modal window object
-    },
-});
+
 
 
 const productItemMenu = document.querySelector('.header-menu__item.products-item');
@@ -1102,4 +1124,235 @@ if (productItemMenu && productsMenu) {
         }
     });
     productsMenu.addEventListener('mouseleave', hideMenuWithDelay);
+}
+
+
+
+
+
+
+/*const tpInnerLink = document.querySelectorAll('.tp-inner-nav__link');
+
+if ( tpInnerLink.length ){
+    let innerNav = document.querySelector('.tp-inner-nav');
+
+
+    tpInnerLink.forEach( la => {
+        la.addEventListener('click', function(event){
+            event.preventDefault();
+
+            let targetClick = document.querySelector(this.getAttribute('href'));
+
+            if (targetClick){
+
+
+                let ot = targetClick.offsetTop;
+                
+                let innerNavHeight = innerNav.offsetHeight;
+                ot = ot - innerNavHeight - 20;
+                
+                window.scrollTo({
+                    top: ot,
+                    left: 0,
+                    behavior: "smooth"
+                });
+
+                
+            }
+
+        })
+    } )
+    let lastScroll = 0;
+    window.addEventListener('scroll', function(){
+
+        let deltaScroll = window.scrollY - lastScroll;
+        //console.log(deltaScroll);
+        lastScroll = window.scrollY;
+        
+
+        tpInnerLink.forEach( la => {
+            let targetLink = document.querySelector(la.getAttribute('href'));
+
+            if (targetLink){
+
+                if ( deltaScroll > 0) {
+
+                    let br = targetLink.getBoundingClientRect().top;
+                    let windowHeight = window.innerHeight;
+                    let result = br - windowHeight / 2;
+                    
+
+                    if ( result < 100 && result > 0 ){
+                        let activeLinks =  innerNav.querySelectorAll('.tp-inner-nav__link.active'); 
+                        if ( activeLinks.length ){
+                            activeLinks.forEach( al => {
+                                al.classList.remove('active');
+                            } )
+                        }
+
+                        la.classList.add('active')
+                    }
+
+                } else{
+                    let br = targetLink.getBoundingClientRect().bottom;
+                    let windowHeight = window.innerHeight;
+                    let result = br - windowHeight / 2;
+                    
+
+                    if ( result < 100 && result > 0 ){
+                        let activeLinks =  innerNav.querySelectorAll('.tp-inner-nav__link.active'); 
+                        if ( activeLinks.length ){
+                            activeLinks.forEach( al => {
+                                al.classList.remove('active');
+                            } )
+                        }
+
+                        la.classList.add('active')
+                    }
+                }
+
+
+
+                
+            }
+            
+        })
+    })
+}*/
+const tpInnerLink = document.querySelectorAll('.tp-inner-nav__link');
+
+if (tpInnerLink.length) {
+    const innerNav = document.querySelector('.tp-inner-nav');
+    let lastScroll = 0;
+    let isManualScroll = false; // Флаг для определения ручного скролла
+
+    // Функция активации пункта меню
+    const activateLink = (link) => {
+        const activeLinks = innerNav.querySelectorAll('.tp-inner-nav__link.active');
+        activeLinks.forEach(al => al.classList.remove('active'));
+        link.classList.add('active');
+    };
+
+    // Функция проверки видимости элемента
+    const isElementInView = (el, offset = 0) => {
+        const rect = el.getBoundingClientRect();
+        return (
+            rect.top <= window.innerHeight / 2 + offset &&
+            rect.bottom >= window.innerHeight / 2 - offset
+        );
+    };
+
+    // Обработчик клика
+    tpInnerLink.forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+
+            if (target) {
+                isManualScroll = true;
+                const targetPosition = target.offsetTop - innerNav.offsetHeight - 20;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+
+                // Активируем пункт сразу после клика
+                activateLink(this);
+                
+                // Сбрасываем флаг после завершения скролла
+                setTimeout(() => {
+                    isManualScroll = false;
+                }, 1000);
+            }
+        });
+    });
+
+    // Обработчик скролла
+    window.addEventListener('scroll', function() {
+        if (isManualScroll) return; // Пропускаем обработку при ручном скролле
+        
+        const currentScroll = window.scrollY;
+        const deltaScroll = currentScroll - lastScroll;
+        lastScroll = currentScroll;
+
+        tpInnerLink.forEach(link => {
+            const target = document.querySelector(link.getAttribute('href'));
+            
+            if (target && isElementInView(target, 100)) {
+                activateLink(link);
+            }
+        });
+    });
+}
+
+const srcTableBlocks = document.querySelectorAll('.scr-table-block');
+
+if (srcTableBlocks.length) {
+  srcTableBlocks.forEach(tableBlock => {
+    const container = tableBlock.querySelector('.src-table-container');
+    const table = tableBlock.querySelector('.scrolled-table');
+    const scrollLeftBtn = tableBlock.querySelector('.src-table-scroll-left');
+    const scrollRightBtn = tableBlock.querySelector('.src-table-scroll-right');
+    const navContainer = tableBlock.querySelector('.src-table-nav');
+    
+    let currentPosition = 0;
+    let maxScroll = 0;
+    const SCROLL_OFFSET = 30; // Погрешность для "докрутки" до края
+
+    const initTable = () => {
+      const containerWidth = container.offsetWidth;
+      const tableWidth = table.scrollWidth;
+      maxScroll = tableWidth - containerWidth;
+      currentPosition = 0;
+      table.style.transform = 'translateX(0)';
+      
+      if (tableWidth <= containerWidth) {
+        navContainer.classList.add('disabled');
+        scrollLeftBtn.disabled = true;
+        scrollRightBtn.disabled = true;
+      } else {
+        navContainer.classList.remove('disabled');
+        updateButtons();
+      }
+    };
+
+    const updateButtons = () => {
+      scrollLeftBtn.disabled = currentPosition <= 0;
+      scrollRightBtn.disabled = currentPosition >= maxScroll;
+    };
+
+    const scrollTable = (direction) => {
+      const containerWidth = container.offsetWidth;
+      let targetPosition = currentPosition;
+      
+      if (direction === 'left') {
+        targetPosition = Math.max(0, currentPosition - containerWidth * 0.8);
+        // Если осталось немного до начала - скроллим до самого края
+        if (targetPosition < SCROLL_OFFSET) targetPosition = 0;
+      } else {
+        targetPosition = Math.min(maxScroll, currentPosition + containerWidth * 0.8);
+        // Если осталось немного до конца - скроллим до самого края
+        if (maxScroll - targetPosition < SCROLL_OFFSET) targetPosition = maxScroll;
+      }
+      
+      currentPosition = targetPosition;
+      table.style.transform = `translateX(-${currentPosition}px)`;
+      updateButtons();
+    };
+
+    // Инициализация
+    initTable();
+    
+    // Обработчики кликов
+    scrollLeftBtn.addEventListener('click', () => !scrollLeftBtn.disabled && scrollTable('left'));
+    scrollRightBtn.addEventListener('click', () => !scrollRightBtn.disabled && scrollTable('right'));
+    
+    // Ресайз
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(initTable, 100);
+    });
+  });
 }
