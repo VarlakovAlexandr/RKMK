@@ -757,21 +757,27 @@
     display: none;
 }
 .src-table-container{
-    --tmw: calc(20px + (1vw - 3.5px) * 5.076142132);
+    max-width: 100%;
+    width: 100%;
+    
+}
 
+.src-table-overflow-container{
+    --tmw: calc(20px + (1vw - 3.5px) * 5.076142132);
+    padding-right: 20px;    
+    overflow: hidden; 
     max-width: calc(100% + var(--tmw));
     width: calc(100% + var(--tmw));
-
-    padding-right: 1px;
+    padding-right: var(--tmw);    
     @media (min-width: 744px){
         max-width: 100%;
         width: 100%;
+        padding-right: var(--tmw);
+        
     }
-
-    overflow: hidden;      
-    
-    
 }
+
+
 .src-table-scroll-left, .src-table-scroll-right{
     &:hover{
         path{
@@ -795,6 +801,8 @@
     min-width: 100%;
     border-collapse: collapse;
     transition: 300ms linear;
+
+    
     th{
         background: #e3e1dc;
         padding: 16px 12px;
