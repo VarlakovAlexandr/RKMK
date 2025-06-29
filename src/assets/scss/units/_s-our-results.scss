@@ -1,0 +1,85 @@
+.s-our-results{
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+
+    padding-bottom: 27px;
+    @include calculateResponsiveProperty(350px, 744px, 27px, 100px, padding-bottom);
+    @include calculateResponsiveProperty(745px, 1024px, 100px, 39px, padding-bottom);
+    @include calculateResponsiveProperty(1025px, 1800px, 39px, 77px, padding-bottom);
+
+    .title-block{
+        max-width: 1000px;
+    }
+}
+
+
+.our-results-container{
+    width: 100%;
+    position: relative;
+}
+.our-results-container__slider-nav{
+    display: none;
+
+    @media (min-width: 1024px){
+        display: flex;
+        align-items: center;
+        column-gap: 22px;
+        justify-content: flex-end;
+        top: 0;
+        right: 0;
+        position: absolute;
+        width: auto;
+        transform: translate(15px, calc(-100% - 70px));
+    }
+
+    @media (min-width: 1280px){
+        transform: translate(-5px, calc(-100% - 86px));
+    }
+}
+
+.swiper.our-results-slider{
+    overflow: visible;
+    width: 100%;
+}
+
+
+.swiper-slide.our-results-single {
+    width: 250px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    transition: 200ms linear;
+    @include calculateResponsiveProperty(350px, 744px, 250px, 392px, width);
+    @include calculateResponsiveProperty(350px, 744px, 250px, 392px, height);
+
+    &:hover{
+        box-shadow: 0 5px 57px 0 rgba(208, 0, 0, 0.1);
+        border-radius: 50%;
+    }
+ 
+}
+.our-results-single__text-block {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    text-align: center;
+    width: 100%;
+    padding: 0 32px;
+    @include calculateResponsiveProperty(350px, 744px, 8px, 16px, row-gap);
+    @include calculateResponsiveProperty(1024px, 1800px, 16px, 8px, row-gap);
+    .text{
+        color: #201f1f;
+    }
+}
+.our-results-single__title {
+    font-family: var(--font-family);
+    font-weight: 300;
+    font-size: 32px;    
+    color: #ac0900;
+    letter-spacing: -0.03em;
+
+    @include calculateResponsiveProperty(350px, 744px, 32px, 60px, font-size);
+}

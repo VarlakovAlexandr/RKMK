@@ -1068,6 +1068,7 @@ mobNavBlock.addEventListener('click', ( event ) => {
 
 
 new VavAccordion('.vav-accordion.mob-menu-list', {singleMode: false, closeChilds: true});
+new VavAccordion('.vav-accordion.faq-accordion', {singleMode: true, closeChilds: true});
 
 
 
@@ -1355,4 +1356,267 @@ if (srcTableBlocks.length) {
       resizeTimer = setTimeout(initTable, 100);
     });
   });
+}
+
+
+const sliderAboutAdvantages = new Swiper(".swiper.sp-advantages-slider", {
+    speed: 1000,    
+    slidesPerView: 'auto',
+    spaceBetween: 12,
+    breakpoints: {
+        
+        744: {
+            slidesPerView: 'auto',
+            spaceBetween: 14
+        },
+    }
+})
+
+
+
+const mediaSlider = new Swiper(".media-slider.swiper", {
+    speed: 1000,    
+    slidesPerView: 'auto',
+    spaceBetween: 6,
+    breakpoints: {
+        
+        1024: {
+            slidesPerView: 2,
+            spaceBetween: 6
+        },
+    }
+})
+
+const aboutCategories = new Swiper('.swiper.sp-categories-slider', {
+    // Настройки для fade-эффекта
+    effect: 'fade',
+    fadeEffect: {
+      crossFade: true // Плавное перекрытие слайдов
+    },
+    
+    // Дополнительные параметры
+    speed: 1000, // Длительность анимации перехода (в мс)          
+});
+
+const apCategoriesLinks = document.querySelectorAll('.sp-categories-list__item');
+if ( apCategoriesLinks.length ){
+    apCategoriesLinks.forEach( (item, index) => {
+        item.addEventListener('mouseenter', () => {
+            aboutCategories.slideTo(index); // Переход к слайду с соответствующим индексом
+        });
+    } )
+}
+
+
+Fancybox.bind('[data-fancybox]', {
+    compact: false,
+    contentClick: "iterateZoom",
+    Images: {
+      Panzoom: {
+        maxScale: 2,
+      },
+    },
+    Toolbar: {
+      display: {
+        left: [
+          "infobar",
+        ],
+        middle : [],
+        right: [
+          "iterateZoom",
+          "close",
+        ],
+      }
+    }
+  });  
+
+  
+  
+
+const storiesSlider = new Swiper(".stories-slider.swiper", {
+    speed: 1000,    
+    slidesPerView: 'auto',
+    spaceBetween: 10,
+    breakpoints: {
+        
+        744: {            
+            spaceBetween: 30,
+        },
+        1024: {            
+            spaceBetween: 44,
+        },
+    },
+    // Навигационные элементы
+    navigation: {
+        nextEl: '.stories-container__slider-nav  .slider-nav.slider-next',
+        prevEl: '.stories-container__slider-nav  .slider-nav.slider-prev'
+      },
+})
+
+
+const ourResultsSlider = new Swiper(".swiper.our-results-slider", {
+    speed: 1000,    
+    slidesPerView: 'auto',
+    spaceBetween: 8,
+    breakpoints: {
+        
+        744: {            
+            spaceBetween: 16,
+        },
+        
+    },
+    // Навигационные элементы
+    navigation: {
+        nextEl: '.our-results-container__slider-nav  .slider-nav.slider-next',
+        prevEl: '.our-results-container__slider-nav  .slider-nav.slider-prev'
+      },
+})
+
+const aboutInnerNav = new Swiper(".ain-list.swiper", {
+    speed: 1000,    
+    slidesPerView: 'auto',
+    spaceBetween: 16,
+    freeMode: true,
+    breakpoints: {
+        
+        744: {            
+            spaceBetween: 20,
+        },
+        1024: {            
+            spaceBetween: 32,
+        },
+    },
+    
+})
+
+const aboutStickyNav = document.querySelector('.content-block.about-inner-nav.sa-intro--nav');
+
+
+if (aboutStickyNav) {
+
+    const header = document.querySelector('.header');
+    const navContainer = document.querySelector('.about-inner-nav-container');
+
+
+    let aboutTopOffset = 0; // изначальная позиция aboutStickyNav
+
+    navContainer.style.minHeight = aboutStickyNav.offsetHeight + 'px';
+
+    const updateAboutOffset = () => {
+        aboutTopOffset = aboutStickyNav.offsetTop;
+    };
+
+  const updateStickyTop = () => {
+    const headerHeight = header.offsetHeight;
+    aboutStickyNav.style.top = `${headerHeight}px`;
+  };
+
+  const checkPosition = () => {
+    // Получаем позицию header относительно документа
+    const headerRect = header.getBoundingClientRect();
+    const scrollY = window.scrollY || document.documentElement.scrollTop;
+    const headerTop = headerRect.top + scrollY; // позиция верхней границы header относительно документа
+
+    // Проверяем, достиг ли нижняя граница header (учитываем его высоту)
+    const headerBottom = headerTop + header.offsetHeight;
+
+    // Верхняя граница aboutStickyNav
+    const aboutTop = aboutTopOffset;
+
+    // Проверка пересечения
+    if (headerBottom >= aboutTop) {
+      aboutStickyNav.classList.add('active');
+    } else {
+      aboutStickyNav.classList.remove('active');
+    }
+  };
+
+  // Изначально
+  document.addEventListener('DOMContentLoaded', () => {
+    updateAboutOffset();
+    updateStickyTop();
+    checkPosition();
+  });
+
+  // Обновление при resize
+  window.addEventListener('resize', () => {
+    updateAboutOffset();
+    updateStickyTop();
+    checkPosition();
+  });
+
+  // Проверка при скролле
+  window.addEventListener('scroll', () => {
+    checkPosition();
+  });
+}
+
+
+const aboutInnerLink = document.querySelectorAll('.about-inner-link');
+
+if (aboutInnerLink.length) {
+    const innerNav = document.querySelector('.about-inner-nav');
+    let lastScroll = 0;
+    let isManualScroll = false; // Флаг для определения ручного скролла
+
+    // Функция активации пункта меню
+    const activateLink = (link) => {
+        const activeLinks = innerNav.querySelectorAll('.about-inner-link.active');
+        activeLinks.forEach(al => al.classList.remove('active'));
+        link.classList.add('active');
+
+        console.log('text');
+    };
+
+    // Функция проверки видимости элемента
+    const isElementInView = (el, offset = 0) => {
+        const rect = el.getBoundingClientRect();
+        return (
+            rect.top <= window.innerHeight / 2 + offset &&
+            rect.bottom >= window.innerHeight / 2 - offset
+        );
+    };
+
+    // Обработчик клика
+    aboutInnerLink.forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+
+            if (target) {
+                isManualScroll = true;
+                const targetPosition = target.offsetTop - innerNav.offsetHeight - 20;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+
+                // Активируем пункт сразу после клика
+                activateLink(this);
+                
+                // Сбрасываем флаг после завершения скролла
+                setTimeout(() => {
+                    isManualScroll = false;
+                }, 1000);
+            }
+        });
+    });
+
+    // Обработчик скролла
+    window.addEventListener('scroll', function() {
+        if (isManualScroll) return; 
+        
+        const currentScroll = window.scrollY;
+        const deltaScroll = currentScroll - lastScroll;
+        lastScroll = currentScroll;
+
+        aboutInnerLink.forEach(link => {
+            const target = document.querySelector(link.getAttribute('href'));
+            
+            if (target && isElementInView(target, 100)) {
+                activateLink(link);
+            }
+        });
+    });
 }

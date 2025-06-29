@@ -1,0 +1,71 @@
+.sp-advantages{
+    background: #e3e1dc;
+    //padding-top: 20px;
+    //padding-bottom: 87px;
+    padding-bottom: 44px;
+    .title-block{
+        max-width: 1000px;
+    }
+
+    max-width: 100%;
+    overflow: hidden;
+
+    @include calculateResponsiveProperty(1024px, 1800px, 0px, 20px, padding-top);
+    @include calculateResponsiveProperty(1024px, 1800px, 44px, 88px, padding-bottom);
+}
+.swiper.sp-advantages-slider{
+    overflow: visible;
+
+    @media (min-width: 1024px){
+        .swiper-wrapper{
+            transform: none !important;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 24px;
+        }
+    }
+    @media (min-width: 1400px){
+        .swiper-wrapper{
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 20px;
+        }
+    }
+}
+.swiper-slide.sp-single-advantage{
+    background-color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 14px;
+
+    width: 100%;
+    max-width: 244px;
+    min-height: 345px;
+
+    @include calculateResponsiveProperty(350px, 744px, 244px, 306px, max-width);
+    @include calculateResponsiveProperty(350px, 744px, 345px, 430px, min-height);
+    @include calculateResponsiveProperty(350px, 744px, 20px, 32px, padding);
+    @include calculateResponsiveProperty(350px, 744px, 14px, 24px, row-gap);
+
+    @media (min-width: 1024px){
+        max-width: initial;
+        min-height: 280px;
+        margin: 0px;
+    }
+
+    @media (min-width: 1400px){
+        min-height: 325px;
+    }
+}
+
+.sp-single-advantage__icon{
+    width: 25px;
+    height: auto;
+    flex-shrink: 0;
+}
+
+.sp-single-advantage__title-block{
+    display: flex;
+    column-gap: 12px;
+    align-items: flex-start;
+}

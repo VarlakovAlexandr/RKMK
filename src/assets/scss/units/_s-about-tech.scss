@@ -1,0 +1,239 @@
+.s-about-tech{
+    position: relative;
+    padding-top: 44px;
+    padding-bottom: 54px;
+
+    @include calculateResponsiveProperty(350px, 744px, 44px, 72px, padding-top);
+    @include calculateResponsiveProperty(350px, 744px, 54px, 64px, padding-bottom);
+
+
+    &::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 69px;
+        background: linear-gradient(180deg, #c12017 12.02%, rgba(193, 32, 23, 0) 100%);
+
+     
+        opacity: 0.1;
+
+        @include calculateResponsiveProperty(350px, 744px, 44px, 100px, height);
+    }
+    .title-block{
+        max-width: 1000px;
+    }
+}
+
+
+.about-tech-grid{
+    width: 100%;
+    display: grid;
+    grid-row-gap: 64px;
+    grid-template-rows: 1fr;
+
+    @media (min-width: 1024px){
+        grid-row-gap: 44px;
+    }
+
+    max-width: 1800px;
+    margin: 0 auto;
+}
+
+.about-tech{
+    display: flex;
+    flex-direction: column;
+    row-gap: 14px;
+    padding-top: 36px;
+
+    @include calculateResponsiveProperty(350px, 744px, 36px, 48px, padding-top);
+    @include calculateResponsiveProperty(350px, 744px, 14px, 24px, row-gap);
+
+
+
+    @media (min-width: 1024px){
+        flex-direction: row;
+        column-gap: 24px;
+        justify-content: space-between;
+        padding-top: 0;
+    }
+
+
+    position: relative;
+    &::before{
+        content: "";
+        position: absolute;
+        width: 22px;
+        height: 22px;
+        left: 20px;
+        top: 0;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+        @include calculateResponsiveProperty(350px, 744px, 20px, 40px, left);
+
+        @media (min-width: 1024px){
+            display: none;
+            padding-top: 0;
+        }
+    }
+
+
+    .about-tech__text-block{
+        @media (min-width: 1024px){
+            &::before{
+                content: "";
+                position: static;
+                width: 22px;
+                height: 22px;
+                
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 100%;
+                
+                display: block;
+                
+            }
+        }
+    }
+
+
+    &:nth-child(3n+1) {       
+
+        &::before{
+            background-image: url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='4' y='4' width='14' height='14' fill='%23E3E1DC' /%3E%3C/svg%3E");
+        }
+        .about-tech__text-block{
+            @media (min-width: 1024px){
+                &::before{
+                    background-image: url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='4' y='4' width='14' height='14' fill='%23E3E1DC' /%3E%3C/svg%3E");
+                }
+            }
+        }
+        
+    }
+      
+    &:nth-child(3n+2) {
+        &::before{
+            background-image: url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='4' y='4' width='14' height='14' rx='7' fill='%23E3E1DC' /%3E%3C/svg%3E");
+        }
+        .about-tech__text-block{
+            @media (min-width: 1024px){
+                &::before{
+                    background-image: url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='4' y='4' width='14' height='14' rx='7' fill='%23E3E1DC' /%3E%3C/svg%3E");
+                }
+            }
+        }
+    }
+      
+    &:nth-child(3n+3) {
+        &::before{
+            background-image: url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='11' y='1.10059' width='14' height='14' transform='rotate(45 11 1.10059)' fill='%23E3E1DC' /%3E%3C/svg%3E");
+        }
+        .about-tech__text-block{
+            @media (min-width: 1024px){
+                &::before{
+                    background-image: url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='11' y='1.10059' width='14' height='14' transform='rotate(45 11 1.10059)' fill='%23E3E1DC' /%3E%3C/svg%3E");
+                }
+            }
+        }
+    }
+
+
+    &:nth-child(even){
+        .about-tech__media{
+            order: 1;
+        }
+
+        .about-tech__text-block{
+            order: 2;
+
+            padding-left: 0;
+            @include calculateResponsiveProperty(1024px, 1800px, 40px, 64px, padding-right);
+            
+        }
+    }
+    &:nth-child(odd){
+        .about-tech__media{
+            order: 2;
+        }
+
+        .about-tech__text-block{
+            order: 1;
+            padding-right: 0;
+            @include calculateResponsiveProperty(1024px, 1800px, 40px, 64px, padding-left);
+            @include calculateResponsiveProperty(1801px, 1920px, 64px, 0px, padding-left);
+        }
+    }
+}
+
+.about-tech__media{
+    position: relative;
+    min-height: 300px;
+    @include calculateResponsiveProperty(350px, 744px, 300px, 444px, min-height);
+    @include calculateResponsiveProperty(745px, 1024px, 444px, 565px, min-height);
+
+    @include calculateResponsiveProperty(1025px, 1800px, 565px, 640px, min-height);
+    @media (min-width: 1024px){
+        width: calc(50% - 12px);
+        flex-shrink: 0;
+
+        
+    }
+
+
+    &::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 5;
+    }
+
+    img, video{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        object-fit: cover;
+        object-position: center;
+        
+        
+        
+    }
+
+    
+}
+
+.about-tech__text-block{
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 6px;
+
+    padding: 0 20px;
+
+
+    
+
+
+    @include calculateResponsiveProperty(350px, 744px, 20px, 40px, padding-left);
+    @include calculateResponsiveProperty(350px, 744px, 20px, 40px, padding-right);
+
+    @include calculateResponsiveProperty(350px, 744px, 6px, 12px, row-gap);
+
+    @media (min-width: 1024px){
+        width: calc(50% - 12px);
+        flex-shrink: 0;
+        justify-content: center;
+        row-gap: 24px;
+
+        & > *{
+            max-width: 700px;
+        }
+    }
+}

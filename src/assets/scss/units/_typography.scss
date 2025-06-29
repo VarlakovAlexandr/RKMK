@@ -134,6 +134,12 @@ h1, h2, h3{
     
 }
 
+.text-subline.sm{
+    font-weight: 300;
+    font-size: 14px;
+    @include calculateResponsiveProperty(350px, 744px, 14px, 36px, font-size);
+}
+
 .text-subline-small{
     font-family: var(--font-family);
     font-weight: 300;

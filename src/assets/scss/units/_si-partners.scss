@@ -20,6 +20,60 @@
     }
 }
 
+.si-partners.about-page{
+    padding-top: 82px;
+    padding-bottom: 22px;
+    @include calculateResponsiveProperty(350px, 744px, 22px, 44px, padding-bottom);
+    @include calculateResponsiveProperty(350px, 744px, 82px, 102px, padding-top);
+    @include calculateResponsiveProperty(1025px, 1800px, 44px, 92px, padding-bottom);
+    
+
+    .sheet.active{
+        display: flex;
+        flex-direction: column;
+        row-gap: 44px;
+        @include calculateResponsiveProperty(745px, 1024px, 44px, 72px, row-gap);
+        @include calculateResponsiveProperty(1025px, 1800px, 72px, 44px, row-gap);
+    }
+}
+
+.partners-grid{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 6px;
+
+    @include calculateResponsiveProperty(350px, 744px, 6px, 12px, grid-row-gap);
+    @include calculateResponsiveProperty(350px, 744px, 6px, 12px, grid-column-gap);
+
+    @media (min-width:480px){
+        grid-template-columns: repeat(4, 1fr);
+    }
+    @media (min-width:680px){
+        grid-template-columns: repeat(5, 1fr);
+    }
+    @media (min-width:960px){
+        grid-template-columns: repeat(4, 1fr);
+    }
+    @media (min-width:1280px){
+        grid-template-columns: repeat(5, 1fr);
+    }
+    @media (min-width:1600px){
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+.partners-grid__item{
+    aspect-ratio: 1 / 1;
+    position: relative;
+    background-color: #fff;
+    img{
+        max-width: calc(100% - 26px);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
 .runner-partner{
     width: 133px;
     height: 133px;
@@ -103,6 +157,7 @@
 }
 .sheets{
     position: relative;
+    width: 100%;
 }
 .sheet{
     display: flex;

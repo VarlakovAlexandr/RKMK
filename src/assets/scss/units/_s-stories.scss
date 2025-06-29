@@ -1,0 +1,151 @@
+.s-stories{
+    padding-top: 54px;
+    padding-bottom: 64px;
+    max-width: 100%;
+    overflow: hidden;
+    @include calculateResponsiveProperty(350px, 744px, 54px, 44px, padding-top);
+    @include calculateResponsiveProperty(1024px, 1800px, 44px, 124px, padding-top);
+    @include calculateResponsiveProperty(350px, 744px, 64px, 75px, padding-bottom);
+    @include calculateResponsiveProperty(1024px, 1800px, 75px, 192px, padding-bottom);
+    .container{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        row-gap: 54px;
+
+        @include calculateResponsiveProperty(350px, 744px, 54px, 70px, row-gap);
+        @include calculateResponsiveProperty(1024px, 1800px, 70px, 60px, row-gap);
+    }
+
+    .gradient-title{
+        max-width: 1320px;
+        @include calculateResponsiveProperty(350px, 744px, 25px, 60px, font-size);
+    }
+}
+
+.stories-slider.swiper{
+    width: 100%;
+    overflow: visible;
+}
+
+.swiper-slide.story{
+    width: 120px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 6px;
+    @include calculateResponsiveProperty(350px, 744px, 120px, 190px, width);
+    @include calculateResponsiveProperty(350px, 744px, 6px, 10px, row-gap);
+    &:hover{
+        .story__round{
+            &::before{
+                transform: translate(0, 0%);
+            }
+        }
+
+        .story__caption{
+            color: #262626;
+        }
+    }
+}
+
+
+.story__round{
+    width: 120px;
+    height: 120px;
+    
+
+
+    border-radius: 50%;
+    padding: 5px;
+    background: linear-gradient(0deg, #c12017 12.02%, rgba(193, 32, 23, 0) 100%);
+    position: relative;
+    @include calculateResponsiveProperty(350px, 744px, 120px, 190px, width);
+    @include calculateResponsiveProperty(350px, 744px, 120px, 190px, height);
+    @include calculateResponsiveProperty(350px, 744px, 5px, 7px, padding);
+
+    z-index: 1;
+    overflow: hidden;
+    &::before{
+        content: "";
+        border-radius: 50%;    
+        background: linear-gradient(0deg, #c12017 12.02%, rgba(193, 32, 23, .7) 100%);
+        position: absolute;
+        z-index: 2;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        transform: translate(0, 100%);
+        transition: 200ms linear;
+    }
+}
+
+.story__inner-round{
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 50%;
+    width: 110px;
+    height: 110px;
+    position: relative;
+    z-index: 5;
+    @include calculateResponsiveProperty(350px, 744px, 5px, 9px, padding);
+    @include calculateResponsiveProperty(350px, 744px, 110px, 176px, width);
+    @include calculateResponsiveProperty(350px, 744px, 110px, 176px, height);
+
+    &::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        
+    }
+}
+
+.story__media{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    @include calculateResponsiveProperty(350px, 744px, 100px, 158px, width);
+    @include calculateResponsiveProperty(350px, 744px, 100px, 158px, height);
+    
+}
+
+.story__caption{
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 10px;
+    text-align: center;
+    color: #83827f;
+    transition: 200ms linear;
+
+    @include calculateResponsiveProperty(350px, 744px, 10px, 13px, font-size);
+}
+
+.stories-container{
+    width: 100%;
+    position: relative;
+}
+
+.stories-container__slider-nav{
+    display: none;
+
+    @media (min-width: 1024px){
+        display: flex;
+        align-items: center;
+        column-gap: 22px;
+        justify-content: flex-end;
+        top: 0;
+        right: 0;
+        position: absolute;
+        width: auto;
+        transform: translate(15px, calc(-100% - 70px));
+    }
+
+    @media (min-width: 1280px){
+        transform: translate(-5px, calc(-100% - 86px));
+    }
+}

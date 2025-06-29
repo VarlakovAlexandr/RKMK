@@ -1,0 +1,74 @@
+.s-our-mission{
+
+    padding-top: 27px;
+    @include calculateResponsiveProperty(350px, 744px, 27px, 100px, padding-top);
+    @include calculateResponsiveProperty(745px, 1024px, 100px, 39px, padding-top);
+    @include calculateResponsiveProperty(1025px, 1800px, 39px, 120px, padding-top);
+
+    padding-bottom: 102px;
+    @include calculateResponsiveProperty(350px, 744px, 102px, 154px, padding-bottom);
+    @include calculateResponsiveProperty(745px, 1024px, 154px, 180px, padding-bottom);
+    @include calculateResponsiveProperty(1025px, 1800px, 180px, 140px, padding-bottom);
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 24px;
+        @include calculateResponsiveProperty(350px, 744px, 24px, 44px, row-gap);
+
+
+        @media (min-width: 1024px){
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+
+    .gradient-title{
+        font-size: 26px;
+        @include calculateResponsiveProperty(350px, 744px, 26px, 44px, font-size);
+        @include calculateResponsiveProperty(1025px, 1800px, 44px, 57px, font-size);
+    }
+    
+}
+
+
+.om-animation-box{
+    width: 280px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img{
+        max-width: 100%;
+        height: auto;
+    }
+    @include calculateResponsiveProperty(350px, 744px, 280px, 386px, width);
+
+    @media (min-width: 1024px){
+        order: 2;
+    }
+
+    @include calculateResponsiveProperty(1025px, 1800px, 386px, 964px, width);
+}
+
+.om-text-block{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    row-gap: 12px;
+
+    @media (min-width: 1024px){
+        max-width: 520px;
+
+        order: 1;
+        row-gap: 24px;
+        text-align: left;
+        align-items: flex-start;
+    }
+
+    @include calculateResponsiveProperty(1025px, 1800px, 520px, 934px, max-width);
+}

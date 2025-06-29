@@ -232,11 +232,14 @@
 }
 
 
-.cf-submit.sm{
+.cf-submit.sm, .dark-btn.sm{
     
     padding: 6px 8px;
     column-gap: 6px;
     .cf-submit__text {
+        font-size: 14px;
+    }
+    .dark-btn__text{
         font-size: 14px;
     }
 }
@@ -335,4 +338,50 @@
 
     @include calculateResponsiveProperty(350px, 744px, 32px, 64px, padding-top);
     @include calculateResponsiveProperty(350px, 744px, 32px, 64px, padding-bottom);
+}
+
+.section-media-slider{
+    padding: 0 6px;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.media-slider.swiper{
+    overflow: visible;
+
+    .swiper-slide{
+        position: relative;
+        min-height: 310px;
+        width: 302px;
+        @include calculateResponsiveProperty(350px, 744px, 310px, 530px, min-height);
+        @include calculateResponsiveProperty(350px, 744px, 302px, 612px, width);
+        @include calculateResponsiveProperty(1025px, 1800px, 530px, 680px, min-height);
+        
+
+
+        &::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 5;
+        }
+
+        img, video{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            object-fit: cover;
+            object-position: center;
+            
+            
+            
+        }
+
+    
+    }
 }
