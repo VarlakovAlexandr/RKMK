@@ -1525,9 +1525,11 @@ if (aboutStickyNav) {
 
     // Проверка пересечения
     if (headerBottom >= aboutTop) {
-      aboutStickyNav.classList.add('active');
+      //aboutStickyNav.classList.add('active');
+      header.append(aboutStickyNav);
     } else {
-      aboutStickyNav.classList.remove('active');
+      //aboutStickyNav.classList.remove('active');
+      navContainer.append(aboutStickyNav)
     }
   };
 
