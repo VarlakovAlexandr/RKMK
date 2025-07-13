@@ -1,0 +1,209 @@
+.breadcrumbs-countainer{
+    max-height: 55px;
+    @media (min-width: 744px){
+        max-height: initial;
+    }
+
+    
+}
+
+
+.breadcrumbs{
+    display: flex;    
+    column-gap: 2px;
+    row-gap: 0px;
+    padding: 16px 20px;
+    
+    background: #f5f4f0;
+    @media (min-width: 744px){
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    @include calculateResponsiveProperty(350px, 744px, 20px, 40px, padding-left);
+    @include calculateResponsiveProperty(350px, 744px, 20px, 40px, padding-right);
+    @include calculateResponsiveProperty(1025px, 1800px, 40px, 66px, padding-left);
+    @include calculateResponsiveProperty(1025px, 1800px, 40px, 66px, padding-right);
+
+    max-width: 1800px;
+    width: 100%;
+    margin: 0 auto;
+
+    @include calculateResponsiveProperty(1801px, 1920px, 66px, 0px, padding-left);
+    @include calculateResponsiveProperty(1801px, 1920px, 66px, 0px, padding-right);
+}
+
+.breadcrumbs.open{
+    flex-direction: column;
+    align-items: flex-start;
+
+    .breadcrumbs__button + .breadcrumbs__delimetr{
+        display: none;
+        width: 0px;
+    }
+    .breadcrumbs__current{
+        max-width: 100%;
+    }
+    .breadcrumbs__button{
+        display: none;
+        width: 0px;
+    }
+    /*
+    .breadcrumbs__link{
+        display: inline-flex;
+    }
+
+    .breadcrumbs__close{
+        display: inline-flex;
+    }
+    */
+}
+
+.breadcrumbs__close{
+    display: inline-flex;
+    column-gap: 4px;
+    align-items: center;
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #83827f;
+    display: none;
+    line-height: 1.3;
+    
+    opacity: 0;
+    max-height: 0;
+    svg{
+        flex-shrink: 0;
+    }
+}
+
+.breadcrumbs__button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 4px;
+    flex-shrink: 0;
+    width: 26px;
+    height: 23px;
+    border-radius: 34px;
+    background: var(--colors-background-terriary);
+
+    @media (min-width: 744px){
+        display: none;
+    }
+
+
+    span{
+        width: 2px;
+        height: 2px;
+        flex-shrink: 0;
+        background: var(--colors-type-secondary);
+        
+    }
+    
+    
+}
+
+.breadcrumbs__delimetr{
+    padding: 2px 6px;
+    display: inline-flex;        
+    flex-shrink: 0;
+    color: var(--colors-type-secondary);
+    font-family: var(--second-family);
+    font-size: 11px;        
+    font-weight: 400;
+    padding: 4px 6px;
+    @media (min-width: 744px){
+        font-size: 13px;
+        align-items: center;
+        padding: 5px 9px;
+    }
+}
+
+.breadcrumbs__link{
+    border-radius: 34px;
+    padding: 2px 6px;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 11px;
+    color: #83827f;
+    background: #e3e1dc;
+    opacity: 0;
+    max-height: 0;
+    
+
+    display: none;
+
+
+    @media (min-width: 744px){
+        padding: 4px 8px;
+        display: inline-flex;   
+        opacity: 1;
+        max-height: unset;
+        font-size: 13px;
+        flex-shrink: 2;
+        max-width: 28%;
+        span{
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100%;
+        }
+        
+    }
+    &:hover{
+        border-radius: 0px;
+        background: #dbd6c8;
+        span{
+            color: #83827f;
+        }
+    }
+}
+.breadcrumbs__button + .breadcrumbs__delimetr{
+    @media (min-width: 744px){
+        display: none;
+    }
+}
+.breadcrumbs__link + .breadcrumbs__delimetr{
+    display: none;
+
+    @media (min-width: 744px){
+        display: inline-flex;
+        
+    }
+}
+
+.breadcrumbs:not(.open){
+    .breadcrumbs__current{
+        align-items: center;
+    }    
+}
+
+.breadcrumbs__current{
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 11px;
+    color: #262626;
+    border-radius: 34px;
+    background-color: #fff;
+    padding: 2px 6px;
+    line-height: 1.3;
+    display: inline-flex;
+    
+
+    @media (max-width: 744px){
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    @media (min-width: 744px){
+        font-size: 13px;
+        flex-shrink: 0;
+        padding: 4px 8px;
+        align-items: center;
+    }
+}
+

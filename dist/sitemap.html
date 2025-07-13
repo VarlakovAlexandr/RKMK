@@ -64,7 +64,7 @@
                         </ul>
                     </nav>
 
-                    <button class="header-search">
+                    <button class="header-search" data-hystmodal="#modal-search">
                         <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M27.3314 25.6053L23.6734 21.9473C22.889 21.1629 22.6275 19.9802 23.0502 18.9539C23.5048 17.8445 23.7002 16.6007 23.5585 15.3007C23.1798 11.8454 20.3965 9.07193 16.9388 8.70784C12.1909 8.20934 8.20782 12.1924 8.70631 16.9403C9.07041 20.398 11.8415 23.1813 15.2991 23.5576C16.5991 23.6993 17.8429 23.5038 18.9523 23.0493C19.9811 22.629 21.1613 22.8881 21.9457 23.6724L25.6014 27.3281L27.329 25.6005L27.3314 25.6053ZM11.1084 16.1364C11.1084 13.3653 13.3638 11.1099 16.1349 11.1099C18.9059 11.1099 21.1613 13.3653 21.1613 16.1364C21.1613 18.9074 18.9059 21.1629 16.1349 21.1629C13.3638 21.1629 11.1084 18.9074 11.1084 16.1364Z" fill="#262626"/>
                         </svg>                            
@@ -1070,12 +1070,618 @@
     </div>
 
 
+    <div class="hystmodal" id="about-tech" aria-hidden="true">
+        <div class="hystmodal__wrap">
+            <div class="hystmodal__window" role="dialog" aria-modal="true">
+                
+                <div class="feedback-form">
+                    <div class="ff-header">
+                        <p class="ff-header__title">Подробнее о технологии</p>
+                        <button class="ff-header__close" data-hystclose>
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.3307 1.73434L10.2624 0.666016L5.99815 4.93026L1.73239 0.666016L0.664062 1.73434L2.78561 3.85589C3.96878 5.03906 3.96878 6.95813 2.78561 8.1413L0.664062 10.2644L1.73239 11.3327L5.99664 7.06843L10.2609 11.3327L11.3292 10.2644L9.20767 8.14281C8.0245 6.95964 8.0245 5.04057 9.20767 3.8574L11.3292 1.73586L11.3307 1.73434Z" fill="#262626" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="ff-body">
+                        <div class="ff-body__top-block">
+                            <p class="title">Отливка с механической отработкой</p>                            
+                        </div>
+                        
+                        <div class="pt-content">
+                            <div class="pt-block" id="block-1">
+                                <p class="pt-text-lg">Благодарим вас за посещение rkmk.ru. Этот веб-сайт, включая, но не ограничиваясь, любые функции, клиентские порталы и контент, доступные через rkmk.ru ("Сайт"), управляется от имени ООО Российско-Китайская Машиностроительная компания и ее аффилированных организаций ("ООО Российско-Китайская Машиностроительная компания", "нас", "мы").</p>
+                            </div>
+                            <div class="pt-block">
+                                <p class="pt-text-small">Пожалуйста, внимательно прочитайте следующие условия использования и все другие правила, политики и руководства, которые могут время от времени передаваться через Сайт (совместно именуемые "Условия использования"). Используя этот Сайт, вы соглашаетесь соблюдать эти Условия использования. Если вы не согласны с Условиями использования, не используйте этот Сайт.</p>
+                            </div>
+                            <div class="pt-block" >
+                                <h2>Заголовок H2</h2>
+                                <h3>Заголовок H3</h3>
+                                <h4>Заголовок H4</h4>
+                                <p class="pt-text-small">Пожалуйста, внимательно прочитайте следующие условия использования и все другие правила, политики и руководства, которые могут время от времени передаваться через Сайт (совместно именуемые "Условия использования"). Используя этот Сайт, вы соглашаетесь соблюдать эти Условия использования. Если вы не согласны с Условиями использования, не используйте этот Сайт.</p>
+                            </div>
+                            <div class="pt-block">
+                                <div class="pt-img-block">
+                                    <img src="assets/img/text-page/img.jpg" alt="">
+                                    <div class="pt-img-block__caption">Подпись к фотографии с <a href="#">примером ссылки</a></div>
+                                </div>
+                            </div>
+
+                            <div class="pt-line"></div>
+
+                            <div class="pt-block" id="block-2">
+                                <div>
+                                    <a href="#" class="dark-btn" >
+                                        <span class="dark-btn__text">Пример кнопки для встраивания</span>                                        
+                                        <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect width="23" height="23" rx="11.5" fill="#3A3A3A" />
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M9.80094 7L14 11.5L9.80094 16L9 15.1417L9.85167 14.2289C11.2856 12.6922 11.2856 10.3078 9.85167 8.77105L9 7.85835L9.80094 7Z" fill="#F5F4F0" />
+                                        </svg>
+                                    </a>
+                                </div>
+
+
+                                <div>
+                                    <a href="#" class="pt-outer-link">
+                                        Перейти по ссылке
+                                        <svg width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M4.02958 3.0212L4.03514 3.86862L6.03986 3.88178C7.04992 3.8884 7.56383 5.11322 6.85462 5.82242L2.7975 9.87954L3.40063 10.4827L7.45774 6.42554C8.16695 5.71634 9.39176 6.23024 9.39838 7.2403L9.41154 9.24502L10.259 9.25058L10.2184 3.0618L4.02958 3.0212Z" fill="#262626" />
+                                        </svg>
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="#" class="pt-inner-link">
+                                        Перейти внутри сайта
+                                        <svg width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.34579 2.2168L6.7505 2.81995L8.15875 4.2468C8.86828 4.96571 8.3656 6.19516 7.36262 6.19516H1.625V7.04811H7.36262C8.3656 7.04811 8.86828 8.27756 8.15875 8.99647L6.7505 10.4233L7.34579 11.0265L11.6932 6.62163L7.34579 2.2168Z" fill="#262626" />
+                                        </svg>
+                                    </a>
+                                </div>
+
+                                <div>
+                                    <a href="#" class="pt-ease-link">
+                                        Пример кнопки без иконки
+                                    </a>
+                                </div>
+
+                                
+                                
+                            </div>
+                            <div class="pt-block" >
+                                <ul>
+                                    <li>Специализируется на выпуске станков с ЧПУ, горнодобывающего оборудования и компонентов для энергетического сектора. Производственные площадки расположены в Харбине и Екатеринбурге.</li>
+                                    <li>Специализируется на выпуске станков с ЧПУ, горнодобывающего оборудования и компонентов для энергетического сектора. Производственные площадки расположены в Харбине и Екатеринбурге.</li>
+                                    <li>Специализируется на выпуске станков с ЧПУ, горнодобывающего оборудования и компонентов для энергетического сектора. Производственные площадки расположены в Харбине и Екатеринбурге.</li>
+                                    <li>Специализируется на выпуске станков с ЧПУ, горнодобывающего оборудования и компонентов для энергетического сектора. Производственные площадки расположены в Харбине и Екатеринбурге.</li>
+                                </ul>
+                            </div>
+
+
+                            <div class="pt-block">
+                                <a href="#" download="" class="pt-file">
+                                    <svg width="40" height="41" viewBox="0 0 40 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8.33594 5.98926V35.9893H31.6693V5.98926H8.33594ZM17.7061 9.60982H28.2595V25.9675L22.2309 32.3687H11.7457V15.9386C11.7457 12.4447 14.4122 9.60982 17.7061 9.60982Z" fill="#262626" />
+                                        <path d="M25.1429 13.8748H14.8657V17.4954H25.1429V13.8748Z" fill="#262626" />
+                                        <path d="M22.456 20.9458H14.8657V24.5664H22.456V20.9458Z" fill="#262626" />
+                                    </svg>
+                                    <span class="pt-file__filestats">
+                                        <span class="pt-file__filename pt-very-small-text">Название документа,  заданное вручную</span>
+                                        <span class="pt-file__fileinfo pt-very-small-text"><b>filename.pdf</b> 2.5 KB</span>
+                                    </span>
+                                </a>
+                            </div>
+                            
+                            <div class="pt-block" >
+                                <div class="pt-stat-blocks">
+                                    <div class="pt-stat-block">
+                                        <div class="pt-stat-block__num title">125</div>
+                                        <div class="pt-stat-block__text-block">
+                                            <p class="pt-stat-block__title pt-very-small-text">Кол-во установок всего</p>
+                                            <p class="pt-stat-block__text pt-very-small-text">Среди наших клиентов — крупнейшие российские и китайские промышленные и энергетические лидеры.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="pt-stat-block">
+                                        <div class="pt-stat-block__num title">125</div>
+                                        <div class="pt-stat-block__text-block">
+                                            <p class="pt-stat-block__title pt-very-small-text">Кол-во установок всего</p>
+                                            <p class="pt-stat-block__text pt-very-small-text">Среди наших клиентов — крупнейшие российские и китайские промышленные и энергетические лидеры.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="pt-stat-block">
+                                        <div class="pt-stat-block__num title">125</div>
+                                        <div class="pt-stat-block__text-block">
+                                            <p class="pt-stat-block__title pt-very-small-text">Кол-во установок всего</p>
+                                            <p class="pt-stat-block__text pt-very-small-text">Среди наших клиентов — крупнейшие российские и китайские промышленные и энергетические лидеры.</p>
+                                        </div>
+                                    </div>
+                                </div>    
+                            </div>
+
+
+                            <div class="pt-block" id="block-3">
+                                <div class="scr-table-block">
+                                    <div class="scr-table-block__top">
+                                        <p class="scr-table-title">Название таблицы (опционально)</p>
+                                        <div class="src-table-nav disabled">
+                                            <button class="src-table-scroll-left" disabled="disabled">
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7147 2.5L5.11644 9.85119L12.7147 17.2024L14.1641 15.8002L10.9865 12.726C9.36157 11.1539 9.36157 8.5485 10.9865 6.97641L14.1641 3.90219L12.7147 2.5Z" fill="#262626" />
+                                                  </svg>
+                                            </button>
+                                            <button class="src-table-scroll-right">
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M7.28526 2.5L14.8836 9.85119L7.28526 17.2024L5.83594 15.8002L9.01349 12.726C10.6384 11.1539 10.6384 8.5485 9.01349 6.97641L5.83594 3.90219L7.28526 2.5Z" fill="#262626" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="src-table-overflow-container">
+                                        <div class="scr-table-block__table-container src-table-container">
+                                            <table class="scrolled-table">
+                                                <thead>
+                                                    <th>Заголовок таблицы</th>
+                                                    <th>Заголовок таблицы</th>
+                                                    <th>Заголовок таблицы</th>
+                                                    <th>Заголовок таблицы</th>                                                    
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Текст ячейки</td>
+                                                        <td>Текст ячейки</td>
+                                                        <td>Текст ячейки</td>
+                                                        <td>Текст ячейки</td>
+                                                        
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Текст ячейки</td>
+                                                        <td>Текст ячейки</td>
+                                                        <td>Текст ячейки</td>
+                                                        <td>Текст ячейки</td>
+                                                        
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Текст ячейки</td>
+                                                        <td>Текст ячейки</td>
+                                                        <td>Текст ячейки</td>
+                                                        <td>Текст ячейки</td>
+                                                        
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Текст ячейки</td>
+                                                        <td>Текст ячейки</td>
+                                                        <td>Текст ячейки</td>
+                                                        <td>Текст ячейки</td>
+                                                        
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+
+
+                            <div class="pt-block">
+                                <ol>
+                                    <li>Специализируется на выпуске станков с ЧПУ, горнодобывающего оборудования и компонентов для энергетического сектора. Производственные площадки расположены в Харбине и Екатеринбурге.</li>
+                                    <li>Специализируется на выпуске станков с ЧПУ, горнодобывающего оборудования и компонентов для энергетического сектора. Производственные площадки расположены в Харбине и Екатеринбурге.</li>
+                                    <li>Специализируется на выпуске станков с ЧПУ, горнодобывающего оборудования и компонентов для энергетического сектора. Производственные площадки расположены в Харбине и Екатеринбурге.</li>
+                                    <li>Специализируется на выпуске станков с ЧПУ, горнодобывающего оборудования и компонентов для энергетического сектора. Производственные площадки расположены в Харбине и Екатеринбурге.</li>
+                                </ol>
+                            </div>
+
+
+
+                            <div class="pt-block">
+                                <div class="pt-outer-quote">
+                                    <div class="pt-outer-quote__icon">
+                                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M15.9974 8C10.0989 8 5.01127 11.2742 2.66406 16C5.01127 20.7258 10.0989 24 15.9974 24C21.8959 24 26.9835 20.7258 29.3307 16C26.9866 11.2742 21.8989 8 15.9974 8ZM15.9974 21.6486C12.69 21.6486 10.0075 19.1189 10.0075 16C10.0075 12.8811 12.69 10.3514 15.9974 10.3514C19.3048 10.3514 21.9873 12.8811 21.9873 16C21.9873 19.1189 19.3048 21.6486 15.9974 21.6486ZM18.9268 18.7596H13.071V13.2375H18.9268V18.7596Z" fill="#262626" />
+                                            <path d="M15.9974 8C10.0989 8 5.01127 11.2742 2.66406 16C5.01127 20.7258 10.0989 24 15.9974 24C21.8959 24 26.9835 20.7258 29.3307 16C26.9866 11.2742 21.8989 8 15.9974 8ZM15.9974 21.6486C12.69 21.6486 10.0075 19.1189 10.0075 16C10.0075 12.8811 12.69 10.3514 15.9974 10.3514C19.3048 10.3514 21.9873 12.8811 21.9873 16C21.9873 19.1189 19.3048 21.6486 15.9974 21.6486ZM18.9268 18.7596H13.071V13.2375H18.9268V18.7596Z" fill="#262626" />
+                                        </svg>
+                                    </div>
+                                    <div class="pt-outer-quote__text-block">
+                                        <p class="pt-text-lg">Российско-китайская машиностроительная компания – совместное предприятие, основанное в 2018 году для разработки и производства промышленного оборудования. Компания объединяет российские инженерные разработки с китайскими производственными мощностями.</p>
+                                        <p class="pt-text-small">Специализируется на выпуске станков с ЧПУ, горнодобывающего оборудования и компонентов для энергетического сектора. Производственные площадки расположены в Харбине и Екатеринбурге.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="pt-block" id="block-4">
+                                <div class="pt-author-quote">
+                                    <svg width="79" height="63" viewBox="0 0 79 63" fill="none" xmlns="http://www.w3.org/2000/svg" class="pt-author-quote__quote-icon">
+                                        <path d="M-7.5774e-06 62.4052L1.6989 52.4332C6.93726 52.6477 10.6183 51.7363 12.7419 49.699C14.8656 47.7689 16.1398 45.1419 16.5645 41.8179C16.8477 38.6012 16.8477 35.1163 16.5645 31.3634L-4.86364e-06 31.3634L-2.12176e-06 7.22995e-07L30.793 3.415e-06L30.793 39.4053C30.793 47.8761 27.8907 54.2024 22.086 58.3842C16.2813 62.566 8.91935 63.9064 -7.5774e-06 62.4052ZM48.207 62.4052L49.9059 52.4332C55.1443 52.6477 58.8253 51.7363 60.9489 49.699C63.0726 47.7689 64.3468 45.1419 64.7715 41.8179C65.0547 38.6012 65.0547 35.1163 64.7715 31.3635L48.207 31.3635L48.207 4.93738e-06L79 7.62939e-06L79 39.4053C79 47.8762 76.0977 54.2025 70.293 58.3842C64.4883 62.566 57.1263 63.9064 48.207 62.4052Z" fill="#E3E1DC" />
+                                    </svg>
+                                    <p class="pt-text-lg">Российско-китайская машиностроительная компания – совместное предприятие, основанное в 2018 году для разработки и производства промышленного оборудования. Компания объединяет российские инженерные разработки с китайскими производственными мощностями.</p>
+
+                                    <div class="pt-author-quote__about-author">
+                                        <div class="pt-author-quote__photo">
+                                            <img src="assets/img/quotes/author.png" alt="">
+                                        </div>
+
+                                        <div class="pt-author-quote__aq-text-block">
+                                            <p class="pt-very-small-text">Павел Портнов</p>
+                                            <p class="pt-very-small-text pt-author-quote__author-post">Генеральный Директор компании</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="pt-block" id="block-5">
+                                <div class="pt-advantages-list">
+                                    <div class="pt-single-advantage w-33">
+                                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M36.9676 21.8883L36.9676 18.1112L21.8912 18.1112L21.8886 3.03211H18.1114L18.1114 10.5329C18.1114 14.7161 14.719 18.1085 10.5358 18.1085L3.03237 18.1112L3.03238 21.8883L18.1088 21.8883V36.9647L21.8859 36.9647L21.8859 29.4639C21.8859 25.2808 25.2783 21.8883 29.4615 21.8883L36.9623 21.8883L36.9676 21.8883Z" fill="#262626" />
+                                        </svg>
+                                        <div class="pt-single-advantage__text-block">
+                                            <p class="small-title">Название плюса</p>
+                                            <p class="pt-very-small-text">Среди наших клиентов — крупнейшие российские и китайские промышленные и энергетические лидеры. Среди наших клиентов — крупнейшие российские и китайские промышленные и энергетические лидеры.</p>
+                                        </div>
+                                    </div>
+                                    <div class="pt-single-advantage w-33">
+                                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M36.9676 21.8883L36.9676 18.1112L21.8912 18.1112L21.8886 3.03211H18.1114L18.1114 10.5329C18.1114 14.7161 14.719 18.1085 10.5358 18.1085L3.03237 18.1112L3.03238 21.8883L18.1088 21.8883V36.9647L21.8859 36.9647L21.8859 29.4639C21.8859 25.2808 25.2783 21.8883 29.4615 21.8883L36.9623 21.8883L36.9676 21.8883Z" fill="#262626" />
+                                        </svg>
+                                        <div class="pt-single-advantage__text-block">
+                                            <p class="small-title">Название плюса</p>
+                                            <p class="pt-very-small-text">Среди наших клиентов — крупнейшие российские и китайские промышленные и энергетические лидеры. Среди наших клиентов — крупнейшие российские и китайские промышленные и энергетические лидеры.</p>
+                                        </div>
+                                    </div>
+                                    <div class="pt-single-advantage w-33">
+                                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M36.9676 21.8883L36.9676 18.1112L21.8912 18.1112L21.8886 3.03211H18.1114L18.1114 10.5329C18.1114 14.7161 14.719 18.1085 10.5358 18.1085L3.03237 18.1112L3.03238 21.8883L18.1088 21.8883V36.9647L21.8859 36.9647L21.8859 29.4639C21.8859 25.2808 25.2783 21.8883 29.4615 21.8883L36.9623 21.8883L36.9676 21.8883Z" fill="#262626" />
+                                        </svg>
+                                        <div class="pt-single-advantage__text-block">
+                                            <p class="small-title">Название плюса</p>
+                                            <p class="pt-very-small-text">Среди наших клиентов — крупнейшие российские и китайские промышленные и энергетические лидеры. Среди наших клиентов — крупнейшие российские и китайские промышленные и энергетические лидеры.</p>
+                                        </div>
+                                    </div>
+                                    <div class="pt-single-advantage w-50">
+                                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M36.9676 21.8883L36.9676 18.1112L21.8912 18.1112L21.8886 3.03211H18.1114L18.1114 10.5329C18.1114 14.7161 14.719 18.1085 10.5358 18.1085L3.03237 18.1112L3.03238 21.8883L18.1088 21.8883V36.9647L21.8859 36.9647L21.8859 29.4639C21.8859 25.2808 25.2783 21.8883 29.4615 21.8883L36.9623 21.8883L36.9676 21.8883Z" fill="#262626" />
+                                        </svg>
+                                        <div class="pt-single-advantage__text-block">
+                                            <p class="small-title">Название плюса</p>
+                                            <p class="pt-very-small-text">Среди наших клиентов — крупнейшие российские и китайские промышленные и энергетические лидеры. Среди наших клиентов — крупнейшие российские и китайские промышленные и энергетические лидеры.</p>
+                                        </div>
+                                    </div>
+                                    <div class="pt-single-advantage w-50">
+                                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M36.9676 21.8883L36.9676 18.1112L21.8912 18.1112L21.8886 3.03211H18.1114L18.1114 10.5329C18.1114 14.7161 14.719 18.1085 10.5358 18.1085L3.03237 18.1112L3.03238 21.8883L18.1088 21.8883V36.9647L21.8859 36.9647L21.8859 29.4639C21.8859 25.2808 25.2783 21.8883 29.4615 21.8883L36.9623 21.8883L36.9676 21.8883Z" fill="#262626" />
+                                        </svg>
+                                        <div class="pt-single-advantage__text-block">
+                                            <p class="small-title">Название плюса</p>
+                                            <p class="pt-very-small-text">Среди наших клиентов — крупнейшие российские и китайские промышленные и энергетические лидеры. Среди наших клиентов — крупнейшие российские и китайские промышленные и энергетические лидеры.</p>
+                                        </div>
+                                    </div>
+                                    <div class="pt-single-advantage">
+                                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M36.9676 21.8883L36.9676 18.1112L21.8912 18.1112L21.8886 3.03211H18.1114L18.1114 10.5329C18.1114 14.7161 14.719 18.1085 10.5358 18.1085L3.03237 18.1112L3.03238 21.8883L18.1088 21.8883V36.9647L21.8859 36.9647L21.8859 29.4639C21.8859 25.2808 25.2783 21.8883 29.4615 21.8883L36.9623 21.8883L36.9676 21.8883Z" fill="#262626" />
+                                        </svg>
+                                        <div class="pt-single-advantage__text-block">
+                                            <p class="small-title">Название плюса</p>
+                                            <p class="pt-very-small-text">Среди наших клиентов — крупнейшие российские и китайские промышленные и энергетические лидеры. Среди наших клиентов — крупнейшие российские и китайские промышленные и энергетические лидеры.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- <button data-hystclose class="hystmodal__close">Закрыть</button>  -->
+
+
+                
+            </div>
+        </div>
+    </div>
+
+
+    <div class="hystmodal modal-search" id="modal-search" aria-hidden="true">
+        <div class="hystmodal__wrap">
+            <div class="hystmodal__window " role="dialog" aria-modal="true">
+                <section class="modal-search__top">
+                    <div class="content-block">
+                        <div class="container">
+                            <form class="m-search-form ">
+                                <div class="m-search-form__top">
+                                    <p class="m-search-form__label">Поиск по сайту</p>
+                                    <div class="m-search-form__close" data-hystclose="">Закрыть</div>
+                                </div>
+                                
+
+
+                                <div class="m-search-form__input-wrap is-empty">
+                                    <input type="text" name="search" required minlength="1" class="m-search-form__input" placeholder="Введите ваш запрос">
+        
+                                    <div class="m-search-form__controls">
+                                        <div class="m-search-form__reset">
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M13.3307 3.73532L12.2624 2.66699L7.99815 6.93124L3.73239 2.66699L2.66406 3.73532L4.78561 5.85687C5.96878 7.04004 5.96878 8.9591 4.78561 10.1423L2.66406 12.2653L3.73239 13.3337L7.99664 9.06941L12.2609 13.3337L13.3292 12.2653L11.2077 10.1438C10.0245 8.96061 10.0245 7.04155 11.2077 5.85838L13.3292 3.73683L13.3307 3.73532Z" fill="#262626" />
+                                            </svg>
+                                        </div>
+                                        <div class="m-search-form__delimetr"></div>
+                                        <button class="m-search-form__submit">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M20.0008 18.1488L16.0814 14.2294C15.241 13.389 14.9608 12.1218 15.4138 11.0222C15.9007 9.83353 16.1102 8.5009 15.9583 7.10804C15.5525 3.40599 12.5705 0.434394 8.86579 0.0442903C3.77874 -0.489811 -0.488834 3.77776 0.0452669 8.86482C0.43537 12.5695 3.40435 15.5516 7.10902 15.9547C8.50187 16.1066 9.83451 15.8972 11.0231 15.4102C12.1254 14.9599 13.3899 15.2374 14.2304 16.0778L18.1471 19.9945L19.9981 18.1435L20.0008 18.1488ZM2.6189 8.00345C2.6189 5.03447 5.03545 2.61793 8.00442 2.61793C10.9734 2.61793 13.3899 5.03447 13.3899 8.00345C13.3899 10.9724 10.9734 13.389 8.00442 13.389C5.03545 13.389 2.6189 10.9724 2.6189 8.00345Z" fill="#DBD6C8" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form> 
+                        </div>
+                    </div>      
+                </section>
+
+                <section class="modal-search__category-group cats ">
+                    <div class="content-block">
+                        <div class="container">
+                            <p class="small-text modal-search__title-group">Категории оборудования <span class="modal-search__categories-qty">(12)</span></p>
+                        </div>                        
+                    </div>   
+                    <div class="modal-search__category-list ">
+                        <a href="#" class="ms-category-item">
+                            <div class="ms-category-item__main-content">
+                                <div class="ms-category-item__img">
+                                    <img src="assets/img/icons/where-use.svg" alt="">
+                                </div>
+                                <div class="ms-category-item__title">Отлив1ки с механической обработкой</div>
+                            </div>
+                            <div class="ms-category-item__arrow">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.82352 2L11.9022 7.88095L5.82352 13.7619L4.66406 12.6402L6.61182 10.7557C8.23676 9.18364 8.23676 6.57826 6.61182 5.00617L4.66406 3.12175L5.82352 2Z" fill="#262626" />
+                                </svg>
+                            </div>
+                        </a>
+                        <a href="#" class="ms-category-item">
+                            <div class="ms-category-item__main-content">
+                                <div class="ms-category-item__img">
+                                    <img src="assets/img/icons/where-use.svg" alt="">
+                                </div>
+                                <div class="ms-category-item__title">Отливки с механической обработкой</div>
+                            </div>
+                            <div class="ms-category-item__arrow">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.82352 2L11.9022 7.88095L5.82352 13.7619L4.66406 12.6402L6.61182 10.7557C8.23676 9.18364 8.23676 6.57826 6.61182 5.00617L4.66406 3.12175L5.82352 2Z" fill="#262626" />
+                                </svg>
+                            </div>
+                        </a>
+                        <a href="#" class="ms-category-item">
+                            <div class="ms-category-item__main-content">
+                                <div class="ms-category-item__img">
+                                    <img src="assets/img/icons/where-use.svg" alt="">
+                                </div>
+                                <div class="ms-category-item__title">Отливки с механической обработкой</div>
+                            </div>
+                            <div class="ms-category-item__arrow">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.82352 2L11.9022 7.88095L5.82352 13.7619L4.66406 12.6402L6.61182 10.7557C8.23676 9.18364 8.23676 6.57826 6.61182 5.00617L4.66406 3.12175L5.82352 2Z" fill="#262626" />
+                                </svg>
+                            </div>
+                        </a>
+                        <a href="#" class="ms-category-item">
+                            <div class="ms-category-item__main-content">
+                                <div class="ms-category-item__img">
+                                    <img src="assets/img/icons/where-use.svg" alt="">
+                                </div>
+                                <div class="ms-category-item__title">Отливки с механической обработкой</div>
+                            </div>
+                            <div class="ms-category-item__arrow">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.82352 2L11.9022 7.88095L5.82352 13.7619L4.66406 12.6402L6.61182 10.7557C8.23676 9.18364 8.23676 6.57826 6.61182 5.00617L4.66406 3.12175L5.82352 2Z" fill="#262626" />
+                                </svg>
+                            </div>
+                        </a>
+                        <a href="#" class="ms-category-item">
+                            <div class="ms-category-item__main-content">
+                                <div class="ms-category-item__img">
+                                    <img src="assets/img/icons/where-use.svg" alt="">
+                                </div>
+                                <div class="ms-category-item__title">Отливки с механической обработкой</div>
+                            </div>
+                            <div class="ms-category-item__arrow">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.82352 2L11.9022 7.88095L5.82352 13.7619L4.66406 12.6402L6.61182 10.7557C8.23676 9.18364 8.23676 6.57826 6.61182 5.00617L4.66406 3.12175L5.82352 2Z" fill="#262626" />
+                                </svg>
+                            </div>
+                        </a>
+
+                        <a href="#" class="ms-category-item">
+                            <div class="ms-category-item__main-content">
+                                <div class="ms-category-item__img">
+                                    <img src="assets/img/icons/where-use.svg" alt="">
+                                </div>
+                                <div class="ms-category-item__title">Категория</div>
+                            </div>
+                            <div class="ms-category-item__arrow">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.82352 2L11.9022 7.88095L5.82352 13.7619L4.66406 12.6402L6.61182 10.7557C8.23676 9.18364 8.23676 6.57826 6.61182 5.00617L4.66406 3.12175L5.82352 2Z" fill="#262626" />
+                                </svg>
+                            </div>
+                        </a>
+                        <a href="#" class="ms-category-item">
+                            <div class="ms-category-item__main-content">
+                                <div class="ms-category-item__img">
+                                    <img src="assets/img/icons/where-use.svg" alt="">
+                                </div>
+                                <div class="ms-category-item__title">Категория</div>
+                            </div>
+                            <div class="ms-category-item__arrow">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.82352 2L11.9022 7.88095L5.82352 13.7619L4.66406 12.6402L6.61182 10.7557C8.23676 9.18364 8.23676 6.57826 6.61182 5.00617L4.66406 3.12175L5.82352 2Z" fill="#262626" />
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="content-block cats-more">
+                        <div class="container">
+                            <a class="show-details " href="catalog.html">Смотреть всё</a>
+                        </div>
+                    </div>  
+                </section>
+
+                <section class="modal-search__category-group prods ">
+                    <div class="content-block">
+                        <div class="container">
+                            <p class="small-text modal-search__title-group">Оборудование <span class="modal-search__products-qty">(12)</span></p>
+                        </div>                        
+                    </div>   
+                    <div class="modal-search__category-list ">
+                        <a href="#" class="ms-category-item">
+                            <div class="ms-category-item__main-content">
+                                <div class="ms-category-item__img ms-category-item__img_product-img">
+                                    <img src="assets/img/product.png" alt="">
+                                </div>
+                                <div class="ms-category-item__title">Отливки с механической обработкой</div>
+                            </div>
+                            <div class="ms-category-item__arrow">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.82352 2L11.9022 7.88095L5.82352 13.7619L4.66406 12.6402L6.61182 10.7557C8.23676 9.18364 8.23676 6.57826 6.61182 5.00617L4.66406 3.12175L5.82352 2Z" fill="#262626" />
+                                </svg>
+                            </div>
+                        </a>
+                        <a href="#" class="ms-category-item">
+                            <div class="ms-category-item__main-content">
+                                <div class="ms-category-item__img ms-category-item__img_product-img">
+                                    <img src="assets/img/product.png" alt="">
+                                </div>
+                                <div class="ms-category-item__title">Отливки с механической обработкой</div>
+                            </div>
+                            <div class="ms-category-item__arrow">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.82352 2L11.9022 7.88095L5.82352 13.7619L4.66406 12.6402L6.61182 10.7557C8.23676 9.18364 8.23676 6.57826 6.61182 5.00617L4.66406 3.12175L5.82352 2Z" fill="#262626" />
+                                </svg>
+                            </div>
+                        </a>
+                        <a href="#" class="ms-category-item">
+                            <div class="ms-category-item__main-content">
+                                <div class="ms-category-item__img ms-category-item__img_product-img">
+                                    <img src="assets/img/product.png" alt="">
+                                </div>
+                                <div class="ms-category-item__title">Отливки с механической обработкой</div>
+                            </div>
+                            <div class="ms-category-item__arrow">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.82352 2L11.9022 7.88095L5.82352 13.7619L4.66406 12.6402L6.61182 10.7557C8.23676 9.18364 8.23676 6.57826 6.61182 5.00617L4.66406 3.12175L5.82352 2Z" fill="#262626" />
+                                </svg>
+                            </div>
+                        </a>
+                        <a href="#" class="ms-category-item">
+                            <div class="ms-category-item__main-content">
+                                <div class="ms-category-item__img ms-category-item__img_product-img">
+                                    <img src="assets/img/product.png" alt="">
+                                </div>
+                                <div class="ms-category-item__title">Отливки с механической обработкой</div>
+                            </div>
+                            <div class="ms-category-item__arrow">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.82352 2L11.9022 7.88095L5.82352 13.7619L4.66406 12.6402L6.61182 10.7557C8.23676 9.18364 8.23676 6.57826 6.61182 5.00617L4.66406 3.12175L5.82352 2Z" fill="#262626" />
+                                </svg>
+                            </div>
+                        </a>
+                        <a href="#" class="ms-category-item">
+                            <div class="ms-category-item__main-content">
+                                <div class="ms-category-item__img ms-category-item__img_product-img">
+                                    <img src="assets/img/product.png" alt="">
+                                </div>
+                                <div class="ms-category-item__title">Отливки с механической обработкой</div>
+                            </div>
+                            <div class="ms-category-item__arrow">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.82352 2L11.9022 7.88095L5.82352 13.7619L4.66406 12.6402L6.61182 10.7557C8.23676 9.18364 8.23676 6.57826 6.61182 5.00617L4.66406 3.12175L5.82352 2Z" fill="#262626" />
+                                </svg>
+                            </div>
+                        </a>
+
+                        <a href="#" class="ms-category-item">
+                            <div class="ms-category-item__main-content">
+                                <div class="ms-category-item__img ms-category-item__img_product-img">
+                                    <img src="assets/img/product.png" alt="">
+                                </div>
+                                <div class="ms-category-item__title">Продукт 1</div>
+                            </div>
+                            <div class="ms-category-item__arrow">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.82352 2L11.9022 7.88095L5.82352 13.7619L4.66406 12.6402L6.61182 10.7557C8.23676 9.18364 8.23676 6.57826 6.61182 5.00617L4.66406 3.12175L5.82352 2Z" fill="#262626" />
+                                </svg>
+                            </div>
+                        </a>
+
+                        <a href="#" class="ms-category-item">
+                            <div class="ms-category-item__main-content">
+                                <div class="ms-category-item__img ms-category-item__img_product-img">
+                                    <img src="assets/img/product.png" alt="">
+                                </div>
+                                <div class="ms-category-item__title">Продукт 2</div>
+                            </div>
+                            <div class="ms-category-item__arrow">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.82352 2L11.9022 7.88095L5.82352 13.7619L4.66406 12.6402L6.61182 10.7557C8.23676 9.18364 8.23676 6.57826 6.61182 5.00617L4.66406 3.12175L5.82352 2Z" fill="#262626" />
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="content-block prods-more">
+                        <div class="container">
+                            <a class="show-details" href="catalog.html">Смотреть всё</a>
+                        </div>
+                    </div>  
+                </section>
+
+                <section class="modal-search__bottom ">
+                    <div class="content-block">
+                        <div class="container">
+                            <a href="catalog.html" class="dark-btn" >
+                                <span class="dark-btn__text">Смотреть все результаты</span>                                    
+                                <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="23" height="23" rx="11.5" fill="#3A3A3A" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.80094 7L14 11.5L9.80094 16L9 15.1417L9.85167 14.2289C11.2856 12.6922 11.2856 10.3078 9.85167 8.77105L9 7.85835L9.80094 7Z" fill="#F5F4F0" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="modal-search__not-found">
+                    <div class="content-block">
+                        <div class="container">
+                            <p class="text-basic">К сожалению, по вашему запросу ничего не найдено. Пожалуйста, попробуйте другую поисковую фразу, или же просто обратитесь к нам для разработки индивидуального решения.</p>
+
+                            <button data-hystclose="" data-hystmodal="#feedback-modal" class="dark-btn" >
+                                <span class="dark-btn__text">Запросить оборудование</span>                                    
+                                <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="23" height="23" rx="11.5" fill="#3A3A3A" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.80094 7L14 11.5L9.80094 16L9 15.1417L9.85167 14.2289C11.2856 12.6922 11.2856 10.3078 9.85167 8.77105L9 7.85835L9.80094 7Z" fill="#F5F4F0" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+       
+    </div>
+
+
 
     <script src="assets/js/vanilla-marquee.min.js" type="module"></script>
     <script src="assets/js/imask.js"></script>
     <script src="assets/js/vav-accordion.js"></script>
     <script src="assets/js/anime.iife.min.js" ></script>
     <script src="assets/js/fancybox.umd.js" ></script>
+    <script src="assets/js/popper.min.js" ></script>
+    <script src="assets/js/tippy-bundle.umd.js" ></script>
     
     <script src="assets/js/swiper-bundle.min.js"></script>
     <script src="assets/js/hystmodal.min.js"></script>

@@ -164,6 +164,15 @@ section{
 @import 'units/s-our-mission';
 @import 'units/sp-about';
 @import 'units/sa-intro';
+@import 'units/single-product';
+@import 'units/breadcrumbs';
+@import 'units/my-gallery';
+@import 'units/s-related-products';
+@import 'units/card';
+@import 'units/single-category';
+@import 'units/catalog';
+@import 'units/search-page';
+@import 'units/search-modal';
 
 
 
@@ -181,4 +190,23 @@ section{
 
 .cf-files + p {
 	display: none;
+}
+
+.tippy-box{
+	background: #fff;
+	font-family: var(--font-family);
+	font-weight: 400;
+	font-size: 13px;
+	color: #262626;
+	box-shadow: 0 2px 12px 0 rgba(208, 0, 0, 0.1);
+}
+.tippy-content{
+	padding: 10px 10px;
+	font-weight: 400;
+	font-size: 13px;
+}
+
+.tippy-arrow{
+	color: #fff;
+	box-shadow: 0 2px 12px 0 rgba(208, 0, 0, 0.1);
 }

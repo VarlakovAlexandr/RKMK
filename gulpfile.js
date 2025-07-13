@@ -44,6 +44,11 @@ const rename = require('gulp-rename');
 const minifycss = require('gulp-minify-css');
 const fileinclude = require('gulp-file-include');
 
+
+
+const uncss = require('gulp-uncss');
+const nano = require('gulp-cssnano')
+
 function browser_sync(){
     b_sync.init({
         server: {baseDir: 'dist/'}
@@ -61,7 +66,7 @@ function css(){
     return src(path.src.scss)
         .pipe(sass())
         
-        .pipe( autoprefixer({ overrideBrowserslist: ['last 15 versions']}))
+        .pipe( autoprefixer({ overrideBrowserslist: ['last 5 versions']}))
         .pipe(dest(path.build.css))
         .pipe(rename({suffix: '.min'}))
         .pipe(minifycss())

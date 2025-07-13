@@ -17,6 +17,11 @@ class VavAccordion {
                 const headers = accordion.querySelectorAll(':scope > .vav-accordion-item >.vav-accordion-header');
 
                 const closeItem = function( item ){
+
+                    const testCatecoriesList = item.closest('.rolled');
+
+                    if ( testCatecoriesList ) return ;
+
                     const itemBody = item.querySelector('.vav-accordion-body');
                     const itemContent = item.querySelector('.vav-accordion-content');
 
@@ -63,7 +68,8 @@ class VavAccordion {
                 }
 
                 const openItem = function( item ){
-
+                    const testCatecoriesList = item.closest('.rolled');
+                    if ( testCatecoriesList ) return ;
                     if ( singleMode ){
                         const parentContainer = item.closest('.vav-accordion');
                         let activeItem = parentContainer.querySelector(':scope > .vav-accordion-item.open');

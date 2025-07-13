@@ -1,3 +1,578 @@
+<!DOCTYPE html>
+<html lang="ru_RU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Краткое описание страницы"/>
+    <title>РКМК</title>
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon"> 
+    <link rel="stylesheet" href="assets/css/fonts.min.css">        
+    <link rel="stylesheet" href="assets/css/swiper.min.css">        
+    <link rel="stylesheet" href="assets/css/hystmodal.min.css">        
+    <link rel="stylesheet" href="assets/css/vav-accordion.min.css">        
+    <link rel="stylesheet" href="assets/css/fancybox.min.css">        
+    <link rel="stylesheet" href="assets/css/main.min.css">     
+    
+</head>
+<body class="@@bodyClassName">
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="header-logo">
+                <img src="assets/img/logo.svg" alt="">
+            </a>
+
+            <div class="header-content">
+                <div class="header-content__contacts-block">
+                    <a href="https://t.me/" class="h-contact-link" target="_blank">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.25 9.25731L15.75 3.75L13.2267 15L11.0713 13.7202C10.0341 13.1045 8.71769 13.1762 7.75499 13.9026L7.47586 14.113L7.52185 12.8753C7.55357 12.0304 7.91201 11.2292 8.52579 10.6369L12.992 6.3127L7.24113 9.67351C6.40372 10.163 5.39027 10.2721 4.46405 9.97281L2.25 9.25731Z" fill="#DBD6C8" />
+                        </svg>
+                        Telegram
+                    </a>
+                    <a href="https://wa.me/+79772634323" class="h-contact-link" target="_blank">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15.75 8.88866C15.7519 9.83266 15.5537 10.744 15.161 11.6151C14.9069 12.1773 14.5758 12.6934 14.1773 13.1654C13.6672 13.7679 13.0666 14.2649 12.3793 14.6544C11.6902 15.0477 10.951 15.3048 10.1675 15.4353C9.71321 15.5101 9.25699 15.535 8.79691 15.5159C8.09429 15.4852 7.41477 15.3451 6.75449 15.0995C6.33292 14.9422 5.36272 14.4778 5.36272 14.4778L2.25 15.7499C2.25 15.7499 3.89972 12.8105 3.04502 11.4597C2.84675 11.1451 2.70815 10.7958 2.62152 10.4351C2.5657 10.2011 2.52142 9.96505 2.49062 9.72329C2.44827 9.39136 2.42902 9.0575 2.43865 8.72173C2.45597 8.09815 2.55607 7.48608 2.74472 6.89129C2.97187 6.17561 3.3126 5.51749 3.76305 4.91694C4.06335 4.51593 4.406 4.1533 4.78907 3.82904C5.23567 3.45105 5.72269 3.13638 6.25399 2.88503C6.84689 2.6049 7.47059 2.41495 8.12124 2.32093C8.35609 2.2864 8.59286 2.26529 8.82964 2.2557C9.86336 2.21157 10.8509 2.40152 11.798 2.81596C12.3736 3.06923 12.901 3.39925 13.3803 3.80409C13.9983 4.32406 14.5084 4.93421 14.9049 5.63645C15.2688 6.28306 15.5171 6.96995 15.648 7.69906C15.6942 7.96192 15.7269 8.22479 15.7423 8.49149C15.75 8.62004 15.7462 8.74859 15.7519 8.88674L15.75 8.88866ZM11.284 12.7069C11.4284 12.703 11.6074 12.6973 11.7807 12.6512C12.1175 12.563 12.4121 12.3884 12.6777 12.1639C12.8048 12.0564 12.9203 11.9375 12.9857 11.784C13.0993 11.5077 13.159 11.2199 13.1551 10.9186C13.1551 10.815 13.1128 10.7383 13.0184 10.6903C12.9183 10.6385 12.8163 10.5905 12.7143 10.5387C12.3582 10.3622 12.0001 10.1876 11.6401 10.0207C11.5285 9.96889 11.4149 9.91325 11.2956 9.87871C11.1262 9.82882 11.0357 9.86144 10.9337 10.0053C10.7373 10.2816 10.5179 10.5387 10.2926 10.792C10.181 10.9167 10.079 10.934 9.92304 10.8688C9.86914 10.8457 9.81524 10.8189 9.76134 10.7958C9.45526 10.6673 9.16074 10.5176 8.88354 10.3354C8.36186 9.99383 7.91526 9.5698 7.54182 9.07093C7.39167 8.86947 7.24729 8.66417 7.12602 8.44352C7.05864 8.32264 7.07404 8.22479 7.16452 8.12309C7.22227 8.05786 7.28387 7.99646 7.33969 7.92931C7.48407 7.76046 7.63037 7.59545 7.72084 7.38823C7.76897 7.27886 7.77474 7.17717 7.72662 7.06973C7.56492 6.70325 7.42247 6.32911 7.26847 5.96263C7.19724 5.79379 7.13179 5.6211 7.04517 5.4561C6.95662 5.28917 6.82572 5.19707 6.62937 5.20666C6.53889 5.2105 6.45034 5.20666 6.35987 5.20283C6.15004 5.1894 5.96139 5.24504 5.79969 5.3851C5.74772 5.43115 5.70344 5.48104 5.65724 5.53093C5.49939 5.69785 5.36079 5.88205 5.26069 6.08927C5.0374 6.55359 4.98349 7.04095 5.07782 7.54365C5.15867 7.97152 5.33769 8.36293 5.55907 8.73708C5.69767 8.97308 5.86322 9.18989 6.01914 9.41438C6.29634 9.81539 6.60627 10.1895 6.94507 10.5426C7.16452 10.7728 7.39744 10.9896 7.64192 11.193C8.03269 11.5154 8.44656 11.8012 8.90664 12.0181C9.40714 12.2541 9.92881 12.4363 10.464 12.5841C10.7219 12.6551 10.9837 12.7088 11.2879 12.7088L11.284 12.7069Z" fill="#DBD6C8" />
+                        </svg>
+                        WhatsApp
+                    </a>
+                    <a href="tel:+78001821111" class="h-contact-link">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.25 9.25731L15.75 3.75L13.2267 15L11.0713 13.7202C10.0341 13.1045 8.71769 13.1762 7.75499 13.9026L7.47586 14.113L7.52185 12.8753C7.55357 12.0304 7.91201 11.2292 8.52579 10.6369L12.992 6.3127L7.24113 9.67351C6.40372 10.163 5.39027 10.2721 4.46405 9.97281L2.25 9.25731Z" fill="#DBD6C8" />
+                        </svg>
+                        8 800 182 11 11
+                    </a>
+                    <a href="mailto:info@rkmk.ru" class="h-contact-link">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.00057 8.73386L15.0446 6.51624C15.4669 6.36096 15.75 5.93878 15.75 5.46445V4.5H2.25V5.46202C2.25 5.93636 2.53308 6.35974 2.95542 6.51381L9.00057 8.73386Z" fill="#DBD6C8" />
+                            <path d="M9.00057 10.0174L3.63915 8.04843C2.95884 7.79853 2.25 8.33595 2.25 9.10022V14.25H15.75V9.10265C15.75 8.33837 15.0412 7.80095 14.3608 8.05086L8.99943 10.0174H9.00057Z" fill="#DBD6C8" />
+                          </svg>
+                        info@rkmk.ru
+                    </a>
+                </div>
+                <div class="header-content__nav-block">
+                    <nav class="header-menu">
+                        <ul class="header-menu__list">
+                            <li class="header-menu__item">
+                                <a href="#" class="header-menu__link">О компании</a>
+                            </li>
+                            <li class="header-menu__item products-item">
+                                <a href="#" class="header-menu__link">Продукция</a>
+                            </li>
+                            <li class="header-menu__item">
+                                <a href="#" class="header-menu__link active">Контакты</a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <button class="header-search" data-hystmodal="#modal-search">
+                        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M27.3314 25.6053L23.6734 21.9473C22.889 21.1629 22.6275 19.9802 23.0502 18.9539C23.5048 17.8445 23.7002 16.6007 23.5585 15.3007C23.1798 11.8454 20.3965 9.07193 16.9388 8.70784C12.1909 8.20934 8.20782 12.1924 8.70631 16.9403C9.07041 20.398 11.8415 23.1813 15.2991 23.5576C16.5991 23.6993 17.8429 23.5038 18.9523 23.0493C19.9811 22.629 21.1613 22.8881 21.9457 23.6724L25.6014 27.3281L27.329 25.6005L27.3314 25.6053ZM11.1084 16.1364C11.1084 13.3653 13.3638 11.1099 16.1349 11.1099C18.9059 11.1099 21.1613 13.3653 21.1613 16.1364C21.1613 18.9074 18.9059 21.1629 16.1349 21.1629C13.3638 21.1629 11.1084 18.9074 11.1084 16.1364Z" fill="#262626"/>
+                        </svg>                            
+                    </button>
+
+                    <div class="hamburger">
+                        <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg" id="ham">
+                            <path id="line" d="M27.7096 8.75 H7.29297 V11.9388 H27.7096 V8.75 Z M27.7096 15.9056 H7.29297 V19.0944 H27.7096 V15.9056 Z M27.7096 23.0612 H7.29297 V26.25 H27.7096 V23.0612 Z" fill="#262626"/>
+                            <path id="cross" d="M29.1693 8.16998L26.8323 5.83301L17.5043 15.1611L8.17291 5.83301L5.83594 8.16998L10.4768 12.8109C13.065 15.399 13.065 19.597 10.4768 22.1852L5.83594 26.8294L8.17291 29.1663L17.501 19.8383L26.829 29.1663L29.166 26.8294L24.5251 22.1885C21.9369 19.6003 21.9369 15.4024 24.5251 12.8142L29.166 8.17328L29.1693 8.16998Z" fill="#262626" />                           
+                        </svg>
+                        
+                    </div>
+                    
+                    <button class="btn btn-red" data-hystmodal="#feedback-modal">Оставить заявку</button>
+                </div>
+
+            </div>
+
+            
+        </div>
+    </header>
+
+    <div class="mob-nav-block">
+
+        <nav class="mob-menu">
+            
+            <div class="mob-menu__top">
+                <button class="mob-menu__fb-btn" data-hystmodal="#feedback-modal">Оставить заявку</button>
+            </div>
+            <div class="mob-menu__bottom">
+                <ul class="mob-menu-list">
+                    <li class="mob-menu-list__item"><a href="about.html" class="mob-menu-list__link active">О компании</a></li>                    
+                    <li class="mob-menu-list__item">
+                        <div class="vav-accordion mob-menu-list">
+                            <div class="vav-accordion-item">
+                                <div class="vav-accordion-header">
+                                    Оборудование
+                                </div>
+                    
+                                <div class="vav-accordion-body">
+                                    <div class="vav-accordion-content">
+                    
+                                        <ul class="mob-child-menu">
+                                            <li class="mob-child-menu__item cat">
+                                                <a href="#" class="go-to-cat">Перейти на страницу оборудования</a>
+                                            </li>
+                                            <li class="mob-child-menu__item">
+                                                <a href="#" class="mob-child-menu__link">
+                                                    <span class="mob-child-menu__icon">
+                                                        <img src="assets/img/icons/where-use.svg" alt="">
+                                                    </span>
+                                                    Отливки с механической обработкой
+                                                </a>
+                                            </li>
+                                            <li class="mob-child-menu__item">
+                                                <a href="#" class="mob-child-menu__link">
+                                                    <span class="mob-child-menu__icon">
+                                                        <img src="assets/img/icons/where-use.svg" alt="">
+                                                    </span>
+                                                    Отливки с механической обработкой
+                                                </a>
+                                            </li>
+                                            <li class="mob-child-menu__item">
+                                                <a href="#" class="mob-child-menu__link">
+                                                    <span class="mob-child-menu__icon">
+                                                        <img src="assets/img/icons/where-use.svg" alt="">
+                                                    </span>
+                                                    Отливки с механической обработкой
+                                                </a>
+                                            </li>
+                                            <li class="mob-child-menu__item">
+                                                <a href="#" class="mob-child-menu__link">
+                                                    <span class="mob-child-menu__icon">
+                                                        <img src="assets/img/icons/where-use.svg" alt="">
+                                                    </span>
+                                                    Отливки с механической обработкой
+                                                </a>
+                                            </li>
+                                            <li class="mob-child-menu__item">
+                                                <a href="#" class="mob-child-menu__link">
+                                                    <span class="mob-child-menu__icon">
+                                                        <img src="assets/img/icons/where-use.svg" alt="">
+                                                    </span>
+                                                    Отливки с механической обработкой
+                                                </a>
+                                            </li>
+                                            <li class="mob-child-menu__item">
+                                                <a href="#" class="mob-child-menu__link">
+                                                    <span class="mob-child-menu__icon">
+                                                        <img src="assets/img/icons/where-use.svg" alt="">
+                                                    </span>
+                                                    Отливки с механической обработкой
+                                                </a>
+                                            </li>
+                                            <li class="mob-child-menu__item">
+                                                <a href="#" class="mob-child-menu__link">
+                                                    <span class="mob-child-menu__icon">
+                                                        <img src="assets/img/icons/where-use.svg" alt="">
+                                                    </span>
+                                                    Отливки с механической обработкой
+                                                </a>
+                                            </li>
+                                            <li class="mob-child-menu__item">
+                                                <a href="#" class="mob-child-menu__link">
+                                                    <span class="mob-child-menu__icon">
+                                                        <img src="assets/img/icons/where-use.svg" alt="">
+                                                    </span>
+                                                    Отливки с механической обработкой
+                                                </a>
+                                            </li>
+                                            <li class="mob-child-menu__item">
+                                                <a href="#" class="mob-child-menu__link">
+                                                    <span class="mob-child-menu__icon">
+                                                        <img src="assets/img/icons/where-use.svg" alt="">
+                                                    </span>
+                                                    Отливки с механической обработкой
+                                                </a>
+                                            </li>
+                                            <li class="mob-child-menu__item">
+                                                <a href="#" class="mob-child-menu__link">
+                                                    <span class="mob-child-menu__icon">
+                                                        <img src="assets/img/icons/where-use.svg" alt="">
+                                                    </span>
+                                                    Отливки с механической обработкой
+                                                </a>
+                                            </li>
+                                        </ul>
+                    
+                                    </div>
+                                </div>
+                    
+                            </div>
+                        </div>
+                    </li>
+                    <li class="mob-menu-list__item"><a href="contacts.html" class="mob-menu-list__link">Контакты</a></li>
+                    
+    
+    
+                </ul>
+
+                <div class="header-content__contacts-block">
+                    <a href="https://t.me/" class="h-contact-link" target="_blank">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.25 9.25731L15.75 3.75L13.2267 15L11.0713 13.7202C10.0341 13.1045 8.71769 13.1762 7.75499 13.9026L7.47586 14.113L7.52185 12.8753C7.55357 12.0304 7.91201 11.2292 8.52579 10.6369L12.992 6.3127L7.24113 9.67351C6.40372 10.163 5.39027 10.2721 4.46405 9.97281L2.25 9.25731Z" fill="#DBD6C8" />
+                        </svg>
+                        Telegram
+                    </a>
+                    <a href="https://wa.me/+79772634323" class="h-contact-link" target="_blank">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15.75 8.88866C15.7519 9.83266 15.5537 10.744 15.161 11.6151C14.9069 12.1773 14.5758 12.6934 14.1773 13.1654C13.6672 13.7679 13.0666 14.2649 12.3793 14.6544C11.6902 15.0477 10.951 15.3048 10.1675 15.4353C9.71321 15.5101 9.25699 15.535 8.79691 15.5159C8.09429 15.4852 7.41477 15.3451 6.75449 15.0995C6.33292 14.9422 5.36272 14.4778 5.36272 14.4778L2.25 15.7499C2.25 15.7499 3.89972 12.8105 3.04502 11.4597C2.84675 11.1451 2.70815 10.7958 2.62152 10.4351C2.5657 10.2011 2.52142 9.96505 2.49062 9.72329C2.44827 9.39136 2.42902 9.0575 2.43865 8.72173C2.45597 8.09815 2.55607 7.48608 2.74472 6.89129C2.97187 6.17561 3.3126 5.51749 3.76305 4.91694C4.06335 4.51593 4.406 4.1533 4.78907 3.82904C5.23567 3.45105 5.72269 3.13638 6.25399 2.88503C6.84689 2.6049 7.47059 2.41495 8.12124 2.32093C8.35609 2.2864 8.59286 2.26529 8.82964 2.2557C9.86336 2.21157 10.8509 2.40152 11.798 2.81596C12.3736 3.06923 12.901 3.39925 13.3803 3.80409C13.9983 4.32406 14.5084 4.93421 14.9049 5.63645C15.2688 6.28306 15.5171 6.96995 15.648 7.69906C15.6942 7.96192 15.7269 8.22479 15.7423 8.49149C15.75 8.62004 15.7462 8.74859 15.7519 8.88674L15.75 8.88866ZM11.284 12.7069C11.4284 12.703 11.6074 12.6973 11.7807 12.6512C12.1175 12.563 12.4121 12.3884 12.6777 12.1639C12.8048 12.0564 12.9203 11.9375 12.9857 11.784C13.0993 11.5077 13.159 11.2199 13.1551 10.9186C13.1551 10.815 13.1128 10.7383 13.0184 10.6903C12.9183 10.6385 12.8163 10.5905 12.7143 10.5387C12.3582 10.3622 12.0001 10.1876 11.6401 10.0207C11.5285 9.96889 11.4149 9.91325 11.2956 9.87871C11.1262 9.82882 11.0357 9.86144 10.9337 10.0053C10.7373 10.2816 10.5179 10.5387 10.2926 10.792C10.181 10.9167 10.079 10.934 9.92304 10.8688C9.86914 10.8457 9.81524 10.8189 9.76134 10.7958C9.45526 10.6673 9.16074 10.5176 8.88354 10.3354C8.36186 9.99383 7.91526 9.5698 7.54182 9.07093C7.39167 8.86947 7.24729 8.66417 7.12602 8.44352C7.05864 8.32264 7.07404 8.22479 7.16452 8.12309C7.22227 8.05786 7.28387 7.99646 7.33969 7.92931C7.48407 7.76046 7.63037 7.59545 7.72084 7.38823C7.76897 7.27886 7.77474 7.17717 7.72662 7.06973C7.56492 6.70325 7.42247 6.32911 7.26847 5.96263C7.19724 5.79379 7.13179 5.6211 7.04517 5.4561C6.95662 5.28917 6.82572 5.19707 6.62937 5.20666C6.53889 5.2105 6.45034 5.20666 6.35987 5.20283C6.15004 5.1894 5.96139 5.24504 5.79969 5.3851C5.74772 5.43115 5.70344 5.48104 5.65724 5.53093C5.49939 5.69785 5.36079 5.88205 5.26069 6.08927C5.0374 6.55359 4.98349 7.04095 5.07782 7.54365C5.15867 7.97152 5.33769 8.36293 5.55907 8.73708C5.69767 8.97308 5.86322 9.18989 6.01914 9.41438C6.29634 9.81539 6.60627 10.1895 6.94507 10.5426C7.16452 10.7728 7.39744 10.9896 7.64192 11.193C8.03269 11.5154 8.44656 11.8012 8.90664 12.0181C9.40714 12.2541 9.92881 12.4363 10.464 12.5841C10.7219 12.6551 10.9837 12.7088 11.2879 12.7088L11.284 12.7069Z" fill="#DBD6C8" />
+                        </svg>
+                        WhatsApp
+                    </a>
+                    <a href="tel:+78001821111" class="h-contact-link">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.25 9.25731L15.75 3.75L13.2267 15L11.0713 13.7202C10.0341 13.1045 8.71769 13.1762 7.75499 13.9026L7.47586 14.113L7.52185 12.8753C7.55357 12.0304 7.91201 11.2292 8.52579 10.6369L12.992 6.3127L7.24113 9.67351C6.40372 10.163 5.39027 10.2721 4.46405 9.97281L2.25 9.25731Z" fill="#DBD6C8" />
+                        </svg>
+                        8 800 182 11 11
+                    </a>
+                    <a href="mailto:info@rkmk.ru" class="h-contact-link">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.00057 8.73386L15.0446 6.51624C15.4669 6.36096 15.75 5.93878 15.75 5.46445V4.5H2.25V5.46202C2.25 5.93636 2.53308 6.35974 2.95542 6.51381L9.00057 8.73386Z" fill="#DBD6C8" />
+                            <path d="M9.00057 10.0174L3.63915 8.04843C2.95884 7.79853 2.25 8.33595 2.25 9.10022V14.25H15.75V9.10265C15.75 8.33837 15.0412 7.80095 14.3608 8.05086L8.99943 10.0174H9.00057Z" fill="#DBD6C8" />
+                          </svg>
+                        info@rkmk.ru
+                    </a>
+                </div>
+            </div>
+            
+
+
+            
+
+        </nav>
+
+    </div>
+
+    <div class="menu-products">
+        <div class="content-block">
+            <div class="container">
+                <div class="si-categories__title-block">
+                    <h2 class="title">Наша продукция</h2>
+                    <p class="text-subline">Обращайтесь к нам по вопросам закупки, возможного партнёрства, для запросов от СМИ и, в целом, по любым интересующим вас вопросам.</p>
+                </div>                    
+
+
+                <div class="si-categories__slider-container">
+                    <div class="si-categories__slider-nav">
+                        <button class="slider-nav slider-prev">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7147 2.5L5.11644 9.85119L12.7147 17.2024L14.1641 15.8002L10.9865 12.726C9.36157 11.1539 9.36157 8.5485 10.9865 6.97641L14.1641 3.90219L12.7147 2.5Z" fill="#262626" />
+                              </svg>
+                        </button>
+                        <button class="slider-nav slider-next">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M7.28526 2.5L14.8836 9.85119L7.28526 17.2024L5.83594 15.8002L9.01349 12.726C10.6384 11.1539 10.6384 8.5485 9.01349 6.97641L5.83594 3.90219L7.28526 2.5Z" fill="#262626" />
+                              </svg>
+                        </button>
+                    </div>
+
+                    <div class="swiper i-categories">
+                        <div class="swiper-wrapper">
+                            <a href="#" class="swiper-slide i-category">
+                                <div class="i-category__top-block">
+                                    <div class="i-category__icon">
+                                        <img src="assets/img/icons/where-use.svg" alt="">
+                                    </div>
+                                    <div class="i-category__description-block">
+                                        <div class="i-category__category-name md-headline">Отливки с механической обработкой</div>
+                                        <div class="i-category__description small-text">Среди наших клиентов — крупнейшие российские и китайские промышленные и энергетические лидеры. Среди наших клиентов — крупнейшие российские и китайские промышленные и энергетические лидеры. Среди наших клиентов — крупнейшие российские и китайские промышленные и энергетические лидеры</div>
+                                    </div>                                        
+                                </div>
+                                <div class="i-category__category-img">
+                                    <img src="assets/img/product/product.png" alt="">
+
+                                    <span class="i-category__arrow">
+                                        <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.28526 0.5L9.88356 7.85119L2.28526 15.2024L0.835937 13.8002L4.01349 10.726C5.63843 9.15388 5.63843 6.5485 4.01349 4.97641L0.835937 1.90219L2.28526 0.5Z" fill="#F5F4F0" />
+                                        </svg>
+                                    </span>
+                                </div>
+                            </a>
+                            <a href="#" class="swiper-slide i-category">
+                                <div class="i-category__top-block">
+                                    <div class="i-category__icon">
+                                        <img src="assets/img/icons/where-use.svg" alt="">
+                                    </div>
+                                    <div class="i-category__description-block">
+                                        <div class="i-category__category-name md-headline">Отливки с механической обработкой</div>
+                                        <div class="i-category__description small-text">Среди наших клиентов — крупнейшие российские и китайские промышленные и энергетические лидеры. Среди наших клиентов — крупнейшие российские и китайские промышленные и энергетические лидеры. Среди наших клиентов — крупнейшие российские и китайские промышленные и энергетические лидеры</div>
+                                    </div>                                        
+                                </div>
+                                <div class="i-category__category-img">
+                                    <img src="assets/img/product/product.png" alt="">
+
+                                    <span class="i-category__arrow">
+                                        <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.28526 0.5L9.88356 7.85119L2.28526 15.2024L0.835937 13.8002L4.01349 10.726C5.63843 9.15388 5.63843 6.5485 4.01349 4.97641L0.835937 1.90219L2.28526 0.5Z" fill="#F5F4F0" />
+                                        </svg>
+                                    </span>
+                                </div>
+                            </a>
+                            <a href="#" class="swiper-slide i-category">
+                                <div class="i-category__top-block">
+                                    <div class="i-category__icon">
+                                        <img src="assets/img/icons/where-use.svg" alt="">
+                                    </div>
+                                    <div class="i-category__description-block">
+                                        <div class="i-category__category-name md-headline">Отливки с механической обработкой</div>
+                                        <div class="i-category__description small-text">Среди наших клиентов — крупнейшие российские и китайские промышленные и энергетические лидеры. Среди наших клиентов — крупнейшие российские и китайские промышленные и энергетические лидеры. Среди наших клиентов — крупнейшие российские и китайские промышленные и энергетические лидеры</div>
+                                    </div>                                        
+                                </div>
+                                <div class="i-category__category-img">
+                                    <img src="assets/img/product/product.png" alt="">
+
+                                    <span class="i-category__arrow">
+                                        <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.28526 0.5L9.88356 7.85119L2.28526 15.2024L0.835937 13.8002L4.01349 10.726C5.63843 9.15388 5.63843 6.5485 4.01349 4.97641L0.835937 1.90219L2.28526 0.5Z" fill="#F5F4F0" />
+                                        </svg>
+                                    </span>
+                                </div>
+                            </a>
+                            <a href="#" class="swiper-slide i-category">
+                                <div class="i-category__top-block">
+                                    <div class="i-category__icon">
+                                        <img src="assets/img/icons/where-use.svg" alt="">
+                                    </div>
+                                    <div class="i-category__description-block">
+                                        <div class="i-category__category-name md-headline">Отливки с механической обработкой</div>
+                                        <div class="i-category__description small-text">Среди наших клиентов — крупнейшие российские и китайские промышленные и энергетические лидеры. Среди наших клиентов — крупнейшие российские и китайские промышленные и энергетические лидеры. Среди наших клиентов — крупнейшие российские и китайские промышленные и энергетические лидеры</div>
+                                    </div>                                        
+                                </div>
+                                <div class="i-category__category-img">
+                                    <img src="assets/img/product/product.png" alt="">
+
+                                    <span class="i-category__arrow">
+                                        <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.28526 0.5L9.88356 7.85119L2.28526 15.2024L0.835937 13.8002L4.01349 10.726C5.63843 9.15388 5.63843 6.5485 4.01349 4.97641L0.835937 1.90219L2.28526 0.5Z" fill="#F5F4F0" />
+                                        </svg>
+                                    </span>
+                                </div>
+                            </a>
+                            <a href="#" class="swiper-slide i-category">
+                                <div class="i-category__top-block">
+                                    <div class="i-category__icon">
+                                        <img src="assets/img/icons/where-use.svg" alt="">
+                                    </div>
+                                    <div class="i-category__description-block">
+                                        <div class="i-category__category-name md-headline">Отливки с механической обработкой</div>
+                                        <div class="i-category__description small-text">Среди наших клиентов — крупнейшие российские и китайские промышленные и энергетические лидеры. Среди наших клиентов — крупнейшие российские и китайские промышленные и энергетические лидеры. Среди наших клиентов — крупнейшие российские и китайские промышленные и энергетические лидеры</div>
+                                    </div>                                        
+                                </div>
+                                <div class="i-category__category-img">
+                                    <img src="assets/img/product/product.png" alt="">
+
+                                    <span class="i-category__arrow">
+                                        <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.28526 0.5L9.88356 7.85119L2.28526 15.2024L0.835937 13.8002L4.01349 10.726C5.63843 9.15388 5.63843 6.5485 4.01349 4.97641L0.835937 1.90219L2.28526 0.5Z" fill="#F5F4F0" />
+                                        </svg>
+                                    </span>
+                                </div>
+                            </a>
+                            <a href="#" class="swiper-slide i-category">
+                                <div class="i-category__top-block">
+                                    <div class="i-category__icon">
+                                        <img src="assets/img/icons/where-use.svg" alt="">
+                                    </div>
+                                    <div class="i-category__description-block">
+                                        <div class="i-category__category-name md-headline">Отливки с механической обработкой</div>
+                                        <div class="i-category__description small-text">Среди наших клиентов — крупнейшие российские и китайские промышленные и энергетические лидеры. Среди наших клиентов — крупнейшие российские и китайские промышленные и энергетические лидеры. Среди наших клиентов — крупнейшие российские и китайские промышленные и энергетические лидеры</div>
+                                    </div>                                        
+                                </div>
+                                <div class="i-category__category-img">
+                                    <img src="assets/img/product/product.png" alt="">
+
+                                    <span class="i-category__arrow">
+                                        <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.28526 0.5L9.88356 7.85119L2.28526 15.2024L0.835937 13.8002L4.01349 10.726C5.63843 9.15388 5.63843 6.5485 4.01349 4.97641L0.835937 1.90219L2.28526 0.5Z" fill="#F5F4F0" />
+                                        </svg>
+                                    </span>
+                                </div>
+                            </a>
+                        </div>
+
+                        
+                    </div>
+
+                    <div class="si-categories__link-container">
+                        <a href="catalog.html" class="dark-btn" >
+                            <span class="dark-btn__text">Смотреть всю продукцию</span>
+                            
+                            <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="23" height="23" rx="11.5" fill="#3A3A3A" />
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M9.80094 7L14 11.5L9.80094 16L9 15.1417L9.85167 14.2289C11.2856 12.6922 11.2856 10.3078 9.85167 8.77105L9 7.85835L9.80094 7Z" fill="#F5F4F0" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <main>
+        <section class="search-page">            
+            <div class="content-block">
+                <div class="container">
+
+                    <form class="p-search-form p-search-form_not-found">
+                        <p class="p-search-form__label">Результаты поиска по запросу</p>
+                        <div class="p-search-form__input-wrap is-empty">
+                            <input type="text" name="search" required minlength="1" class="p-search-form__input" placeholder="Введите ваш запрос">
+
+                            <div class="p-search-form__controls">
+                                <div class="p-search-form__reset">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M13.3307 3.73532L12.2624 2.66699L7.99815 6.93124L3.73239 2.66699L2.66406 3.73532L4.78561 5.85687C5.96878 7.04004 5.96878 8.9591 4.78561 10.1423L2.66406 12.2653L3.73239 13.3337L7.99664 9.06941L12.2609 13.3337L13.3292 12.2653L11.2077 10.1438C10.0245 8.96061 10.0245 7.04155 11.2077 5.85838L13.3292 3.73683L13.3307 3.73532Z" fill="#262626" />
+                                    </svg>
+                                </div>
+                                <div class="p-search-form__delimetr"></div>
+                                <button class="p-search-form__submit">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M20.0008 18.1488L16.0814 14.2294C15.241 13.389 14.9608 12.1218 15.4138 11.0222C15.9007 9.83353 16.1102 8.5009 15.9583 7.10804C15.5525 3.40599 12.5705 0.434394 8.86579 0.0442903C3.77874 -0.489811 -0.488834 3.77776 0.0452669 8.86482C0.43537 12.5695 3.40435 15.5516 7.10902 15.9547C8.50187 16.1066 9.83451 15.8972 11.0231 15.4102C12.1254 14.9599 13.3899 15.2374 14.2304 16.0778L18.1471 19.9945L19.9981 18.1435L20.0008 18.1488ZM2.6189 8.00345C2.6189 5.03447 5.03545 2.61793 8.00442 2.61793C10.9734 2.61793 13.3899 5.03447 13.3899 8.00345C13.3899 10.9724 10.9734 13.389 8.00442 13.389C5.03545 13.389 2.6189 10.9724 2.6189 8.00345Z" fill="#DBD6C8" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </form>   
+
+                    <p class="text-basic no-result">К сожалению, по вашему запросу ничего не найдено. Пожалуйста, попробуйте другую поисковую фразу, или же просто обратитесь к нам по форме ниже.</p>                 
+                </div>
+            </div>
+            
+            
+        </section>
+
+        <section class="cs-form-section">
+            <div class="content-block">
+                <div class="container">
+                    <div class="contact-form" id="contact-form">
+                        <div class="cs-form-section__title-block">
+                            <h2 class="md-headline">Не нашли нужную продукцию?</h2>
+                            <p class="text">Обращайтесь к нам по вопросам закупки, возможного партнёрства, для запросов от СМИ и, в целом, по любым интересующим вас вопросам.</p>                                
+                        </div>
+                        <form class="page-contacts-form">
+                            <div class="cf-fields">
+                                <div class="cf-fields__field-group">
+        
+                                    <label class="input-block">
+                                        
+                                        <span class="input-block__label">Ваше имя<sup>*</sup></span>
+        
+                                        <div class="input-block__wrap">                                                
+                                            <input type="text" id="field-name" name="name" class="input" required >
+                                            <span class="input-block__reset">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M13.3332 3.73499L12.2648 2.66666L8.00059 6.93091L3.73483 2.66666L2.6665 3.73499L4.78805 5.85653C5.97122 7.0397 5.97122 8.95877 4.78805 10.1419L2.6665 12.265L3.73483 13.3333L7.99908 9.06907L12.2633 13.3333L13.3317 12.265L11.2101 10.1434C10.0269 8.96028 10.0269 7.04121 11.2101 5.85804L13.3317 3.7365L13.3332 3.73499Z" fill="#262626" />
+                                                </svg>
+                                            </span>
+                                        </div>
+                                        <span class="input-error">Это поле обязательное для ввода</span>
+                                    </label>
+        
+                                    <label class="input-block">
+                                        
+                                        <span class="input-block__label">Ваша почта<sup>*</sup></span>
+                                        <div class="input-block__wrap">                                                
+                                            <input type="email" id="field-email" name="email" class="input" required >
+                                            <span class="input-block__reset">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M13.3332 3.73499L12.2648 2.66666L8.00059 6.93091L3.73483 2.66666L2.6665 3.73499L4.78805 5.85653C5.97122 7.0397 5.97122 8.95877 4.78805 10.1419L2.6665 12.265L3.73483 13.3333L7.99908 9.06907L12.2633 13.3333L13.3317 12.265L11.2101 10.1434C10.0269 8.96028 10.0269 7.04121 11.2101 5.85804L13.3317 3.7365L13.3332 3.73499Z" fill="#262626" />
+                                                </svg>
+                                            </span>
+                                        </div>
+                                        <span class="input-error">Это поле обязательное для ввода</span>
+                                    </label>
+        
+                                </div>
+                                <div class="cf-fields__field-group">
+                                    <label class="input-block">                                            
+                                        <span class="input-block__label">Ваш телефон<sup>*</sup></span>
+                                        <div class="input-block__wrap">                                                
+                                            <input type="tel" id="field-phone" name="phone" class="input" required minlength="16">
+                                            <span class="input-block__reset">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M13.3332 3.73499L12.2648 2.66666L8.00059 6.93091L3.73483 2.66666L2.6665 3.73499L4.78805 5.85653C5.97122 7.0397 5.97122 8.95877 4.78805 10.1419L2.6665 12.265L3.73483 13.3333L7.99908 9.06907L12.2633 13.3333L13.3317 12.265L11.2101 10.1434C10.0269 8.96028 10.0269 7.04121 11.2101 5.85804L13.3317 3.7365L13.3332 3.73499Z" fill="#262626" />
+                                                </svg>
+                                            </span>
+                                        </div>
+                                        <span class="input-error">Это поле обязательное для ввода</span>
+                                    </label>
+                                    <label class="input-block">                                            
+                                        <span class="input-block__label">Компания</span>
+                                        <div class="input-block__wrap">                                                
+                                            <input type="text" id="field-company" name="company" class="input">
+                                            <span class="input-block__reset">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M13.3332 3.73499L12.2648 2.66666L8.00059 6.93091L3.73483 2.66666L2.6665 3.73499L4.78805 5.85653C5.97122 7.0397 5.97122 8.95877 4.78805 10.1419L2.6665 12.265L3.73483 13.3333L7.99908 9.06907L12.2633 13.3333L13.3317 12.265L11.2101 10.1434C10.0269 8.96028 10.0269 7.04121 11.2101 5.85804L13.3317 3.7365L13.3332 3.73499Z" fill="#262626" />
+                                                </svg>
+                                            </span>
+                                        </div>                                            
+                                    </label>
+                                </div>
+                                <div class="cf-fields__field-group">
+                                    <label class="input-block textarea-block">                                            
+                                        <span class="input-block__label ">Ваше сообщение (опционально)</span>
+                                        <div class="input-block__wrap">                                                
+                                            
+                                            <textarea name="message" id="field-message" class="input"></textarea>
+                                            <span class="input-block__reset">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M13.3332 3.73499L12.2648 2.66666L8.00059 6.93091L3.73483 2.66666L2.6665 3.73499L4.78805 5.85653C5.97122 7.0397 5.97122 8.95877 4.78805 10.1419L2.6665 12.265L3.73483 13.3333L7.99908 9.06907L12.2633 13.3333L13.3317 12.265L11.2101 10.1434C10.0269 8.96028 10.0269 7.04121 11.2101 5.85804L13.3317 3.7365L13.3332 3.73499Z" fill="#262626" />
+                                                </svg>
+                                            </span>
+                                        </div>
+                                        
+                                    </label>
+                                </div>
+                            </div>
+        
+                            <div class="cf-file-uploads">
+        
+                                <div class="cf-load-file-zone">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M20 20H4V14.3679H5.65183V16.6652C5.65183 17.5615 6.35179 18.2866 7.21693 18.2866H16.781C17.6461 18.2866 18.3461 17.5615 18.3461 16.6652V14.3679H19.9979V20H20Z" fill="#262626" />
+                                        <path d="M7.08685 9.08877L8.02013 10.0556L9.70706 8.30802C10.3451 7.64706 11.4353 8.11551 11.4353 9.05027V15.739H12.7547V9.25134C12.7547 8.31658 13.8449 7.84813 14.4829 8.50909L15.9757 10.0556L16.909 9.08877L11.999 4L7.08685 9.08877Z" fill="#262626" />
+                                    </svg>
+                                    <div>Перенесите сюда файл(ы), или <label for="files">выберите</label> на вашем устройстве</div>
+                                    
+                                </div>
+        
+        
+                                <div class="cf-files">
+                                    
+                                </div>
+        
+        
+        
+                                <div class="cf-file-uploads__btn">
+                                    <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M11.5802 17.7205L18.3754 10.7625M14.0004 5.24998L6.63819 12.7627C6.31012 13.0909 6.12582 13.5359 6.12582 14C6.12582 14.464 6.31012 14.9091 6.63819 15.2372C6.96637 15.5653 7.41141 15.7496 7.87544 15.7496C8.33948 15.7496 8.78452 15.5653 9.11269 15.2372L16.4749 7.72448C17.1311 7.06814 17.4997 6.17806 17.4997 5.24998C17.4997 4.32191 17.1311 3.43183 16.4749 2.77548C15.8186 2.11934 14.9285 1.75073 14.0004 1.75073C13.0724 1.75073 12.1823 2.11934 11.5259 2.77548L4.16282 10.2874C3.17817 11.272 2.625 12.6075 2.625 14C2.625 15.3925 3.17817 16.728 4.16282 17.7126C5.14747 18.6973 6.48294 19.2504 7.87544 19.2504C9.26795 19.2504 10.6034 18.6973 11.5881 17.7126" stroke="#262626" stroke-width="2" stroke-linecap="square" stroke-linejoin="round" />
+                                    </svg>
+                                    Приложить файл
+                                </div>
+        
+                                
+        
+        
+                                <input type="file" id="files" class="loaded-files" multiple>
+                            </div>
+        
+                            <div class="cf-bottom">
+                                <button class="cf-submit" >
+                                    <span class="cf-submit__text cf-submit__text_static">Отправить заявку</span>
+                                    <span class="cf-submit__text cf-submit__text_sending">Отправляем данные</span>
+                                    <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="23" height="23" rx="11.5" fill="#3A3A3A" />
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.80094 7L14 11.5L9.80094 16L9 15.1417L9.85167 14.2289C11.2856 12.6922 11.2856 10.3078 9.85167 8.77105L9 7.85835L9.80094 7Z" fill="#F5F4F0" />
+                                    </svg>
+                                </button>
+        
+        
+                                <p>Нажимая кнопку “Отправить сообщение”, вы подтверждаете, что ознакомились и согласны с нашей <a href="privacy-politic.html" target="_blank">Политикой обработкой данных</a></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
     <footer class="footer">
         <div class="container">
             <div class="footer-top">
